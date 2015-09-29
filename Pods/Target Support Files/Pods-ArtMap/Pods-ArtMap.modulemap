@@ -1,0 +1,6 @@
+framework module Pods_ArtMap {
+  umbrella header "Pods-ArtMap-umbrella.h"
+
+  export *
+  module * { export * }
+}
