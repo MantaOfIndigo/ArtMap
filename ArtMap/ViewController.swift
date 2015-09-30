@@ -11,6 +11,8 @@ import GoogleMaps
 
 class ViewController: UIViewController {
     
+    var locator: Locator?
+    
     @IBOutlet weak var photoImg: UIImageView!
     
     
@@ -20,6 +22,20 @@ class ViewController: UIViewController {
     @IBAction func tapPhoto(sender: UITapGestureRecognizer) {
         //Apri nuova finestra
         
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        locator = Locator()
+        locator!.fetchWithCompletion{location, error in
+            if let loc = location {
+            print(location)
+            } else if let err = error{
+                print(err.localizedDescription)
+            }
+            self.locator = nil
+        }
     }
     
     
@@ -50,7 +66,7 @@ class ViewController: UIViewController {
         viewMap.camera = camera
         // Do any additional setup after loading the view, typically from a nib.
     }
-     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "profile"{
             //CONTROLLO DEL LOG -----------------------------------------------
         }
@@ -63,4 +79,3 @@ class ViewController: UIViewController {
 
 
 }
-
