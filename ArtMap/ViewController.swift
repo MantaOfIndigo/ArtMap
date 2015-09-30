@@ -50,7 +50,12 @@ class ViewController: UIViewController {
         viewMap.camera = camera
         // Do any additional setup after loading the view, typically from a nib.
     }
-
+     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "profile"{
+            //CONTROLLO DEL LOG -----------------------------------------------
+        }
+        
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
