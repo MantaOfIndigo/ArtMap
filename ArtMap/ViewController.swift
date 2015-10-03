@@ -8,10 +8,11 @@
 
 import UIKit
 import GoogleMaps
+import CoreLocation
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, CLLocationManagerDelegate {
     
-    var locator: Locator?
+    var locationManager: CLLocationManager!
     
     @IBOutlet weak var photoImg: UIImageView!
     
@@ -24,58 +25,46 @@ class ViewController: UIViewController {
         
     }
     
-    override func viewDidAppear(animated: Bool) {
-        super.viewDidAppear(animated)
-        
-        locator = Locator()
-        locator!.fetchWithCompletion{location, error in
-            if let loc = location {
-            print(location)
-            } else if let err = error{
-                print(err.localizedDescription)
-            }
-            self.locator = nil
-        }
-    }
     
-    
-    /*
-    @IBAction func getCurrentPlace(sender: UIButton) {
-        placesClient?.currentPlaceWithCallback({ (placeLikelihoodList: GMSPlaceLikelihoodList?, error: NSError?) -> Void in
-            if let error = error{
-                print("Pick place error: \(error.localizedDescription)")
-                return
-            }
-            
-            self.nameLabel.text = "No current place"
-            self.addressLabel.text = ""
-            
-            if let placeLicklihoodList = placeLikelihoodList {
-                let place = placeLicklihoodList.likelihoods.first?.place
-                if let place = place{
-                    self.nameLabel.text = place.name
-                    self.addressLabel.text = "\n" + place.formattedAddress.componentsSeparatedByString(", ").joinWithSeparator(", ")
-                }
-            }
-        })
-    }*/
     override func viewDidLoad() {
         super.viewDidLoad()
-        placesClient = GMSPlacesClient()
-        let camera: GMSCameraPosition = GMSCameraPosition.cameraWithLatitude(48.857165, longitude: 2.354613, zoom: 8.0)
-        viewMap.camera = camera
+        
+        
+        
+       
         // Do any additional setup after loading the view, typically from a nib.
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        locationManager = CLLocationManager()
+        locationManager.delegate = self
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.requestAlwaysAuthorization()
+        locationManager.startUpdatingLocation()
+        
+    }
+    func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        let loc = locations[0] as CLLocation
+        
+        placesClient = GMSPlacesClient()
+        let camera: GMSCameraPosition = GMSCameraPosition.cameraWithLatitude(loc.coordinate.latitude, longitude: loc.coordinate.longitude, zoom: 10.0)
+        viewMap.camera = camera
+        
+        locationManager.stopUpdatingLocation()
+    
+    
     }
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "profile"{
             //CONTROLLO DEL LOG -----------------------------------------------
         }
-        
+       
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
 
-
 }
+
