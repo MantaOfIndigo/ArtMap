@@ -11,13 +11,14 @@ import UIKit
 import GoogleMaps
 import MobileCoreServices
 
-class AddArtController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class AddArtController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, CLLocationManagerDelegate {
     
     var newMedia: Bool?
     var imagePicker: UIImagePickerController!
+    var locationManager : CLLocationManager?
     
     @IBOutlet weak var mapView: GMSMapView!
-    var placesClient: GMSPlacesClient?
+    var placesClient: GMSPlacesClient!
     
     @IBOutlet weak var tapImage: UITapGestureRecognizer!
 
@@ -51,17 +52,19 @@ class AddArtController: UIViewController, UIImagePickerControllerDelegate, UINav
         if sender === saveButton{
             //Crea nuovo oggetto Art e invialo
         }
+        
+        locationManager?.stopUpdatingLocation()
     }
     override func viewDidLoad() {
         super.viewDidLoad()
         saveButton.enabled = false
         
-        // SET LOCATION ----------------------------------------------------
-        placesClient = GMSPlacesClient()
-        let camera: GMSCameraPosition = GMSCameraPosition.cameraWithLatitude(48.857165, longitude: 2.354613, zoom: 8.0)
-        mapView.camera = camera
-        // Do any additional setup after loading the view, typically from a nib.
-        // SET LOCATION ----------------------------------------------------
+        locationManager = CLLocationManager()
+        locationManager!.delegate = self
+        locationManager!.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager!.requestAlwaysAuthorization()
+        locationManager!.startUpdatingLocation()
+        
     }
     
     func checkValidObject(){
@@ -69,7 +72,13 @@ class AddArtController: UIViewController, UIImagePickerControllerDelegate, UINav
         // foto scattata
         saveButton.enabled = true
     }
-    
-    
+    func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        let loc = locations[0] as CLLocation
+        
+        let camera: GMSCameraPosition = GMSCameraPosition.cameraWithLatitude(loc.coordinate.latitude, longitude: loc.coordinate.longitude, zoom: 18.0)
+        mapView.camera = camera
+        
+    }
     
 }
+
