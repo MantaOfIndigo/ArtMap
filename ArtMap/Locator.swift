@@ -8,74 +8,36 @@
 /*
 import UIKit
 import CoreLocation
-
-enum LocatorErrors: Int{
-    case AuthorizationDenied
-    case AuthorizationNotDetermined
-    case InvalidLocation
-}
+import GoogleMaps
 
 class Locator: NSObject, CLLocationManagerDelegate {
-    // ATTRIBUTO LOCATOR ---------------------------------------------
-    var locationManager:CLLocationManager?
     
-    //DISTRUTTORE ----------------------------------------------------
-    deinit{
-        locationManager?.delegate = nil
-        locationManager = nil
-    }
+    private var place: GMSPlacesClient?
+    var locationManager: CLLocationManager!
+    var camera: GMSCameraPosition?
     
-    typealias LocationClosure = ((location: CLLocation?, error: NSError?)->())
-    private var didComplete: LocationClosure?
-    
-    private func _didComplete(location: CLLocation?, error: NSError?){
-        locationManager?.stopUpdatingLocation()
-        didComplete?(location: location, error: error)
-        locationManager?.delegate = nil
-        locationManager = nil
-    }
-    
-    func locationManager(manger: CLLocationManager!, didChangeAuthoricationStatus status: CLAuthorizationStatus){
-        
-        switch status{
-        case .AuthorizedWhenInUse:
-            self.locationManager!.startUpdatingLocation()
-        case .Denied:
-            _didComplete(nil, error: NSError(domain: self.classForCoder.description(), code: LocatorErrors.AuthorizationDenied.rawValue, userInfo: nil))
-        default:
-            break
-        }
-    }
-    
-    internal func locationManager(manager: CLLocationManager, didFailWithError error: NSError) {
-        _didComplete(nil, error: error)
-    }
-    internal func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        if let location = locations[0] as? CLLocation{
-            _didComplete(location, error: nil)
-        } else {
-            _didComplete(nil, error: NSError(domain: self.classForCoder.description(),
-                code: LocatorErrors.InvalidLocation.rawValue,
-                userInfo: nil))
-
-        }
-        
-    }
-    
-    func fetchWithCompletion(completion: LocationClosure){
-        didComplete = completion
-        
+    override init(){
+        super.init()
         locationManager = CLLocationManager()
-        locationManager!.delegate = self
-        
-        if(NSBundle.mainBundle().objectForInfoDictionaryKey("NSLocationWhenInUseUsageDescription") != nil){
-            locationManager!.requestWhenInUseAuthorization()
-        } else if(NSBundle.mainBundle().objectForInfoDictionaryKey("NSLocationAlwaysUsageDescription") != nil){
-            locationManager!.requestAlwaysAuthorization()
-        } else {
-            fatalError("Per usare la locazione in iOS8 occorre defiire  NSLocationWhenInUseUsageDescription o NSLocationAlwaysUsageDescription nei bundle dell'app nel file Info.plist")
-        }
+        locationManager.delegate = self
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.requestAlwaysAuthorization()
+        locationManager.startUpdatingLocation()
     }
     
+    func getGPSPosition()->GMSCameraPosition?{
+        let cam = self.camera
+        return cam
+    }
+    func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        let loc = locations[0] as CLLocation
+        
+        self.place = GMSPlacesClient()
+        let cam: GMSCameraPosition = GMSCameraPosition.cameraWithLatitude(loc.coordinate.latitude, longitude: loc.coordinate.longitude, zoom: 8.0)
+        camera = cam
+        locationManager.stopUpdatingLocation()
+        
+
+    }
 }
 */
