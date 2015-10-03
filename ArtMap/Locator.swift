@@ -5,7 +5,7 @@
 //  Created by Andrea Mantani on 29/09/15.
 //  Copyright © 2015 Andrea Mantani. All rights reserved.
 //
-
+/*
 import UIKit
 import CoreLocation
 
@@ -78,3 +78,4 @@ class Locator: NSObject, CLLocationManagerDelegate {
     }
     
 }
+*/
