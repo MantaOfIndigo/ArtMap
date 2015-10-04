@@ -10,10 +10,10 @@ import UIKit
 
 class UserInfoController: UIViewController, UINavigationControllerDelegate{
     
-    
-    @IBAction func cancelButton(sender: UIBarButtonItem) {
+    @IBAction func cancelButton(sender: UIButton) {
         dismissViewControllerAnimated(true, completion: nil)
     }
+   
     override func viewDidLoad() {
         super.viewDidLoad()
     }

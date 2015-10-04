@@ -8,19 +8,15 @@
 
 import UIKit
 import GoogleMaps
-import CoreLocation
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var window: UIWindow?
-    var coreLocationController:Locator?
     
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         [GMSServices .provideAPIKey("AIzaSyDSMxA_OlWGDLe3gAEEmen1sCnyXN2TJW0")]
-        self.coreLocationController = Locator()
-        
         
         return true
     }

@@ -8,12 +8,28 @@
 
 import UIKit
 import GoogleMaps
+import CoreLocation
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, CLLocationManagerDelegate, GMSMapViewDelegate {
+    
+    var locationManager: CLLocationManager!
+    var marker: Marker?
+    
+    func setMarkers(){
+        marker = Marker()
+        var g : [GMSMarker] = (marker?.getList())!
+        g[0].map = viewMap
+        g[1].map = viewMap
+    }
     
     @IBOutlet weak var photoImg: UIImageView!
     
-    
+    @IBAction func prepareUserProfile(sender: UITapGestureRecognizer) {
+        //if loggato
+        if let resultController = storyboard?.instantiateViewControllerWithIdentifier("userInterface") as? UserInfoController{
+            presentViewController(resultController, animated: true, completion: nil)
+        }
+    }
     @IBOutlet weak var viewMap: GMSMapView!
     var placesClient: GMSPlacesClient?
     
@@ -23,34 +39,48 @@ class ViewController: UIViewController {
     }
     
     
-    /*
-    @IBAction func getCurrentPlace(sender: UIButton) {
-        placesClient?.currentPlaceWithCallback({ (placeLikelihoodList: GMSPlaceLikelihoodList?, error: NSError?) -> Void in
-            if let error = error{
-                print("Pick place error: \(error.localizedDescription)")
-                return
-            }
-            
-            self.nameLabel.text = "No current place"
-            self.addressLabel.text = ""
-            
-            if let placeLicklihoodList = placeLikelihoodList {
-                let place = placeLicklihoodList.likelihoods.first?.place
-                if let place = place{
-                    self.nameLabel.text = place.name
-                    self.addressLabel.text = "\n" + place.formattedAddress.componentsSeparatedByString(", ").joinWithSeparator(", ")
-                }
-            }
-        })
-    }*/
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        placesClient = GMSPlacesClient()
-        let camera: GMSCameraPosition = GMSCameraPosition.cameraWithLatitude(48.857165, longitude: 2.354613, zoom: 8.0)
-        viewMap.camera = camera
+        viewMap.delegate = self
+        setMarkers()
+        
+       
         // Do any additional setup after loading the view, typically from a nib.
     }
-
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        locationManager = CLLocationManager()
+        locationManager.delegate = self
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.requestAlwaysAuthorization()
+        locationManager.startUpdatingLocation()
+        
+    }
+    func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        let loc = locations[0] as CLLocation
+        
+        placesClient = GMSPlacesClient()
+        let camera: GMSCameraPosition = GMSCameraPosition.cameraWithLatitude(loc.coordinate.latitude, longitude: loc.coordinate.longitude, zoom: 10.0)
+        viewMap.camera = camera
+        
+        locationManager.stopUpdatingLocation()
+    
+    
+    }
+    
+    func mapView(mapView: GMSMapView!, markerInfoWindow marker: GMSMarker!) -> UIView! {
+        let infoWindow = NSBundle.mainBundle().loadNibNamed("InfoWindow", owner: self, options: nil).first! as! CustomInfoWindow
+        infoWindow.image.image = UIImage(named: "marker")
+        return infoWindow
+    }
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "profile"{
+            //CONTROLLO DEL LOG -----------------------------------------------
+        }
+       
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

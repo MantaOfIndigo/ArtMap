@@ -366,6 +366,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 8A3C7888F9CAAAA5F21B32F943FD6E34 /* Pods-ArtMap.release.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
@@ -434,6 +435,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 3391009EB492605200756EB9BA4841F8 /* Pods-ArtMap.debug.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
