@@ -10,7 +10,13 @@ import UIKit
 import GoogleMaps
 import CoreLocation
 
+<<<<<<< HEAD
 class ViewController: UIViewController, CLLocationManagerDelegate, GMSMapViewDelegate {
+=======
+class ViewController: UIViewController, CLLocationManagerDelegate {
+    
+    var locationManager: CLLocationManager!
+>>>>>>> d839b32cab56bad3c71a95c902f9d463d86a0be0
     
     var locationManager: CLLocationManager!
     var marker: Marker?
@@ -39,11 +45,18 @@ class ViewController: UIViewController, CLLocationManagerDelegate, GMSMapViewDel
     }
     
     
+<<<<<<< HEAD
     
     override func viewDidLoad() {
         super.viewDidLoad()
         viewMap.delegate = self
         setMarkers()
+=======
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        
+>>>>>>> d839b32cab56bad3c71a95c902f9d463d86a0be0
         
        
         // Do any additional setup after loading the view, typically from a nib.
@@ -69,12 +82,15 @@ class ViewController: UIViewController, CLLocationManagerDelegate, GMSMapViewDel
     
     
     }
+<<<<<<< HEAD
     
     func mapView(mapView: GMSMapView!, markerInfoWindow marker: GMSMarker!) -> UIView! {
         let infoWindow = NSBundle.mainBundle().loadNibNamed("InfoWindow", owner: self, options: nil).first! as! CustomInfoWindow
         infoWindow.image.image = UIImage(named: "marker")
         return infoWindow
     }
+=======
+>>>>>>> d839b32cab56bad3c71a95c902f9d463d86a0be0
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "profile"{
             //CONTROLLO DEL LOG -----------------------------------------------
@@ -85,7 +101,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate, GMSMapViewDel
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
 
 }
 
