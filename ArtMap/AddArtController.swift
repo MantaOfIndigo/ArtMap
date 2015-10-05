@@ -78,16 +78,11 @@ class AddArtController: UIViewController, UIImagePickerControllerDelegate, UINav
         let camera: GMSCameraPosition = GMSCameraPosition.cameraWithLatitude(loc.coordinate.latitude, longitude: loc.coordinate.longitude, zoom: 18.0)
         mapView.camera = camera
         
-<<<<<<< HEAD
-        print("porcamadonna")
-        
-        
+
         
     }
     
-=======
-    }
->>>>>>> d839b32cab56bad3c71a95c902f9d463d86a0be0
+    
     
 }
 
