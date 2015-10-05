@@ -18,12 +18,28 @@
                     <accessibility key="accessibilityConfiguration" identifier="image">
                         <bool key="isElement" value="YES"/>
                     </accessibility>
+                    <gestureRecognizers/>
+                    <connections>
+                        <outletCollection property="gestureRecognizers" destination="W7M-Dg-dsd" appends="YES" id="KJU-Lf-uLn"/>
+                    </connections>
                 </imageView>
             </subviews>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
                 <outlet property="image" destination="Jkf-JJ-y1m" id="WVq-5p-SF2"/>
             </connections>
+        </view>
+        <tapGestureRecognizer id="W7M-Dg-dsd">
+            <connections>
+                <action selector="showImage:" destination="iN0-l3-epB" id="nwW-2G-1rt"/>
+            </connections>
+        </tapGestureRecognizer>
+        <view contentMode="scaleToFill" id="aZo-hB-cSM" customClass="ArtInfoView" customModule="ArtMap" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="300" height="600"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <color key="backgroundColor" red="0.2323066788" green="0.66420059970000001" blue="0.55157494819999997" alpha="1" colorSpace="calibratedRGB"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="666" y="379"/>
         </view>
     </objects>
     <resources>

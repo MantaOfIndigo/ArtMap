@@ -7,7 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0FDFE7051BC174B5009D2EBD /* Marker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FDFE7041BC174B5009D2EBD /* Marker.swift */; settings = {ASSET_TAGS = (); }; };
+		0FD541E51BC2B68D0084546E /* Marker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FD541E41BC2B68D0084546E /* Marker.swift */; settings = {ASSET_TAGS = (); }; };
+		0FD541E71BC2BF4E0084546E /* ArtInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FD541E61BC2BF4E0084546E /* ArtInfoView.swift */; settings = {ASSET_TAGS = (); }; };
+		0FDFE7051BC174B5009D2EBD /* MarkerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FDFE7041BC174B5009D2EBD /* MarkerController.swift */; settings = {ASSET_TAGS = (); }; };
 		0FDFE7071BC18EB8009D2EBD /* CustomInfoWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FDFE7061BC18EB8009D2EBD /* CustomInfoWindow.swift */; settings = {ASSET_TAGS = (); }; };
 		0FDFE7091BC18F05009D2EBD /* InfoWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0FDFE7081BC18F05009D2EBD /* InfoWindow.xib */; settings = {ASSET_TAGS = (); }; };
 		0FF19C1A1BBA7DB800B96C5F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF19C191BBA7DB800B96C5F /* AppDelegate.swift */; };
@@ -43,7 +45,9 @@
 
 /* Begin PBXFileReference section */
 		0428BF98C3DD5EB1288B7035 /* Pods-ArtMap.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ArtMap.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ArtMap/Pods-ArtMap.debug.xcconfig"; sourceTree = "<group>"; };
-		0FDFE7041BC174B5009D2EBD /* Marker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Marker.swift; sourceTree = "<group>"; };
+		0FD541E41BC2B68D0084546E /* Marker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Marker.swift; sourceTree = "<group>"; };
+		0FD541E61BC2BF4E0084546E /* ArtInfoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtInfoView.swift; sourceTree = "<group>"; };
+		0FDFE7041BC174B5009D2EBD /* MarkerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarkerController.swift; sourceTree = "<group>"; };
 		0FDFE7061BC18EB8009D2EBD /* CustomInfoWindow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomInfoWindow.swift; sourceTree = "<group>"; };
 		0FDFE7081BC18F05009D2EBD /* InfoWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InfoWindow.xib; sourceTree = "<group>"; };
 		0FF19C161BBA7DB800B96C5F /* ArtMap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ArtMap.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -120,13 +124,15 @@
 			children = (
 				0FF19C191BBA7DB800B96C5F /* AppDelegate.swift */,
 				0FF19C1B1BBA7DB800B96C5F /* ViewController.swift */,
+				0FD541E41BC2B68D0084546E /* Marker.swift */,
 				0FF19C471BBA7EFA00B96C5F /* AddArtController.swift */,
 				0FF19C491BBA7F1000B96C5F /* UserInfoController.swift */,
 				0FF19C4B1BBA7F2000B96C5F /* Art.swift */,
 				0FF19C4D1BBA7F2F00B96C5F /* Locator.swift */,
 				0FF19C1D1BBA7DB800B96C5F /* Main.storyboard */,
-				0FDFE7041BC174B5009D2EBD /* Marker.swift */,
+				0FDFE7041BC174B5009D2EBD /* MarkerController.swift */,
 				0FDFE7061BC18EB8009D2EBD /* CustomInfoWindow.swift */,
+				0FD541E61BC2BF4E0084546E /* ArtInfoView.swift */,
 				0FDFE7081BC18F05009D2EBD /* InfoWindow.xib */,
 				0FF19C201BBA7DB800B96C5F /* Assets.xcassets */,
 				0FF19C221BBA7DB800B96C5F /* LaunchScreen.storyboard */,
@@ -356,10 +362,12 @@
 				0FF19C1C1BBA7DB800B96C5F /* ViewController.swift in Sources */,
 				0FF19C1A1BBA7DB800B96C5F /* AppDelegate.swift in Sources */,
 				0FF19C4E1BBA7F2F00B96C5F /* Locator.swift in Sources */,
+				0FD541E71BC2BF4E0084546E /* ArtInfoView.swift in Sources */,
 				0FF19C4C1BBA7F2000B96C5F /* Art.swift in Sources */,
 				0FF19C4A1BBA7F1000B96C5F /* UserInfoController.swift in Sources */,
 				0FF19C481BBA7EFA00B96C5F /* AddArtController.swift in Sources */,
-				0FDFE7051BC174B5009D2EBD /* Marker.swift in Sources */,
+				0FDFE7051BC174B5009D2EBD /* MarkerController.swift in Sources */,
+				0FD541E51BC2B68D0084546E /* Marker.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

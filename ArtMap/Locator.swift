@@ -40,8 +40,4 @@ class Locator: NSObject, CLLocationManagerDelegate {
 
     }
 }
-<<<<<<< HEAD
 */
-=======
-*/
->>>>>>> d839b32cab56bad3c71a95c902f9d463d86a0be0

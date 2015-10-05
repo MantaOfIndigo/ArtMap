@@ -10,22 +10,17 @@ import UIKit
 import GoogleMaps
 import CoreLocation
 
-<<<<<<< HEAD
 class ViewController: UIViewController, CLLocationManagerDelegate, GMSMapViewDelegate {
-=======
-class ViewController: UIViewController, CLLocationManagerDelegate {
-    
+
     var locationManager: CLLocationManager!
->>>>>>> d839b32cab56bad3c71a95c902f9d463d86a0be0
-    
-    var locationManager: CLLocationManager!
-    var marker: Marker?
+    var markerController: MarkerController?
     
     func setMarkers(){
-        marker = Marker()
-        var g : [GMSMarker] = (marker?.getList())!
-        g[0].map = viewMap
-        g[1].map = viewMap
+        markerController = MarkerController()
+        var g : [Marker] = (markerController?.getList())!
+        g[0].getMarker().map = viewMap
+        g[1].getMarker().map = viewMap
+
     }
     
     @IBOutlet weak var photoImg: UIImageView!
@@ -44,21 +39,13 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         
     }
     
-    
-<<<<<<< HEAD
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
         viewMap.delegate = self
         setMarkers()
-=======
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        
->>>>>>> d839b32cab56bad3c71a95c902f9d463d86a0be0
-        
-       
+
         // Do any additional setup after loading the view, typically from a nib.
     }
     
@@ -82,15 +69,12 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     
     
     }
-<<<<<<< HEAD
     
-    func mapView(mapView: GMSMapView!, markerInfoWindow marker: GMSMarker!) -> UIView! {
+    func mapView(mapView: GMSMapView!, markerInfoWindow marker: GMSMarker) -> UIView! {
         let infoWindow = NSBundle.mainBundle().loadNibNamed("InfoWindow", owner: self, options: nil).first! as! CustomInfoWindow
-        infoWindow.image.image = UIImage(named: "marker")
+        infoWindow.image.image = markerController!.getImageFromMarker(marker)
         return infoWindow
     }
-=======
->>>>>>> d839b32cab56bad3c71a95c902f9d463d86a0be0
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "profile"{
             //CONTROLLO DEL LOG -----------------------------------------------

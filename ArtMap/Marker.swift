@@ -2,7 +2,7 @@
 //  Marker.swift
 //  ArtMap
 //
-//  Created by Andrea Mantani on 04/10/15.
+//  Created by Andrea Mantani on 05/10/15.
 //  Copyright © 2015 Andrea Mantani. All rights reserved.
 //
 
@@ -11,29 +11,30 @@ import GoogleMaps
 
 class Marker: NSObject {
     
-    var m : GMSMarker?
+    private var marker : GMSMarker
+    private var id : Int
+    private var image : UIImage
     
-    override init(){
-        super.init()
+    init(position: CLLocationCoordinate2D, id: Int, image: UIImage){
+        
+        self.marker = GMSMarker()
+        self.marker.icon = UIImage(named: "icon")
+        self.marker.position = position
+        self.marker.appearAnimation = kGMSMarkerAnimationPop
+        self.marker.infoWindowAnchor = CGPointMake(0.44, 0.45);
+        
+        self.image = image
+        self.id = id
     }
-    
-    internal func getList() -> [GMSMarker]{
-        var tmp = [GMSMarker]()
-        m = GMSMarker()
-        let d = GMSMarker()
+    func getMarker() -> GMSMarker{
+        return self.marker
+    }
+    func getId() -> Int{
+        return self.id
         
-        m!.appearAnimation = kGMSMarkerAnimationPop
-        m!.infoWindowAnchor = CGPointMake(0.44, 0.45);
-        m!.snippet = "stupido"
-        m?.position = CLLocationCoordinate2DMake(21.304080, -157.733396)
-        tmp.append(m!)
-        
-        d.appearAnimation = kGMSMarkerAnimationPop
-        d.infoWindowAnchor = CGPointMake(0.44, 0.45);
-        d.snippet = "ciao"
-        d.position = CLLocationCoordinate2DMake(21.357168, -157.857679)
-        tmp.append(d)
-        return tmp
+    }
+    func getImage() -> UIImage{
+        return self.image
     }
 
 }

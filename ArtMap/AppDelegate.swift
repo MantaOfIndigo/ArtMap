@@ -16,13 +16,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
-<<<<<<< HEAD
-        [GMSServices .provideAPIKey("AIzaSyDSMxA_OlWGDLe3gAEEmen1sCnyXN2TJW0")]
-=======
-        [GMSServices .provideAPIKey(/*--APIKEY--*/)]
-        self.coreLocationController = Locator()
-        
->>>>>>> d839b32cab56bad3c71a95c902f9d463d86a0be0
+
+        [GMSServices .provideAPIKey("AIzaSyDSMxA_OlWGDLe3gAEEmen1sCnyXN2TJW0")]        
         
         return true
     }
