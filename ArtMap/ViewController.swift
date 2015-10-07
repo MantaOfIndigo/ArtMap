@@ -14,6 +14,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, GMSMapViewDel
 
     var locationManager: CLLocationManager!
     var markerController: MarkerController?
+    var popview: ArtInfoView!
     
     func setMarkers(){
         markerController = MarkerController()
@@ -69,6 +70,15 @@ class ViewController: UIViewController, CLLocationManagerDelegate, GMSMapViewDel
     
     
     }
+  
+    
+    func mapView(mapView: GMSMapView!, didTapInfoWindowOfMarker marker: GMSMarker!) {
+        
+        self.popview = ArtInfoView(nibName: "ArtInfoView", bundle: nil)
+               //popview.image.image = markerController!.getImageFromMarker(marker)
+        self.popview.showInView(self.view, animated: true, image: (markerController?.getImageFromMarker(marker))!)
+    }
+    
     
     func mapView(mapView: GMSMapView!, markerInfoWindow marker: GMSMarker) -> UIView! {
         let infoWindow = NSBundle.mainBundle().loadNibNamed("InfoWindow", owner: self, options: nil).first! as! CustomInfoWindow
@@ -81,6 +91,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate, GMSMapViewDel
         }
        
     }
+    
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

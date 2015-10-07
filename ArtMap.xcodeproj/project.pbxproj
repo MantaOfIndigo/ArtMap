@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		0FD541E51BC2B68D0084546E /* Marker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FD541E41BC2B68D0084546E /* Marker.swift */; settings = {ASSET_TAGS = (); }; };
 		0FD541E71BC2BF4E0084546E /* ArtInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FD541E61BC2BF4E0084546E /* ArtInfoView.swift */; settings = {ASSET_TAGS = (); }; };
+		0FD541E91BC414340084546E /* ArtInfoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0FD541E81BC414340084546E /* ArtInfoView.xib */; settings = {ASSET_TAGS = (); }; };
 		0FDFE7051BC174B5009D2EBD /* MarkerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FDFE7041BC174B5009D2EBD /* MarkerController.swift */; settings = {ASSET_TAGS = (); }; };
 		0FDFE7071BC18EB8009D2EBD /* CustomInfoWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FDFE7061BC18EB8009D2EBD /* CustomInfoWindow.swift */; settings = {ASSET_TAGS = (); }; };
 		0FDFE7091BC18F05009D2EBD /* InfoWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0FDFE7081BC18F05009D2EBD /* InfoWindow.xib */; settings = {ASSET_TAGS = (); }; };
@@ -47,6 +48,7 @@
 		0428BF98C3DD5EB1288B7035 /* Pods-ArtMap.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ArtMap.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ArtMap/Pods-ArtMap.debug.xcconfig"; sourceTree = "<group>"; };
 		0FD541E41BC2B68D0084546E /* Marker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Marker.swift; sourceTree = "<group>"; };
 		0FD541E61BC2BF4E0084546E /* ArtInfoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtInfoView.swift; sourceTree = "<group>"; };
+		0FD541E81BC414340084546E /* ArtInfoView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ArtInfoView.xib; sourceTree = "<group>"; };
 		0FDFE7041BC174B5009D2EBD /* MarkerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarkerController.swift; sourceTree = "<group>"; };
 		0FDFE7061BC18EB8009D2EBD /* CustomInfoWindow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomInfoWindow.swift; sourceTree = "<group>"; };
 		0FDFE7081BC18F05009D2EBD /* InfoWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InfoWindow.xib; sourceTree = "<group>"; };
@@ -134,6 +136,7 @@
 				0FDFE7061BC18EB8009D2EBD /* CustomInfoWindow.swift */,
 				0FD541E61BC2BF4E0084546E /* ArtInfoView.swift */,
 				0FDFE7081BC18F05009D2EBD /* InfoWindow.xib */,
+				0FD541E81BC414340084546E /* ArtInfoView.xib */,
 				0FF19C201BBA7DB800B96C5F /* Assets.xcassets */,
 				0FF19C221BBA7DB800B96C5F /* LaunchScreen.storyboard */,
 				0FF19C251BBA7DB800B96C5F /* Info.plist */,
@@ -283,6 +286,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0FF19C241BBA7DB800B96C5F /* LaunchScreen.storyboard in Resources */,
+				0FD541E91BC414340084546E /* ArtInfoView.xib in Resources */,
 				0FF19C211BBA7DB800B96C5F /* Assets.xcassets in Resources */,
 				0FF19C1F1BBA7DB800B96C5F /* Main.storyboard in Resources */,
 				0FDFE7091BC18F05009D2EBD /* InfoWindow.xib in Resources */,
