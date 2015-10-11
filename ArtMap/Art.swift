@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import GoogleMaps
 
 class Art: NSObject {
     
@@ -55,9 +56,22 @@ class Art: NSObject {
         
         super.init()
     }
+    init?(title:String, author:String, year:Int, status: Bool){
+        self.title = title
+        self.author = author
+        self.year = year
+        self.status = status
+        
+        super.init()
+    }
     
     //------------------------------------------------------------
     
+    func getFromMarker(marker: GMSMarker){
+        
+        
+    
+    }
     
     
 }

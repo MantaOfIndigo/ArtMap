@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0F1527D71BC90A6D003F665B /* FormArtController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F1527D61BC90A6D003F665B /* FormArtController.swift */; settings = {ASSET_TAGS = (); }; };
 		0FD541E51BC2B68D0084546E /* Marker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FD541E41BC2B68D0084546E /* Marker.swift */; settings = {ASSET_TAGS = (); }; };
 		0FD541E71BC2BF4E0084546E /* ArtInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FD541E61BC2BF4E0084546E /* ArtInfoView.swift */; settings = {ASSET_TAGS = (); }; };
 		0FD541E91BC414340084546E /* ArtInfoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0FD541E81BC414340084546E /* ArtInfoView.xib */; settings = {ASSET_TAGS = (); }; };
@@ -24,7 +25,6 @@
 		0FF19C4A1BBA7F1000B96C5F /* UserInfoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF19C491BBA7F1000B96C5F /* UserInfoController.swift */; settings = {ASSET_TAGS = (); }; };
 		0FF19C4C1BBA7F2000B96C5F /* Art.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF19C4B1BBA7F2000B96C5F /* Art.swift */; settings = {ASSET_TAGS = (); }; };
 		0FF19C4E1BBA7F2F00B96C5F /* Locator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF19C4D1BBA7F2F00B96C5F /* Locator.swift */; settings = {ASSET_TAGS = (); }; };
-		8080AAE55C4F157E291A8F33 /* Pods_ArtMap.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 97ACF3F2411BE3919F00674B /* Pods_ArtMap.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +46,7 @@
 
 /* Begin PBXFileReference section */
 		0428BF98C3DD5EB1288B7035 /* Pods-ArtMap.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ArtMap.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ArtMap/Pods-ArtMap.debug.xcconfig"; sourceTree = "<group>"; };
+		0F1527D61BC90A6D003F665B /* FormArtController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormArtController.swift; sourceTree = "<group>"; };
 		0FD541E41BC2B68D0084546E /* Marker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Marker.swift; sourceTree = "<group>"; };
 		0FD541E61BC2BF4E0084546E /* ArtInfoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtInfoView.swift; sourceTree = "<group>"; };
 		0FD541E81BC414340084546E /* ArtInfoView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ArtInfoView.xib; sourceTree = "<group>"; };
@@ -70,7 +71,6 @@
 		0FF19C4B1BBA7F2000B96C5F /* Art.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Art.swift; sourceTree = "<group>"; };
 		0FF19C4D1BBA7F2F00B96C5F /* Locator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Locator.swift; sourceTree = "<group>"; };
 		812F30186C5601B275DA8949 /* Pods-ArtMap.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ArtMap.release.xcconfig"; path = "Pods/Target Support Files/Pods-ArtMap/Pods-ArtMap.release.xcconfig"; sourceTree = "<group>"; };
-		97ACF3F2411BE3919F00674B /* Pods_ArtMap.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ArtMap.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,7 +78,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8080AAE55C4F157E291A8F33 /* Pods_ArtMap.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -137,6 +136,7 @@
 				0FD541E61BC2BF4E0084546E /* ArtInfoView.swift */,
 				0FDFE7081BC18F05009D2EBD /* InfoWindow.xib */,
 				0FD541E81BC414340084546E /* ArtInfoView.xib */,
+				0F1527D61BC90A6D003F665B /* FormArtController.swift */,
 				0FF19C201BBA7DB800B96C5F /* Assets.xcassets */,
 				0FF19C221BBA7DB800B96C5F /* LaunchScreen.storyboard */,
 				0FF19C251BBA7DB800B96C5F /* Info.plist */,
@@ -174,7 +174,6 @@
 		A6B8ADDA12D7E363226320C4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				97ACF3F2411BE3919F00674B /* Pods_ArtMap.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -364,6 +363,7 @@
 			files = (
 				0FDFE7071BC18EB8009D2EBD /* CustomInfoWindow.swift in Sources */,
 				0FF19C1C1BBA7DB800B96C5F /* ViewController.swift in Sources */,
+				0F1527D71BC90A6D003F665B /* FormArtController.swift in Sources */,
 				0FF19C1A1BBA7DB800B96C5F /* AppDelegate.swift in Sources */,
 				0FF19C4E1BBA7F2F00B96C5F /* Locator.swift in Sources */,
 				0FD541E71BC2BF4E0084546E /* ArtInfoView.swift in Sources */,
@@ -517,6 +517,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/FacebookSDKs-iOS-20151007",
 				);
 				INFOPLIST_FILE = ArtMap/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -570,6 +571,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/FacebookSDKs-iOS-20151007",
 				);
 				INFOPLIST_FILE = ArtMap/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

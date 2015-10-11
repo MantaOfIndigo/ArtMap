@@ -75,8 +75,17 @@ class ViewController: UIViewController, CLLocationManagerDelegate, GMSMapViewDel
     func mapView(mapView: GMSMapView!, didTapInfoWindowOfMarker marker: GMSMarker!) {
         
         self.popview = ArtInfoView(nibName: "ArtInfoView", bundle: nil)
+        
+        if let tmp = markerController?.getMarker(marker)! {
+            print("ok")
+            popview.setInformation(tmp)
+        }
+        
+        print("mo")
                //popview.image.image = markerController!.getImageFromMarker(marker)
         self.popview.showInView(self.view, animated: true, image: (markerController?.getImageFromMarker(marker))!)
+        
+        
     }
     
     
