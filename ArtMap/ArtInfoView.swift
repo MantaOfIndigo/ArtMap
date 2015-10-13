@@ -14,6 +14,7 @@ import QuartzCore
     @IBOutlet weak var infoView: UIView!
     @IBOutlet weak var imageInfo: UIImageView!
     @IBOutlet weak var decorationView: UIView!
+    @IBOutlet weak var bottomArea: UIView!
     
     private var artInformation : Marker = Marker()
     
@@ -44,6 +45,7 @@ import QuartzCore
     override func viewDidLoad() {
         
         super.viewDidLoad()
+        self.imageInfo.image = artInformation.getImage()
         decorationView.layer.borderColor = UIColor.whiteColor().CGColor
         decorationView.layer.borderWidth = 2
         self.view.backgroundColor = UIColor.blackColor().colorWithAlphaComponent(0.6)
@@ -56,7 +58,7 @@ import QuartzCore
     
     func showInView(superView: UIView!, animated: Bool, image: UIImage!){
         superView.addSubview(self.view)
-        self.imageInfo?.image = UIImage(named: "d")
+        self.imageInfo?.image = artInformation.getImage()
         if animated{
             self.showAnimate()
         }
@@ -80,10 +82,7 @@ import QuartzCore
     }
     
     func setInformation(info: Marker){
-        artInformation = info
-        
-        self.imageInfo.image = info.getImage()
-
+        self.artInformation = info
     }
 
 }

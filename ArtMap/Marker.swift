@@ -52,16 +52,5 @@ class Marker: NSObject {
         return Art(title: self.art.title, author: self.art.author, year: self.art.year, status: self.art.status)!
         
     }
-    
-    func checking() -> String{
-        var string = ""
-        if getImage() != nil {
-            string += "immagine ok"
-        }
-        
-        if getMarker() != nil {
-            string += "-marker ok"
-        }
-    }
 
 }

@@ -4,6 +4,16 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>Bolts.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>FBSDKCoreKit.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-ArtMap.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -17,12 +27,22 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>3B8DD0EA9E3E4F92FC71A8743863ADBA</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>9AA340D3097B7B60D9C2BC6078D0F819</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>B9A04D3C9B208813656510FDA8ADAE02</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>D69F11EFD4D63F42C23D25FDE5C509D9</key>
+		<key>DFDA457732F6AE079BA05FC981E89B55</key>
 		<dict>
 			<key>primary</key>
 			<true/>

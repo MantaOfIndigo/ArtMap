@@ -6,6 +6,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ArtInfoView" customModule="ArtMap" customModuleProvider="target">
             <connections>
+                <outlet property="bottomArea" destination="MU8-Fm-yym" id="joL-nc-BBC"/>
                 <outlet property="decorationView" destination="MU8-Fm-yym" id="0qP-MB-Tvg"/>
                 <outlet property="imageInfo" destination="yO6-EY-g05" id="Lqy-9f-9Pi"/>
                 <outlet property="infoView" destination="nZf-LZ-U9V" id="9bG-wm-BmO"/>
@@ -60,7 +61,7 @@
                             <rect key="frame" x="0.0" y="52" width="495" height="70"/>
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JdX-5l-5VB">
-                                    <rect key="frame" x="199" y="20" width="97" height="30"/>
+                                    <rect key="frame" x="197" y="20" width="100" height="30"/>
                                     <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
                                     <state key="normal" title="Esci">
                                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -70,13 +71,21 @@
                                     </connections>
                                 </button>
                             </subviews>
-                            <color key="backgroundColor" red="0.00071728013629999998" green="0.86276830810000005" blue="0.69687103380000004" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="backgroundColor" red="1" green="0.28594372130000001" blue="0.35572190869999998" alpha="1" colorSpace="calibratedRGB"/>
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <constraints>
                                 <constraint firstItem="JdX-5l-5VB" firstAttribute="centerX" secondItem="MU8-Fm-yym" secondAttribute="centerX" id="3Gj-op-2ox"/>
                                 <constraint firstAttribute="height" constant="70" id="A08-6i-Ome"/>
+                                <constraint firstItem="JdX-5l-5VB" firstAttribute="centerY" secondItem="MU8-Fm-yym" secondAttribute="centerY" id="ABY-nI-jlb"/>
+                                <constraint firstItem="JdX-5l-5VB" firstAttribute="centerY" secondItem="MU8-Fm-yym" secondAttribute="centerY" id="OW9-WA-meP"/>
                                 <constraint firstItem="JdX-5l-5VB" firstAttribute="centerY" secondItem="MU8-Fm-yym" secondAttribute="centerY" id="Pi7-bc-BkI"/>
                             </constraints>
+                            <variation key="default">
+                                <mask key="constraints">
+                                    <exclude reference="ABY-nI-jlb"/>
+                                    <exclude reference="Pi7-bc-BkI"/>
+                                </mask>
+                            </variation>
                         </view>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="sdfgshfgsjdfgjsdgfjhgsdjhfgsjhgdfjgsdjfgsdgfgsgdjfgshdfgjshdgf" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tYi-Gq-Ood">
                             <rect key="frame" x="60" y="15" width="200" height="20"/>

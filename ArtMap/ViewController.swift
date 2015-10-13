@@ -18,7 +18,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, GMSMapViewDel
     
     func setMarkers(){
         markerController = MarkerController()
-        var g : [Marker] = (markerController?.getList())!
+        var g : [Marker] = (markerController?.getMarkerList())!
         g[0].getMarker().map = viewMap
         g[1].getMarker().map = viewMap
 
@@ -77,11 +77,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate, GMSMapViewDel
         self.popview = ArtInfoView(nibName: "ArtInfoView", bundle: nil)
         
         if let tmp = markerController?.getMarker(marker)! {
-            print("ok")
             popview.setInformation(tmp)
         }
-        
-        print("mo")
                //popview.image.image = markerController!.getImageFromMarker(marker)
         self.popview.showInView(self.view, animated: true, image: (markerController?.getImageFromMarker(marker))!)
         

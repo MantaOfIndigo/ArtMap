@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0F1527D71BC90A6D003F665B /* FormArtController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F1527D61BC90A6D003F665B /* FormArtController.swift */; settings = {ASSET_TAGS = (); }; };
+		0F58495C1BCD4C7E00BAA982 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F58495B1BCD4C7E00BAA982 /* User.swift */; settings = {ASSET_TAGS = (); }; };
 		0FD541E51BC2B68D0084546E /* Marker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FD541E41BC2B68D0084546E /* Marker.swift */; settings = {ASSET_TAGS = (); }; };
 		0FD541E71BC2BF4E0084546E /* ArtInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FD541E61BC2BF4E0084546E /* ArtInfoView.swift */; settings = {ASSET_TAGS = (); }; };
 		0FD541E91BC414340084546E /* ArtInfoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0FD541E81BC414340084546E /* ArtInfoView.xib */; settings = {ASSET_TAGS = (); }; };
@@ -25,6 +26,7 @@
 		0FF19C4A1BBA7F1000B96C5F /* UserInfoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF19C491BBA7F1000B96C5F /* UserInfoController.swift */; settings = {ASSET_TAGS = (); }; };
 		0FF19C4C1BBA7F2000B96C5F /* Art.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF19C4B1BBA7F2000B96C5F /* Art.swift */; settings = {ASSET_TAGS = (); }; };
 		0FF19C4E1BBA7F2F00B96C5F /* Locator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF19C4D1BBA7F2F00B96C5F /* Locator.swift */; settings = {ASSET_TAGS = (); }; };
+		80D8D205C4E20B3A5EF17EB8 /* Pods_ArtMap.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2248431C800505F1B8394BCF /* Pods_ArtMap.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +49,40 @@
 /* Begin PBXFileReference section */
 		0428BF98C3DD5EB1288B7035 /* Pods-ArtMap.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ArtMap.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ArtMap/Pods-ArtMap.debug.xcconfig"; sourceTree = "<group>"; };
 		0F1527D61BC90A6D003F665B /* FormArtController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormArtController.swift; sourceTree = "<group>"; };
+		0F2AAB721BCD54D9005D2BC2 /* FBAdChoicesView.html */ = {isa = PBXFileReference; lastKnownFileType = text.html.documentation; path = FBAdChoicesView.html; sourceTree = "<group>"; };
+		0F2AAB731BCD54D9005D2BC2 /* FBAdCustomSize.html */ = {isa = PBXFileReference; lastKnownFileType = text.html.documentation; path = FBAdCustomSize.html; sourceTree = "<group>"; };
+		0F2AAB741BCD54D9005D2BC2 /* FBAdImage.html */ = {isa = PBXFileReference; lastKnownFileType = text.html.documentation; path = FBAdImage.html; sourceTree = "<group>"; };
+		0F2AAB751BCD54D9005D2BC2 /* FBAdSettings.html */ = {isa = PBXFileReference; lastKnownFileType = text.html.documentation; path = FBAdSettings.html; sourceTree = "<group>"; };
+		0F2AAB761BCD54D9005D2BC2 /* FBAdStarRatingView.html */ = {isa = PBXFileReference; lastKnownFileType = text.html.documentation; path = FBAdStarRatingView.html; sourceTree = "<group>"; };
+		0F2AAB771BCD54D9005D2BC2 /* FBAdView.html */ = {isa = PBXFileReference; lastKnownFileType = text.html.documentation; path = FBAdView.html; sourceTree = "<group>"; };
+		0F2AAB781BCD54D9005D2BC2 /* FBInterstitialAd.html */ = {isa = PBXFileReference; lastKnownFileType = text.html.documentation; path = FBInterstitialAd.html; sourceTree = "<group>"; };
+		0F2AAB791BCD54D9005D2BC2 /* FBMediaView.html */ = {isa = PBXFileReference; lastKnownFileType = text.html.documentation; path = FBMediaView.html; sourceTree = "<group>"; };
+		0F2AAB7A1BCD54D9005D2BC2 /* FBNativeAd.html */ = {isa = PBXFileReference; lastKnownFileType = text.html.documentation; path = FBNativeAd.html; sourceTree = "<group>"; };
+		0F2AAB7B1BCD54D9005D2BC2 /* FBNativeAdScrollView.html */ = {isa = PBXFileReference; lastKnownFileType = text.html.documentation; path = FBNativeAdScrollView.html; sourceTree = "<group>"; };
+		0F2AAB7C1BCD54D9005D2BC2 /* FBNativeAdsManager.html */ = {isa = PBXFileReference; lastKnownFileType = text.html.documentation; path = FBNativeAdsManager.html; sourceTree = "<group>"; };
+		0F2AAB7D1BCD54D9005D2BC2 /* FBNativeAdTableViewAdProvider.html */ = {isa = PBXFileReference; lastKnownFileType = text.html.documentation; path = FBNativeAdTableViewAdProvider.html; sourceTree = "<group>"; };
+		0F2AAB7E1BCD54D9005D2BC2 /* FBNativeAdTableViewCellProvider.html */ = {isa = PBXFileReference; lastKnownFileType = text.html.documentation; path = FBNativeAdTableViewCellProvider.html; sourceTree = "<group>"; };
+		0F2AAB7F1BCD54D9005D2BC2 /* FBNativeAdView.html */ = {isa = PBXFileReference; lastKnownFileType = text.html.documentation; path = FBNativeAdView.html; sourceTree = "<group>"; };
+		0F2AAB801BCD54D9005D2BC2 /* FBNativeAdViewAttributes.html */ = {isa = PBXFileReference; lastKnownFileType = text.html.documentation; path = FBNativeAdViewAttributes.html; sourceTree = "<group>"; };
+		0F2AAB821BCD54D9005D2BC2 /* FBAdLogLevel.html */ = {isa = PBXFileReference; lastKnownFileType = text.html.documentation; path = FBAdLogLevel.html; sourceTree = "<group>"; };
+		0F2AAB831BCD54D9005D2BC2 /* FBNativeAdsCachePolicy.html */ = {isa = PBXFileReference; lastKnownFileType = text.html.documentation; path = FBNativeAdsCachePolicy.html; sourceTree = "<group>"; };
+		0F2AAB841BCD54D9005D2BC2 /* FBNativeAdViewType.html */ = {isa = PBXFileReference; lastKnownFileType = text.html.documentation; path = FBNativeAdViewType.html; sourceTree = "<group>"; };
+		0F2AAB861BCD54D9005D2BC2 /* styles.css */ = {isa = PBXFileReference; lastKnownFileType = text.css; path = styles.css; sourceTree = "<group>"; };
+		0F2AAB871BCD54D9005D2BC2 /* stylesPrint.css */ = {isa = PBXFileReference; lastKnownFileType = text.css; path = stylesPrint.css; sourceTree = "<group>"; };
+		0F2AAB881BCD54D9005D2BC2 /* hierarchy.html */ = {isa = PBXFileReference; lastKnownFileType = text.html.documentation; path = hierarchy.html; sourceTree = "<group>"; };
+		0F2AAB8A1BCD54D9005D2BC2 /* button_bar_background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button_bar_background.png; sourceTree = "<group>"; };
+		0F2AAB8B1BCD54D9005D2BC2 /* disclosure.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = disclosure.png; sourceTree = "<group>"; };
+		0F2AAB8C1BCD54D9005D2BC2 /* disclosure_open.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = disclosure_open.png; sourceTree = "<group>"; };
+		0F2AAB8D1BCD54D9005D2BC2 /* library_background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = library_background.png; sourceTree = "<group>"; };
+		0F2AAB8E1BCD54D9005D2BC2 /* title_background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = title_background.png; sourceTree = "<group>"; };
+		0F2AAB8F1BCD54D9005D2BC2 /* index.html */ = {isa = PBXFileReference; lastKnownFileType = text.html.documentation; path = index.html; sourceTree = "<group>"; };
+		0F2AAB911BCD54D9005D2BC2 /* FBAdViewDelegate.html */ = {isa = PBXFileReference; lastKnownFileType = text.html.documentation; path = FBAdViewDelegate.html; sourceTree = "<group>"; };
+		0F2AAB921BCD54D9005D2BC2 /* FBInterstitialAdDelegate.html */ = {isa = PBXFileReference; lastKnownFileType = text.html.documentation; path = FBInterstitialAdDelegate.html; sourceTree = "<group>"; };
+		0F2AAB931BCD54D9005D2BC2 /* FBMediaViewDelegate.html */ = {isa = PBXFileReference; lastKnownFileType = text.html.documentation; path = FBMediaViewDelegate.html; sourceTree = "<group>"; };
+		0F2AAB941BCD54D9005D2BC2 /* FBNativeAdDelegate.html */ = {isa = PBXFileReference; lastKnownFileType = text.html.documentation; path = FBNativeAdDelegate.html; sourceTree = "<group>"; };
+		0F2AAB951BCD54D9005D2BC2 /* FBNativeAdsManagerDelegate.html */ = {isa = PBXFileReference; lastKnownFileType = text.html.documentation; path = FBNativeAdsManagerDelegate.html; sourceTree = "<group>"; };
+		0F2AAB961BCD551F005D2BC2 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = "../../../../Downloads/FacebookSDKs-iOS-20151007/FBSDKLoginKit.framework"; sourceTree = "<group>"; };
+		0F58495B1BCD4C7E00BAA982 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		0FD541E41BC2B68D0084546E /* Marker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Marker.swift; sourceTree = "<group>"; };
 		0FD541E61BC2BF4E0084546E /* ArtInfoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtInfoView.swift; sourceTree = "<group>"; };
 		0FD541E81BC414340084546E /* ArtInfoView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ArtInfoView.xib; sourceTree = "<group>"; };
@@ -70,6 +106,7 @@
 		0FF19C491BBA7F1000B96C5F /* UserInfoController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInfoController.swift; sourceTree = "<group>"; };
 		0FF19C4B1BBA7F2000B96C5F /* Art.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Art.swift; sourceTree = "<group>"; };
 		0FF19C4D1BBA7F2F00B96C5F /* Locator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Locator.swift; sourceTree = "<group>"; };
+		2248431C800505F1B8394BCF /* Pods_ArtMap.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ArtMap.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		812F30186C5601B275DA8949 /* Pods-ArtMap.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ArtMap.release.xcconfig"; path = "Pods/Target Support Files/Pods-ArtMap/Pods-ArtMap.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -78,6 +115,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				80D8D205C4E20B3A5EF17EB8 /* Pods_ArtMap.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -98,6 +136,86 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0F2AAB701BCD54D9005D2BC2 /* Documents */ = {
+			isa = PBXGroup;
+			children = (
+				0F2AAB711BCD54D9005D2BC2 /* Classes */,
+				0F2AAB811BCD54D9005D2BC2 /* Constants */,
+				0F2AAB851BCD54D9005D2BC2 /* css */,
+				0F2AAB881BCD54D9005D2BC2 /* hierarchy.html */,
+				0F2AAB891BCD54D9005D2BC2 /* img */,
+				0F2AAB8F1BCD54D9005D2BC2 /* index.html */,
+				0F2AAB901BCD54D9005D2BC2 /* Protocols */,
+			);
+			name = Documents;
+			path = "../../../../Downloads/FacebookSDKs-iOS-20151007/DocSets/FacebookAudienceNetworkSDK-4_7-for-iOS.docset/Contents/Resources/Documents";
+			sourceTree = "<group>";
+		};
+		0F2AAB711BCD54D9005D2BC2 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				0F2AAB721BCD54D9005D2BC2 /* FBAdChoicesView.html */,
+				0F2AAB731BCD54D9005D2BC2 /* FBAdCustomSize.html */,
+				0F2AAB741BCD54D9005D2BC2 /* FBAdImage.html */,
+				0F2AAB751BCD54D9005D2BC2 /* FBAdSettings.html */,
+				0F2AAB761BCD54D9005D2BC2 /* FBAdStarRatingView.html */,
+				0F2AAB771BCD54D9005D2BC2 /* FBAdView.html */,
+				0F2AAB781BCD54D9005D2BC2 /* FBInterstitialAd.html */,
+				0F2AAB791BCD54D9005D2BC2 /* FBMediaView.html */,
+				0F2AAB7A1BCD54D9005D2BC2 /* FBNativeAd.html */,
+				0F2AAB7B1BCD54D9005D2BC2 /* FBNativeAdScrollView.html */,
+				0F2AAB7C1BCD54D9005D2BC2 /* FBNativeAdsManager.html */,
+				0F2AAB7D1BCD54D9005D2BC2 /* FBNativeAdTableViewAdProvider.html */,
+				0F2AAB7E1BCD54D9005D2BC2 /* FBNativeAdTableViewCellProvider.html */,
+				0F2AAB7F1BCD54D9005D2BC2 /* FBNativeAdView.html */,
+				0F2AAB801BCD54D9005D2BC2 /* FBNativeAdViewAttributes.html */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		0F2AAB811BCD54D9005D2BC2 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				0F2AAB821BCD54D9005D2BC2 /* FBAdLogLevel.html */,
+				0F2AAB831BCD54D9005D2BC2 /* FBNativeAdsCachePolicy.html */,
+				0F2AAB841BCD54D9005D2BC2 /* FBNativeAdViewType.html */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
+		0F2AAB851BCD54D9005D2BC2 /* css */ = {
+			isa = PBXGroup;
+			children = (
+				0F2AAB861BCD54D9005D2BC2 /* styles.css */,
+				0F2AAB871BCD54D9005D2BC2 /* stylesPrint.css */,
+			);
+			path = css;
+			sourceTree = "<group>";
+		};
+		0F2AAB891BCD54D9005D2BC2 /* img */ = {
+			isa = PBXGroup;
+			children = (
+				0F2AAB8A1BCD54D9005D2BC2 /* button_bar_background.png */,
+				0F2AAB8B1BCD54D9005D2BC2 /* disclosure.png */,
+				0F2AAB8C1BCD54D9005D2BC2 /* disclosure_open.png */,
+				0F2AAB8D1BCD54D9005D2BC2 /* library_background.png */,
+				0F2AAB8E1BCD54D9005D2BC2 /* title_background.png */,
+			);
+			path = img;
+			sourceTree = "<group>";
+		};
+		0F2AAB901BCD54D9005D2BC2 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				0F2AAB911BCD54D9005D2BC2 /* FBAdViewDelegate.html */,
+				0F2AAB921BCD54D9005D2BC2 /* FBInterstitialAdDelegate.html */,
+				0F2AAB931BCD54D9005D2BC2 /* FBMediaViewDelegate.html */,
+				0F2AAB941BCD54D9005D2BC2 /* FBNativeAdDelegate.html */,
+				0F2AAB951BCD54D9005D2BC2 /* FBNativeAdsManagerDelegate.html */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
 		0FF19C0D1BBA7DB800B96C5F = {
 			isa = PBXGroup;
 			children = (
@@ -128,6 +246,7 @@
 				0FD541E41BC2B68D0084546E /* Marker.swift */,
 				0FF19C471BBA7EFA00B96C5F /* AddArtController.swift */,
 				0FF19C491BBA7F1000B96C5F /* UserInfoController.swift */,
+				0F58495B1BCD4C7E00BAA982 /* User.swift */,
 				0FF19C4B1BBA7F2000B96C5F /* Art.swift */,
 				0FF19C4D1BBA7F2F00B96C5F /* Locator.swift */,
 				0FF19C1D1BBA7DB800B96C5F /* Main.storyboard */,
@@ -174,6 +293,9 @@
 		A6B8ADDA12D7E363226320C4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0F2AAB961BCD551F005D2BC2 /* FBSDKLoginKit.framework */,
+				0F2AAB701BCD54D9005D2BC2 /* Documents */,
+				2248431C800505F1B8394BCF /* Pods_ArtMap.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -369,6 +491,7 @@
 				0FD541E71BC2BF4E0084546E /* ArtInfoView.swift in Sources */,
 				0FF19C4C1BBA7F2000B96C5F /* Art.swift in Sources */,
 				0FF19C4A1BBA7F1000B96C5F /* UserInfoController.swift in Sources */,
+				0F58495C1BCD4C7E00BAA982 /* User.swift in Sources */,
 				0FF19C481BBA7EFA00B96C5F /* AddArtController.swift in Sources */,
 				0FDFE7051BC174B5009D2EBD /* MarkerController.swift in Sources */,
 				0FD541E51BC2B68D0084546E /* Marker.swift in Sources */,
@@ -448,6 +571,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = .;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -466,6 +590,7 @@
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -493,6 +618,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_SEARCH_PATHS = .;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -504,6 +630,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};

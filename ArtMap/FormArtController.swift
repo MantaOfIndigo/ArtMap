@@ -19,6 +19,9 @@ class FormArtController : UIViewController{
     
     var setForm : Marker = Marker()
     
+    @IBAction func backAction(sender: UIBarButtonItem) {
+        dismissViewControllerAnimated(true, completion: nil)
+    }
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
     }
