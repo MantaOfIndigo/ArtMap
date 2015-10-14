@@ -23,9 +23,9 @@ class MarkerController: NSObject {
     private func getList() -> [Marker]{
         var tmpList = [Marker]()
         
-        let m = Marker(position: CLLocationCoordinate2DMake(21.304080, -157.733396), id: 1, image: UIImage(named: "logo")!, title: "Giancy", author: "Alexander Mant", year: 2015, status: true)
+        let m = Marker(position: CLLocationCoordinate2DMake(21.304080, -157.733396), image: UIImage(named: "logo")!, title: "Giancy", author: "Alexander Mant", year: 2015, visibility: 0)
         
-        let d = Marker(position: CLLocationCoordinate2DMake(21.357168, -157.857679), id: 1, image: UIImage(named: "profile")!,  title: "Gianal", author: "Pago", year: 2014, status: false)
+        let d = Marker(position: CLLocationCoordinate2DMake(21.357168, -157.857679), image: UIImage(named: "profile")!,  title: "Gianal", author: "Pago", year: 2014,visibility: 2)
         
         tmpList.append(m)
         tmpList.append(d)

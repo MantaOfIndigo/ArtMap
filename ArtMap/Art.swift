@@ -18,14 +18,9 @@ class Art: NSObject {
     var title: String
     var author: String
     var year: Int
-    var status: Bool
+    var visibility: Int
+    var tag : String
     
-    struct Property{
-        static let titleKey = "title"
-        static let authorKey = "author"
-        static let yearKey = "year"
-        static let stateKey = "status"
-    }
     
     // COSTRUTTORI ----------------------------------------------
     
@@ -34,7 +29,8 @@ class Art: NSObject {
         self.title = title
         self.author = ""
         self.year = 0
-        self.status = true
+        self.visibility = 0
+        self.tag = ""
         
         super.init()
     }
@@ -43,7 +39,8 @@ class Art: NSObject {
         self.title = title
         self.author = author
         self.year = 0
-        self.status = true
+        self.visibility = 0
+        self.tag = ""
         
         super.init()
     }
@@ -52,15 +49,26 @@ class Art: NSObject {
         self.title = title
         self.author = author
         self.year = year
-        self.status = true
+        self.visibility = 0
+        self.tag = ""
         
         super.init()
     }
-    init?(title:String, author:String, year:Int, status: Bool){
+    init?(title:String, author:String, year:Int, status: Int){
         self.title = title
         self.author = author
         self.year = year
-        self.status = status
+        self.visibility = status
+        self.tag = ""
+        
+        super.init()
+    }
+    init?(title:String, author:String, year:Int, status: Int, tag : String){
+        self.title = title
+        self.author = author
+        self.year = year
+        self.visibility = status
+        self.tag = tag
         
         super.init()
     }

@@ -37,7 +37,7 @@ class FormArtController : UIViewController{
         titleLabel.text = tmp.title.capitalizedString
         authorLabel.text = tmp.author.capitalizedString
         yearLabel.text = String(tmp.year)
-        if !tmp.status{
+        if tmp.visibility != 0{
             stateLabel.text = "NON VISIBILE"
         }
         super.viewDidLoad()

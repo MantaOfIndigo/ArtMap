@@ -10,9 +10,9 @@ import UIKit
 import GoogleMaps
 
 class Marker: NSObject {
-    
+   
     private var marker : GMSMarker
-    private var id : Int
+    //private var id : Int ------ verrà inserito a livello DB
     private var image : UIImage
     private var art : Art
     
@@ -20,10 +20,10 @@ class Marker: NSObject {
         self.marker = GMSMarker()
         self.image = UIImage()
         self.art = Art(title: "", author: "", year: 0)!
-        self.id = 0
+       //self.id += 1
         super.init()
     }
-    init(position: CLLocationCoordinate2D, id: Int, image: UIImage, title: String, author: String, year: Int, status: Bool){
+    init(position: CLLocationCoordinate2D, image: UIImage, title: String, author: String, year: Int, visibility: Int){
         
         self.marker = GMSMarker()
         self.marker.icon = UIImage(named: "marker")
@@ -32,24 +32,24 @@ class Marker: NSObject {
         self.marker.infoWindowAnchor = CGPointMake(0.44, 0.45);
         
         self.image = image
-        self.id = id
+        //self.id = id
         
-        self.art = Art(title: title, author: author, year: year, status: status)!
+        self.art = Art(title: title, author: author, year: year, status: visibility)!
      
     }
     func getMarker() -> GMSMarker{
         return self.marker
     }
-    func getId() -> Int{
+    /*func getId() -> Int{
         return self.id
         
-    }
+    }*/
     func getImage() -> UIImage{
         return self.image
     }
     
     func getArt() -> Art{
-        return Art(title: self.art.title, author: self.art.author, year: self.art.year, status: self.art.status)!
+        return Art(title: self.art.title, author: self.art.author, year: self.art.year, status: self.art.visibility)!
         
     }
 

@@ -9,12 +9,15 @@
 import UIKit
 import GoogleMaps
 import CoreLocation
+import FBSDKCoreKit
 
 class ViewController: UIViewController, CLLocationManagerDelegate, GMSMapViewDelegate {
 
     var locationManager: CLLocationManager!
     var markerController: MarkerController?
     var popview: ArtInfoView!
+    
+    var log = false
     
     func setMarkers(){
         markerController = MarkerController()
@@ -25,11 +28,18 @@ class ViewController: UIViewController, CLLocationManagerDelegate, GMSMapViewDel
     }
     
     @IBOutlet weak var photoImg: UIImageView!
+    @IBOutlet weak var loginLabel: UILabel!
     
     @IBAction func prepareUserProfile(sender: UITapGestureRecognizer) {
         //if loggato
-        if let resultController = storyboard?.instantiateViewControllerWithIdentifier("userInterface") as? UserInfoController{
-            presentViewController(resultController, animated: true, completion: nil)
+        if !log {
+            if let resultController = storyboard?.instantiateViewControllerWithIdentifier("loginInterface") as? LoginViewController{
+                presentViewController(resultController, animated: true, completion: nil)
+            }
+        }else{
+            if let resultController = storyboard?.instantiateViewControllerWithIdentifier("userInterface") as? UserInfoController{
+                presentViewController(resultController, animated: true, completion: nil)
+            }
         }
     }
     @IBOutlet weak var viewMap: GMSMapView!
@@ -44,10 +54,19 @@ class ViewController: UIViewController, CLLocationManagerDelegate, GMSMapViewDel
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         viewMap.delegate = self
         setMarkers()
+        
+        if FBSDKAccessToken.currentAccessToken() != nil{
+            loginLabel.text = "Andrea Mantani"
+            log = true
+            
+        }else{
+            loginLabel.text = "Not Logged"
+            log = false
+        }
 
-        // Do any additional setup after loading the view, typically from a nib.
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -67,8 +86,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate, GMSMapViewDel
         viewMap.camera = camera
         
         locationManager.stopUpdatingLocation()
-    
-    
     }
   
     
@@ -81,8 +98,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate, GMSMapViewDel
         }
                //popview.image.image = markerController!.getImageFromMarker(marker)
         self.popview.showInView(self.view, animated: true, image: (markerController?.getImageFromMarker(marker))!)
-        
-        
     }
     
     
@@ -92,9 +107,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, GMSMapViewDel
         return infoWindow
     }
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == "profile"{
-            //CONTROLLO DEL LOG -----------------------------------------------
-        }
+        print("diocane")
        
     }
     
