@@ -10,6 +10,7 @@ import UIKit
 import GoogleMaps
 import CoreLocation
 import FBSDKCoreKit
+import Parse
 
 class ViewController: UIViewController, CLLocationManagerDelegate, GMSMapViewDelegate {
 
@@ -21,9 +22,31 @@ class ViewController: UIViewController, CLLocationManagerDelegate, GMSMapViewDel
     
     func setMarkers(){
         markerController = MarkerController()
-        var g : [Marker] = (markerController?.getMarkerList())!
-        g[0].getMarker().map = viewMap
-        g[1].getMarker().map = viewMap
+        
+        var query = PFQuery(className:"MainDB")
+        query.limit = 900
+        query.findObjectsInBackgroundWithBlock {
+            (objects: [PFObject]?, error: NSError?) -> Void in
+            
+            if error == nil {
+                // The find succeeded.
+                print("Successfully retrieved \(objects!.count) scores.")
+                // Do something with the found objects
+                if let objects = objects as [PFObject]? {
+                    for object in objects {
+                        self.markerController!.createList(object).getMarker().map = self.viewMap
+
+                    }
+                }
+            } else {
+                // Log details of the failure
+                print("Error")
+            }
+        }
+
+        
+     //   let g : [Marker] = (markerController!.getMarkerList())!
+      //  print(g.count)
 
     }
     
@@ -82,7 +105,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, GMSMapViewDel
         let loc = locations[0] as CLLocation
         
         placesClient = GMSPlacesClient()
-        let camera: GMSCameraPosition = GMSCameraPosition.cameraWithLatitude(loc.coordinate.latitude, longitude: loc.coordinate.longitude, zoom: 10.0)
+        let camera: GMSCameraPosition = GMSCameraPosition.cameraWithLatitude(loc.coordinate.latitude, longitude: loc.coordinate.longitude, zoom: 5.0)
         viewMap.camera = camera
         
         locationManager.stopUpdatingLocation()
@@ -92,18 +115,20 @@ class ViewController: UIViewController, CLLocationManagerDelegate, GMSMapViewDel
     func mapView(mapView: GMSMapView!, didTapInfoWindowOfMarker marker: GMSMarker!) {
         
         self.popview = ArtInfoView(nibName: "ArtInfoView", bundle: nil)
-        
+        var markImage = UIImage()
         if let tmp = markerController?.getMarker(marker)! {
-            popview.setInformation(tmp)
+            popview.setInformation(retriveDBMarkerInfo(tmp))
+            markImage = tmp.getImage()
         }
                //popview.image.image = markerController!.getImageFromMarker(marker)
-        self.popview.showInView(self.view, animated: true, image: (markerController?.getImageFromMarker(marker))!)
+        self.popview.showInView(self.view, animated: true, image: markImage)
     }
     
     
     func mapView(mapView: GMSMapView!, markerInfoWindow marker: GMSMarker) -> UIView! {
         let infoWindow = NSBundle.mainBundle().loadNibNamed("InfoWindow", owner: self, options: nil).first! as! CustomInfoWindow
-        infoWindow.image.image = markerController!.getImageFromMarker(marker)
+        let mark = markerController?.getMarker(marker)
+        infoWindow.image.image = retriveDBMarkerInfo(mark!).getImage()
         return infoWindow
     }
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
@@ -115,6 +140,35 @@ class ViewController: UIViewController, CLLocationManagerDelegate, GMSMapViewDel
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func retriveDBMarkerInfo(marker: Marker) -> Marker{
+        var query = PFQuery(className:"MainDB")
+        query.whereKey("artId", equalTo: marker.getId() as AnyObject)
+        
+        query.getFirstObjectInBackgroundWithBlock {
+            (object: PFObject?, error: NSError?) -> Void in
+            if error != nil || object == nil {
+                print("The getFirstObject request failed.")
+            } else {
+                marker.setInfoFromRecord(object!)
+                
+                let userImageFile = object!["image"] as! PFFile
+                userImageFile.getDataInBackgroundWithBlock {
+                    (imageData: NSData?, error: NSError?) -> Void in
+                    if error == nil {
+                        if let imageData = imageData {
+                            marker.setImage(UIImage(data:imageData)!)
+                        }
+                    }
+                }
+
+               
+            }
+        }
+        
+        return marker
+
     }
 
 }

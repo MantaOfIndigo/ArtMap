@@ -34,7 +34,7 @@ class LoginViewController : UIViewController, UITextFieldDelegate{
         print("privacy di merda")
     }
     @IBAction func signIn(sender: UIButton) {
-        
+        /*
         let lista = PFObject(className: "ClassListaUtenti")
         
         lista["user"] = username.text
@@ -45,7 +45,7 @@ class LoginViewController : UIViewController, UITextFieldDelegate{
             if NSError == nil{
                 print("salvato")
             }
-        }
+        }*/
     }
     @IBAction func login(sender: UIButton) {
          print("login")

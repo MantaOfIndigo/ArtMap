@@ -8,6 +8,7 @@
 
 import UIKit
 import GoogleMaps
+import Parse
 
 class MarkerController: NSObject {
     
@@ -17,24 +18,26 @@ class MarkerController: NSObject {
     // da passare nella lista di ritorno
     override init(){
         super.init()
-        markerList = getList()
+    }
+    // formato record
+    /*
+        artId   author  image   latitude    longitude    tag    title   user    visibility  year
+        int     string  UIImage double      double       string string  string  bool        int
+    */
+    func createList(object: PFObject) -> Marker{
+            let loc = CLLocationCoordinate2DMake(object["latitude"] as! Double, object["longitude"] as! Double)
+        
+        let tmp = Marker(position: loc, id: object["artId"] as! Int)
+        
+            markerList.append(tmp)
+            
+            return tmp
+            
     }
     
-    private func getList() -> [Marker]{
-        var tmpList = [Marker]()
-        
-        let m = Marker(position: CLLocationCoordinate2DMake(21.304080, -157.733396), image: UIImage(named: "logo")!, title: "Giancy", author: "Alexander Mant", year: 2015, visibility: 0)
-        
-        let d = Marker(position: CLLocationCoordinate2DMake(21.357168, -157.857679), image: UIImage(named: "profile")!,  title: "Gianal", author: "Pago", year: 2014,visibility: 2)
-        
-        tmpList.append(m)
-        tmpList.append(d)
-        return tmpList
-    }
-    
-    func getImageFromMarker(marker: GMSMarker) -> UIImage?{
+    func getImageFromMarker(marker: Marker) -> UIImage?{
         for index in 0...markerList.count{
-            if markerList[index].getMarker().isEqual(marker){
+            if markerList[index].isEqual(marker){
                 return markerList[index].getImage()
             }
         }

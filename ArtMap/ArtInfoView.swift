@@ -9,12 +9,13 @@
 import UIKit
 import QuartzCore
 
- @objc class ArtInfoView : UIViewController {
+ @objc class ArtInfoView : UIViewController{
     
     @IBOutlet weak var infoView: UIView!
     @IBOutlet weak var imageInfo: UIImageView!
     @IBOutlet weak var decorationView: UIView!
     @IBOutlet weak var bottomArea: UIView!
+    @IBOutlet weak var authorLabel: UILabel!
     
     private var artInformation : Marker = Marker()
     
@@ -52,6 +53,7 @@ import QuartzCore
         self.view.frame.size = CGSize(width: UIScreen.mainScreen().bounds.width, height: UIScreen.mainScreen().bounds.height)
         self.infoView?.layer.shadowOpacity = 0.8
         self.infoView?.layer.shadowOffset = CGSizeMake(0.0, 0.0)
+        self.authorLabel.text = artInformation.getUser()
     
         
     }

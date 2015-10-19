@@ -20,7 +20,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
 
         [GMSServices .provideAPIKey("AIzaSyDSMxA_OlWGDLe3gAEEmen1sCnyXN2TJW0")]
+        /*
+        Collegamento per db di prova
         Parse.setApplicationId("4DcOOhEqmkNqFEa36DoxbpBqJsbyzLjRGXJzJnf6", clientKey: "ro3M9OMQQv03GUJvrJKhbYVUkD6at0pRFpKLycoB")
+        */
+        
+        /*
+            collegamento db finale
+        */
+        
+        Parse.setApplicationId("xcOaOqfRorTUBCeSMxXskMZnvRPZ9lJRbmjKWRD0", clientKey: "ZckF2p9D9QhLrmXVxl6EqPu3AhgRVyDsYFIuJQpD")
         
         return FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
     }

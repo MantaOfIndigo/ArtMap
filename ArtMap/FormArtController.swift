@@ -34,8 +34,14 @@ class FormArtController : UIViewController{
         imageForm.image = setForm.getImage()
         
         let tmp = setForm.getArt()
-        titleLabel.text = tmp.title.capitalizedString
-        authorLabel.text = tmp.author.capitalizedString
+        titleLabel.text = tmp.title?.capitalizedString
+        if tmp.title == ""{
+            titleLabel.text == ""
+        }
+        authorLabel.text = tmp.author?.capitalizedString
+        if tmp.author == ""{
+            authorLabel.text == ""
+        }
         yearLabel.text = String(tmp.year)
         if tmp.visibility != 0{
             stateLabel.text = "NON VISIBILE"

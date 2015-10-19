@@ -6,6 +6,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ArtInfoView" customModule="ArtMap" customModuleProvider="target">
             <connections>
+                <outlet property="authorLabel" destination="tYi-Gq-Ood" id="PaI-9O-WXA"/>
                 <outlet property="bottomArea" destination="MU8-Fm-yym" id="joL-nc-BBC"/>
                 <outlet property="decorationView" destination="MU8-Fm-yym" id="0qP-MB-Tvg"/>
                 <outlet property="imageInfo" destination="yO6-EY-g05" id="Lqy-9f-9Pi"/>
@@ -18,16 +19,23 @@
             <rect key="frame" x="0.0" y="0.0" width="485" height="558"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nZf-LZ-U9V">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HsQ-9K-C5e">
+                    <rect key="frame" x="0.0" y="0.0" width="485" height="20"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="20" id="QNa-tO-qMY"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nZf-LZ-U9V">
                     <rect key="frame" x="5" y="0.0" width="475" height="438"/>
                     <subviews>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ciccio" translatesAutoresizingMaskIntoConstraints="NO" id="yO6-EY-g05">
+                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="ciccio" translatesAutoresizingMaskIntoConstraints="NO" id="yO6-EY-g05">
                             <rect key="frame" x="5" y="39" width="465" height="360"/>
                         </imageView>
                     </subviews>
                     <constraints>
+                        <constraint firstItem="yO6-EY-g05" firstAttribute="centerY" secondItem="nZf-LZ-U9V" secondAttribute="centerY" id="1ni-Tw-D5v"/>
                         <constraint firstItem="yO6-EY-g05" firstAttribute="leading" secondItem="nZf-LZ-U9V" secondAttribute="leading" constant="5" id="CgT-Vz-KxS"/>
-                        <constraint firstItem="yO6-EY-g05" firstAttribute="centerY" secondItem="nZf-LZ-U9V" secondAttribute="centerY" id="InJ-P5-daX"/>
                         <constraint firstAttribute="trailing" secondItem="yO6-EY-g05" secondAttribute="trailing" constant="5" id="gyb-VC-8dZ"/>
                     </constraints>
                 </view>
@@ -87,7 +95,7 @@
                                 </mask>
                             </variation>
                         </view>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="sdfgshfgsjdfgjsdgfjhgsdjhfgsjhgdfjgsdjfgsdgfgsgdjfgshdfgjshdgf" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tYi-Gq-Ood">
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="autore" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tYi-Gq-Ood">
                             <rect key="frame" x="60" y="15" width="200" height="20"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="200" id="STc-mO-3ku"/>
@@ -116,14 +124,27 @@
             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="dou-BX-mxd" firstAttribute="top" secondItem="nZf-LZ-U9V" secondAttribute="bottom" id="3gc-De-cSq"/>
+                <constraint firstAttribute="trailing" secondItem="HsQ-9K-C5e" secondAttribute="trailing" id="43h-vk-gg6"/>
+                <constraint firstItem="dou-BX-mxd" firstAttribute="top" secondItem="HsQ-9K-C5e" secondAttribute="bottom" id="4o3-PF-QIm"/>
                 <constraint firstItem="nZf-LZ-U9V" firstAttribute="top" secondItem="n3n-T0-Nnt" secondAttribute="top" id="E02-u5-CDv"/>
                 <constraint firstItem="nZf-LZ-U9V" firstAttribute="leading" secondItem="n3n-T0-Nnt" secondAttribute="leading" constant="5" id="G5D-Js-1rh"/>
+                <constraint firstItem="HsQ-9K-C5e" firstAttribute="top" secondItem="n3n-T0-Nnt" secondAttribute="top" id="MdD-FQ-oKg"/>
+                <constraint firstItem="HsQ-9K-C5e" firstAttribute="leading" secondItem="n3n-T0-Nnt" secondAttribute="leading" id="UAq-vi-UNw"/>
                 <constraint firstItem="dou-BX-mxd" firstAttribute="leading" secondItem="n3n-T0-Nnt" secondAttribute="leading" constant="-5" id="Xlx-Rt-wCK"/>
+                <constraint firstItem="nZf-LZ-U9V" firstAttribute="top" secondItem="n3n-T0-Nnt" secondAttribute="top" constant="30" id="b1g-yf-UeT"/>
                 <constraint firstAttribute="trailing" secondItem="dou-BX-mxd" secondAttribute="trailing" constant="-5" id="x2X-yo-Slf"/>
+                <constraint firstItem="HsQ-9K-C5e" firstAttribute="leading" secondItem="n3n-T0-Nnt" secondAttribute="leading" constant="122" id="xTq-q1-D2K"/>
                 <constraint firstAttribute="trailing" secondItem="nZf-LZ-U9V" secondAttribute="trailing" constant="5" id="ypG-WF-t3l"/>
                 <constraint firstAttribute="bottom" secondItem="dou-BX-mxd" secondAttribute="bottom" id="zg4-Cu-JxB"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <variation key="default">
+                <mask key="constraints">
+                    <exclude reference="xTq-q1-D2K"/>
+                    <exclude reference="E02-u5-CDv"/>
+                    <exclude reference="4o3-PF-QIm"/>
+                </mask>
+            </variation>
             <point key="canvasLocation" x="186.5" y="469"/>
         </view>
     </objects>
