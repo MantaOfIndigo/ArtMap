@@ -12,18 +12,20 @@ import CoreLocation
 import FBSDKCoreKit
 import Parse
 
-class ViewController: UIViewController, CLLocationManagerDelegate, GMSMapViewDelegate {
+class ViewController: UIViewController, CLLocationManagerDelegate, GMSMapViewDelegate{
 
     var locationManager: CLLocationManager!
     var markerController: MarkerController?
     var popview: ArtInfoView!
     
+    let intrct : Interactor = Interactor()
+    var userList : [User] = [User]()
     var log = false
     
     func setMarkers(){
         markerController = MarkerController()
         
-        var query = PFQuery(className:"MainDB")
+        let query = PFQuery(className:"MainDB")
         query.limit = 900
         query.findObjectsInBackgroundWithBlock {
             (objects: [PFObject]?, error: NSError?) -> Void in
@@ -80,6 +82,9 @@ class ViewController: UIViewController, CLLocationManagerDelegate, GMSMapViewDel
         
         viewMap.delegate = self
         setMarkers()
+        userList = intrct.retrieveUserList()
+        print(userList.count)
+        markerController?.linkUser(userList)
         
         if FBSDKAccessToken.currentAccessToken() != nil{
             loginLabel.text = "Andrea Mantani"
@@ -117,7 +122,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, GMSMapViewDel
         self.popview = ArtInfoView(nibName: "ArtInfoView", bundle: nil)
         var markImage = UIImage()
         if let tmp = markerController?.getMarker(marker)! {
-            popview.setInformation(retriveDBMarkerInfo(tmp))
+            popview.setInformation(intrct.retriveDBMarkerInfo(tmp))
             markImage = tmp.getImage()
         }
                //popview.image.image = markerController!.getImageFromMarker(marker)
@@ -126,50 +131,23 @@ class ViewController: UIViewController, CLLocationManagerDelegate, GMSMapViewDel
     
     
     func mapView(mapView: GMSMapView!, markerInfoWindow marker: GMSMarker) -> UIView! {
-        let infoWindow = NSBundle.mainBundle().loadNibNamed("InfoWindow", owner: self, options: nil).first! as! CustomInfoWindow
         let mark = markerController?.getMarker(marker)
-        infoWindow.image.image = retriveDBMarkerInfo(mark!).getImage()
+        let image : UIImage = intrct.retriveDBMarkerImage(mark!)
+            let infoWindow = NSBundle.mainBundle().loadNibNamed("InfoWindow", owner: self, options: nil).first! as! CustomInfoWindow
+                infoWindow.image.image = image
+
         return infoWindow
     }
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        print("diocane")
-       
-    }
-    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-    func retriveDBMarkerInfo(marker: Marker) -> Marker{
-        var query = PFQuery(className:"MainDB")
-        query.whereKey("artId", equalTo: marker.getId() as AnyObject)
-        
-        query.getFirstObjectInBackgroundWithBlock {
-            (object: PFObject?, error: NSError?) -> Void in
-            if error != nil || object == nil {
-                print("The getFirstObject request failed.")
-            } else {
-                marker.setInfoFromRecord(object!)
-                
-                let userImageFile = object!["image"] as! PFFile
-                userImageFile.getDataInBackgroundWithBlock {
-                    (imageData: NSData?, error: NSError?) -> Void in
-                    if error == nil {
-                        if let imageData = imageData {
-                            marker.setImage(UIImage(data:imageData)!)
-                        }
-                    }
-                }
+    
+  
 
-               
-            }
-        }
-        
-        return marker
 
-    }
 
 }
 

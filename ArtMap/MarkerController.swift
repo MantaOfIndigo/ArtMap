@@ -61,5 +61,18 @@ class MarkerController: NSObject {
         }
         return markerList
     }
+    
+    func linkUser(userList: [User]) -> Bool{
+        print(userList.count)
+        for user in userList{
+            for marker in markerList{
+                if user.username == marker.getUser(){
+                    marker.setUser(user)
+                }
+            }
+        }
+        
+        return false
+    }
 
 }

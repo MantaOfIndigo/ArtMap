@@ -15,14 +15,17 @@ class Marker: NSObject {
     private var marker : GMSMarker
     private var id : Int = Int()
     private var image : UIImage
-    private var user : String
+    private var user : User
     private var art : Art
+    private let intrct : Interactor
     
     override init(){
         self.marker = GMSMarker()
         self.image = UIImage()
         self.art = Art(title: "", author: "", year: 0)!
-        self.user = ""
+        self.user = User()
+        
+        self.intrct = Interactor()
         
         super.init()
     }
@@ -35,8 +38,11 @@ class Marker: NSObject {
         self.marker.infoWindowAnchor = CGPointMake(0.44, 0.45);
         
         self.image = UIImage()
-        self.user = ""
+        self.user = User()
         self.art = Art(title: title, author: author, year: year, status: visibility)!
+        
+        
+        self.intrct = Interactor()
      
     }
     init(position: CLLocationCoordinate2D, id: Int){
@@ -50,17 +56,20 @@ class Marker: NSObject {
         self.image = UIImage()
         self.id = id
         self.art = Art()
-        self.user = ""
+        self.user = User()
         
+        
+        self.intrct = Interactor()
         
     }
     func setImage(value: UIImage){
         self.image = value
     }
     func setInfoFromRecord(value: PFObject){
-        
         self.art = Art(object: value)!
-        self.user = value["user"] as! String
+    }
+    func setUser(user: User){
+        self.user = user
     }
     func setArt(value: Art){
         self.art = value
@@ -82,7 +91,7 @@ class Marker: NSObject {
         return self.art
         
     }
-    func getUser() -> String{
+    func getUser() -> User{
         return self.user
     }
 

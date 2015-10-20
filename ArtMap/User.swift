@@ -7,31 +7,49 @@
 //
 
 import UIKit
+import Parse
 
 class User: NSObject {
     
+    let idUser : String?
     let username : String
-    let password : String
     let email : String
     var points : Int
-    var picturesUploaded : Int
-    var reports : Int
-    var checkins : Int
+    var picturesUploaded : Int?
+    var reports : Int?
+    var checkins : Int?
+    var checkCounter : Int?
     
-    init(username : String, password: String, email: String){
-        self.username = username
-        self.password = password
-        self.email = email
+    override init(){
+        self.idUser = ""
+        self.username = ""
+        self.email = ""
         self.points = 0
+        self.checkCounter = 0
+        self.checkins = 0
         self.picturesUploaded = 0
         self.reports = 0
-        self.checkins = 0
-        
         super.init()
     }
     
+    init(object: PFObject){
+        
+        self.username = object["username"] as! String
+        self.email = object["email"] as! String
+        self.picturesUploaded = object["publishedPhotos"] as? Int
+        self.reports = object["reports"] as? Int
+        self.checkins = object["checkIns"] as? Int
+        self.checkCounter = object["checkCounter"] as? Int
+        self.idUser = object["objectId"] as? String
+        self.points = 0
+        super.init()
+         self.calculatePoint()
+    }
+    
     func calculatePoint(){
-        self.points = self.picturesUploaded * 100
+        if self.picturesUploaded != nil{
+        self.points = self.picturesUploaded! * 100
+        }
         // altre formule per i punti
     }
     
