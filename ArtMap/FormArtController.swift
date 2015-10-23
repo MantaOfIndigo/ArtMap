@@ -34,17 +34,20 @@ class FormArtController : UIViewController{
         imageForm.image = setForm.getImage()
         
         let tmp = setForm.getArt()
-        titleLabel.text = tmp.title?.capitalizedString
-        if tmp.title == ""{
-            titleLabel.text == ""
+        titleLabel.text = tmp.getTitle().capitalizedString
+        if tmp.getTitle() == nil {
+            titleLabel.text == "NESSUN TITOLO"
         }
-        authorLabel.text = tmp.author?.capitalizedString
-        if tmp.author == ""{
-            authorLabel.text == ""
+        authorLabel.text = tmp.getAuthor().capitalizedString
+        if tmp.getAuthor() == ""{
+            authorLabel.text == "NESSUN AUTORE"
         }
-        yearLabel.text = String(tmp.year)
-        if tmp.visibility != 0{
-            stateLabel.text = "NON VISIBILE"
+        yearLabel.text = String(tmp.getYear())
+        if tmp.getYear() == 0 {
+            yearLabel.text = "NESSUNA DATA"
+        }
+        if tmp.getState() != 0{
+            stateLabel.text = "NON AGGIORNATO"
         }
         super.viewDidLoad()
 

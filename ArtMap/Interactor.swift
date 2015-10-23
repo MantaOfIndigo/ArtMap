@@ -11,9 +11,8 @@ import Parse
 
 class Interactor : UIViewController{
     
-    func retrieveUserList() -> [User]{
+    func retrieveUserList(controller: UserController) -> UserController{
         let query = PFQuery(className:"_User")
-        var userList : [User] = [User]()
         query.findObjectsInBackgroundWithBlock {
             (objects: [PFObject]?, error: NSError?) -> Void in
             if error == nil {
@@ -21,15 +20,14 @@ class Interactor : UIViewController{
                 print("Successfully retrieved \(objects!.count) users.")
                 if let objects = objects as [PFObject]? {
                     for object in objects {
-                        userList.append(User(object: object))
+                        controller.createList(object)
                     }
                 }
                 
             }
         }
         
-        print(userList.count)
-        return userList
+        return controller
         
     }
 

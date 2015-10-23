@@ -11,18 +11,30 @@ import Parse
 
 class User: NSObject {
     
-    let idUser : String?
-    let username : String
-    let email : String
-    var points : Int
-    var picturesUploaded : Int?
-    var reports : Int?
-    var checkins : Int?
-    var checkCounter : Int?
+    private let idUser : String?
+    private let username : String
+    private let email : String
+    private var points : Int
+    private var picturesUploaded : Int?
+    private var reports : Int?
+    private var checkins : Int?
+    private var checkCounter : Int?
     
     override init(){
         self.idUser = ""
         self.username = ""
+        self.email = ""
+        self.points = 0
+        self.checkCounter = 0
+        self.checkins = 0
+        self.picturesUploaded = 0
+        self.reports = 0
+        super.init()
+    }
+    
+    init(username : String){
+        self.idUser = ""
+        self.username = username
         self.email = ""
         self.points = 0
         self.checkCounter = 0
@@ -58,6 +70,10 @@ class User: NSObject {
         // se nuovo aggiungilo a database
         
         return false
+    }
+    
+    func getSurname() -> String{
+        return self.username
     }
 
 }

@@ -16,11 +16,11 @@ class Art: NSObject {
     // author: Autore opera
     // year: Anno di realizzazione
     // status: Visibile - true, Non visibile - false
-    var title: String?
-    var author: String?
-    var year: Int?
-    var visibility: Int?
-    var tag : String?
+    private var title: String?
+    private var author: String?
+    private var year: Int?
+    private var visibility: Int?
+    private var tag : String?
     
     
     // COSTRUTTORI ----------------------------------------------
@@ -110,10 +110,35 @@ class Art: NSObject {
     
     //------------------------------------------------------------
     
-    func getFromMarker(marker: GMSMarker){
-        
-        
-    
+    func getTitle() -> String!{
+        if self.title == nil{
+            return ""
+        }
+        return self.title!
+    }
+    func getAuthor() -> String!{
+        if self.author == nil{
+            return ""
+        }
+        return self.title!
+    }
+    func getYear() -> Int!{
+        if self.year == nil{
+            return 0
+        }
+        return self.year!
+    }
+    func getState() -> Int!{
+        if self.visibility == nil{
+            return 1
+        }
+        return self.visibility!
+    }
+    func getTag() -> String!{
+        if self.tag == nil{
+            return ""
+        }
+        return self.tag!
     }
     
     

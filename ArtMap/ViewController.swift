@@ -16,10 +16,13 @@ class ViewController: UIViewController, CLLocationManagerDelegate, GMSMapViewDel
 
     var locationManager: CLLocationManager!
     var markerController: MarkerController?
+    var userController : UserController?
     var popview: ArtInfoView!
     
+    var markerFlag = false
+    var userFlag = false
+    
     let intrct : Interactor = Interactor()
-    var userList : [User] = [User]()
     var log = false
     
     func setMarkers(){
@@ -39,6 +42,11 @@ class ViewController: UIViewController, CLLocationManagerDelegate, GMSMapViewDel
                         self.markerController!.createList(object).getMarker().map = self.viewMap
 
                     }
+                    
+                    self.markerFlag = true
+                    if self.markerFlag && self.userFlag{
+                        self.markerController?.linkUser((self.userController?.getList())!)
+                    }
                 }
             } else {
                 // Log details of the failure
@@ -46,11 +54,35 @@ class ViewController: UIViewController, CLLocationManagerDelegate, GMSMapViewDel
             }
         }
 
-        
-     //   let g : [Marker] = (markerController!.getMarkerList())!
-      //  print(g.count)
-
     }
+    
+    
+    func setUsers(){
+        userController = UserController()
+        
+        let query = PFQuery(className:"_User")
+        query.findObjectsInBackgroundWithBlock {
+            (objects: [PFObject]?, error: NSError?) -> Void in
+            if error == nil {
+                
+                print("Successfully retrieved \(objects!.count) users.")
+                if let objects = objects as [PFObject]? {
+                    for object in objects {
+                        self.userController!.createList(object)
+                        
+                    }
+                    
+                    self.userFlag = true
+                    if self.markerFlag && self.userFlag{
+                        self.markerController?.linkUser((self.userController?.getList())!)
+                    }
+                }
+            } else{
+                print("Error")
+            }
+        }
+    }
+
     
     @IBOutlet weak var photoImg: UIImageView!
     @IBOutlet weak var loginLabel: UILabel!
@@ -82,9 +114,9 @@ class ViewController: UIViewController, CLLocationManagerDelegate, GMSMapViewDel
         
         viewMap.delegate = self
         setMarkers()
-        userList = intrct.retrieveUserList()
-        print(userList.count)
-        markerController?.linkUser(userList)
+        setUsers()
+        
+        
         
         if FBSDKAccessToken.currentAccessToken() != nil{
             loginLabel.text = "Andrea Mantani"
@@ -104,7 +136,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate, GMSMapViewDel
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.requestAlwaysAuthorization()
         locationManager.startUpdatingLocation()
-        
     }
     func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         let loc = locations[0] as CLLocation
@@ -119,21 +150,27 @@ class ViewController: UIViewController, CLLocationManagerDelegate, GMSMapViewDel
     
     func mapView(mapView: GMSMapView!, didTapInfoWindowOfMarker marker: GMSMarker!) {
         
-        self.popview = ArtInfoView(nibName: "ArtInfoView", bundle: nil)
-        var markImage = UIImage()
-        if let tmp = markerController?.getMarker(marker)! {
-            popview.setInformation(intrct.retriveDBMarkerInfo(tmp))
-            markImage = tmp.getImage()
-        }
+        let tmpimage = markerController?.getMarker(marker)?.getImage()
+        popUpView(marker, image: tmpimage!)
                //popview.image.image = markerController!.getImageFromMarker(marker)
-        self.popview.showInView(self.view, animated: true, image: markImage)
+       
     }
     
+    func popUpView(marker: GMSMarker, image: UIImage){
+        self.popview = ArtInfoView(nibName: "ArtInfoView", bundle: nil)
+        if let tmp = markerController?.getMarker(marker)! {
+            popview.setInformation(intrct.retriveDBMarkerInfo(tmp))
+            print(intrct.retriveDBMarkerInfo(tmp).getUser().getSurname())
+        }
+        self.popview.showInView(self.view, animated: true, image: image)
+    }
     
     func mapView(mapView: GMSMapView!, markerInfoWindow marker: GMSMarker) -> UIView! {
         let mark = markerController?.getMarker(marker)
         let image : UIImage = intrct.retriveDBMarkerImage(mark!)
-            let infoWindow = NSBundle.mainBundle().loadNibNamed("InfoWindow", owner: self, options: nil).first! as! CustomInfoWindow
+        var infoWindow : CustomInfoWindow = CustomInfoWindow()
+        infoWindow.prepareImage(image)
+        infoWindow = NSBundle.mainBundle().loadNibNamed("InfoWindow", owner: self, options: nil).first! as! CustomInfoWindow
                 infoWindow.image.image = image
 
         return infoWindow

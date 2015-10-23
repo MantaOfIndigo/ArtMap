@@ -26,11 +26,17 @@ class MarkerController: NSObject {
     */
     func createList(object: PFObject) -> Marker{
             let loc = CLLocationCoordinate2DMake(object["latitude"] as! Double, object["longitude"] as! Double)
-        
         let tmp = Marker(position: loc, id: object["artId"] as! Int)
         
-            markerList.append(tmp)
-            
+        if object["user"] == nil{
+            tmp.setUser(User(username: "(undefined)"))
+        }else
+        {
+            tmp.setUser(User(username: object["user"] as! String))
+        }
+        
+        markerList.append(tmp)
+        
             return tmp
             
     }
@@ -64,9 +70,10 @@ class MarkerController: NSObject {
     
     func linkUser(userList: [User]) -> Bool{
         print(userList.count)
+        print(markerList.count)
         for user in userList{
-            for marker in markerList{
-                if user.username == marker.getUser(){
+            for marker in self.markerList{
+                if user.getSurname() == marker.getUser().getSurname(){
                     marker.setUser(user)
                 }
             }

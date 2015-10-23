@@ -17,8 +17,15 @@ class UserController: NSObject{
         
         let tmp = User(object: object)
         userList.append(tmp)
-        
         return tmp
         
+    }
+    
+    func count()->Int{
+        return userList.count
+    }
+    
+    func getList() -> [User]{
+        return self.userList
     }
 }
