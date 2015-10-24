@@ -36,11 +36,11 @@ class FormArtController : UIViewController{
         let tmp = setForm.getArt()
         titleLabel.text = tmp.getTitle().capitalizedString
         if tmp.getTitle() == nil {
-            titleLabel.text == "NESSUN TITOLO"
+            titleLabel.text = "NESSUN TITOLO"
         }
         authorLabel.text = tmp.getAuthor().capitalizedString
         if tmp.getAuthor() == ""{
-            authorLabel.text == "NESSUN AUTORE"
+            authorLabel.text = "NESSUN AUTORE"
         }
         yearLabel.text = String(tmp.getYear())
         if tmp.getYear() == 0 {

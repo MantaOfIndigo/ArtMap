@@ -8,7 +8,7 @@
 
 
 import UIKit
-import GoogleMaps
+//import GoogleMaps
 import MobileCoreServices
 
 class AddArtController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, CLLocationManagerDelegate {

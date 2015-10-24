@@ -48,9 +48,12 @@ class Interactor : UIViewController{
     }
     
     func retriveDBMarkerImage(marker: Marker) -> UIImage{
+        UIImageWriteToSavedPhotosAlbum(retriveDBMarkerInfo(marker).getImage(), self, "image:didFinishSavingWithError:contextInfo", nil)
+        
         return retriveDBMarkerInfo(marker).getImage()
     }
     
+   
     func retriveDBMarkerInfo(marker: Marker) -> Marker{
         let query = PFQuery(className:"MainDB")
         query.whereKey("artId", equalTo: marker.getId() as AnyObject)
