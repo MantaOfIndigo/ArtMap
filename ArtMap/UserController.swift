@@ -11,7 +11,7 @@ import Parse
 
 class UserController: NSObject{
     
-    var userList : [User] = [User]()
+    private var userList : [User] = [User]()
 
     func createList(object: PFObject) -> User{
         
@@ -27,5 +27,22 @@ class UserController: NSObject{
     
     func getList() -> [User]{
         return self.userList
+    }
+    
+    func checkEmail(email: String) -> Bool{
+        for user in self.userList{
+            if user.getEmail() == email{
+                return false
+            }
+        }
+        return true
+    }
+    func checkUsername(username: String) -> Bool{
+        for user in self.userList{
+            if user.getUsername() == username{
+                return false
+            }
+        }
+        return true
     }
 }

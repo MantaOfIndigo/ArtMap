@@ -13,9 +13,8 @@ class CustomInfoWindow: UIView{
     @IBOutlet weak var image: UIImageView!
     var viewImage : UIImage = UIImage()
     
-    
-    
     func prepareImage (image : UIImage){
         self.viewImage = image
     }
+    
 }

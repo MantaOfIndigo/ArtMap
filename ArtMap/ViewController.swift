@@ -91,6 +91,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, GMSMapViewDel
         //if loggato
         if !log {
             if let resultController = storyboard?.instantiateViewControllerWithIdentifier("loginInterface") as? LoginViewController{
+                resultController.setUserList(userController!)
                 presentViewController(resultController, animated: true, completion: nil)
             }
         }else{
@@ -137,6 +138,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, GMSMapViewDel
         locationManager.requestAlwaysAuthorization()
         locationManager.startUpdatingLocation()
     }
+    
     func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         let loc = locations[0] as CLLocation
         
@@ -160,22 +162,26 @@ class ViewController: UIViewController, CLLocationManagerDelegate, GMSMapViewDel
         self.popview = ArtInfoView(nibName: "ArtInfoView", bundle: nil)
         if let tmp = markerController?.getMarker(marker)! {
             popview.setInformation(intrct.retriveDBMarkerInfo(tmp))
-            print(intrct.retriveDBMarkerInfo(tmp).getUser().getSurname())
+            print(intrct.retriveDBMarkerInfo(tmp).getUser().getUsername())
         }
         self.popview.showInView(self.view, animated: true, image: image)
     }
     
     func mapView(mapView: GMSMapView!, markerInfoWindow marker: GMSMarker) -> UIView! {
         let mark = markerController?.getMarker(marker)
-        let image : UIImage = intrct.retriveDBMarkerImage(mark!)
+        let image = tmp(mark!)
         var infoWindow : CustomInfoWindow = CustomInfoWindow()
         infoWindow.prepareImage(image)
         infoWindow = NSBundle.mainBundle().loadNibNamed("InfoWindow", owner: self, options: nil).first! as! CustomInfoWindow
-                infoWindow.image.image = image
-
+        // devo rendere sincrono sto cazzo di thread altrimenti carica l'immagine dopo che lancia la view
+        infoWindow.image.image = image
+        
         return infoWindow
     }
     
+    func tmp(mark : Marker) -> UIImage{
+        return intrct.retriveDBMarkerImage(mark)
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

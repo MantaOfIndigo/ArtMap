@@ -11,6 +11,8 @@ import Parse
 
 class Interactor : UIViewController{
     
+    var checkMarkerRetrieve = false
+    
     func retrieveUserList(controller: UserController) -> UserController{
         let query = PFQuery(className:"_User")
         query.findObjectsInBackgroundWithBlock {
@@ -48,7 +50,7 @@ class Interactor : UIViewController{
     }
     
     func retriveDBMarkerImage(marker: Marker) -> UIImage{
-        UIImageWriteToSavedPhotosAlbum(retriveDBMarkerInfo(marker).getImage(), self, "image:didFinishSavingWithError:contextInfo", nil)
+        //UIImageWriteToSavedPhotosAlbum(retriveDBMarkerInfo(marker).getImage(), self, "image:didFinishSavingWithError:contextInfo", nil)
         
         return retriveDBMarkerInfo(marker).getImage()
     }
@@ -56,6 +58,7 @@ class Interactor : UIViewController{
    
     func retriveDBMarkerInfo(marker: Marker) -> Marker{
         let query = PFQuery(className:"MainDB")
+        self.checkMarkerRetrieve = false
         query.whereKey("artId", equalTo: marker.getId() as AnyObject)
         
         query.getFirstObjectInBackgroundWithBlock {
@@ -71,6 +74,8 @@ class Interactor : UIViewController{
                     if error == nil {
                         if let imageData = imageData {
                             marker.setImage(UIImage(data:imageData)!)
+                            print("fatto")
+                            self.checkMarkerRetrieve = true
                         }
                     }
                 }
@@ -80,5 +85,9 @@ class Interactor : UIViewController{
         return marker
         
     }
-
+    
+    
+    func getCheckMarkerRetrieve() -> Bool{
+        return self.checkMarkerRetrieve
+    }
 }

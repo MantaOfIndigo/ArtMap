@@ -72,8 +72,11 @@ class User: NSObject {
         return false
     }
     
-    func getSurname() -> String{
+    func getUsername() -> String{
         return self.username
+    }
+    func getEmail() -> String{
+        return self.email
     }
 
 }

@@ -73,7 +73,7 @@ class MarkerController: NSObject {
         print(markerList.count)
         for user in userList{
             for marker in self.markerList{
-                if user.getSurname() == marker.getUser().getSurname(){
+                if user.getUsername() == marker.getUser().getUsername(){
                     marker.setUser(user)
                 }
             }

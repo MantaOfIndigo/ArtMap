@@ -53,8 +53,7 @@ import QuartzCore
         self.view.frame.size = CGSize(width: UIScreen.mainScreen().bounds.width, height: UIScreen.mainScreen().bounds.height)
         self.infoView?.layer.shadowOpacity = 0.8
         self.infoView?.layer.shadowOffset = CGSizeMake(0.0, 0.0)
-        self.authorLabel.text = artInformation.getUser().getSurname()
-    
+        self.authorLabel.text = artInformation.getUser().getUsername()
         
     }
     
