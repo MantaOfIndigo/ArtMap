@@ -27,10 +27,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         /*
             collegamento db finale
+
         */
-        
         Parse.setApplicationId("xcOaOqfRorTUBCeSMxXskMZnvRPZ9lJRbmjKWRD0", clientKey: "ZckF2p9D9QhLrmXVxl6EqPu3AhgRVyDsYFIuJQpD")
-        
+
         return FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
     }
 

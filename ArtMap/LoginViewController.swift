@@ -42,18 +42,12 @@ class LoginViewController : UIViewController, UITextFieldDelegate{
     @IBAction func signIn(sender: UIButton) {
         
         if checkParameters(){
-        let lista = PFObject(className: "ClassListaUtenti")
-        
-        lista["username"] = username.text
-        lista["email"] = email.text
-        lista["password"] = password.text
-        
-        lista.saveInBackgroundWithBlock{ (Bool, NSError) -> Void in
-            if NSError == nil{
-                print("salvato")
-            }
-            }
+            //carica
+            let intrct = Interactor()
+            intrct.uploadNewUser(User(username: username.text!, email: email.text!), password: password.text!)
         }
+        
+        dismissViewControllerAnimated(true, completion: nil)
     }
     
     func isValidEmail(testStr:String) -> Bool {

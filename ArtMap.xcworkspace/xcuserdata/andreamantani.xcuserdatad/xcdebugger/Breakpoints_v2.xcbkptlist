@@ -432,11 +432,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ArtMap/FormArtController.swift"
-            timestampString = "466426709.34634"
+            timestampString = "467548455.494642"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "26"
-            endingLineNumber = "26"
+            startingLineNumber = "32"
+            endingLineNumber = "32"
             landmarkName = "init(nibName:bundle:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -448,11 +448,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ArtMap/FormArtController.swift"
-            timestampString = "467307712.735317"
+            timestampString = "467548455.494642"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "56"
-            endingLineNumber = "56"
+            startingLineNumber = "62"
+            endingLineNumber = "62"
             landmarkName = "setForm(_:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -656,11 +656,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ArtMap/Interactor.swift"
-            timestampString = "467462041.95203"
+            timestampString = "467544767.497074"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "32"
-            endingLineNumber = "32"
+            startingLineNumber = "30"
+            endingLineNumber = "30"
             landmarkName = "retrieveUserList(_:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -672,11 +672,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ArtMap/Interactor.swift"
-            timestampString = "467462041.95203"
+            timestampString = "467544767.497074"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "25"
-            endingLineNumber = "25"
+            startingLineNumber = "23"
+            endingLineNumber = "23"
             landmarkName = "retrieveUserList(_:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -848,11 +848,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ArtMap/Interactor.swift"
-            timestampString = "467462041.95203"
+            timestampString = "467544767.497074"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "55"
-            endingLineNumber = "55"
+            startingLineNumber = "53"
+            endingLineNumber = "53"
             landmarkName = "retriveDBMarkerImage(_:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -912,12 +912,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ArtMap/LoginViewController.swift"
-            timestampString = "467470831.593574"
+            timestampString = "467548455.494642"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "84"
-            endingLineNumber = "84"
-            landmarkName = "isValidEmail(_:)"
+            startingLineNumber = "78"
+            endingLineNumber = "78"
+            landmarkName = "checkParameters()"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

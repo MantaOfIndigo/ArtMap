@@ -44,6 +44,18 @@ class User: NSObject {
         super.init()
     }
     
+    init(username : String, email : String){
+        self.idUser = ""
+        self.username = username
+        self.email = email
+        self.points = 0
+        self.checkCounter = 0
+        self.checkins = 0
+        self.picturesUploaded = 0
+        self.reports = 0
+        super.init()
+    }
+    
     init(object: PFObject){
         
         self.username = object["username"] as! String

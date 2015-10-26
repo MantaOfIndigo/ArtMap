@@ -10,6 +10,7 @@
 		0F1527D71BC90A6D003F665B /* FormArtController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F1527D61BC90A6D003F665B /* FormArtController.swift */; };
 		0F23A1221BD6435200CD7435 /* Interactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F23A1211BD6435200CD7435 /* Interactor.swift */; };
 		0F23A1241BD68FD700CD7435 /* UserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F23A1231BD68FD700CD7435 /* UserController.swift */; };
+		0F3736B91BDE3863009A1CBB /* ReportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F3736B81BDE3863009A1CBB /* ReportViewController.swift */; };
 		0F51B89B1BCE5BCA009E0BA1 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F51B89A1BCE5BCA009E0BA1 /* LoginViewController.swift */; };
 		0F51B89E1BCE9677009E0BA1 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F51B89C1BCE9677009E0BA1 /* Bolts.framework */; };
 		0F51B89F1BCE9678009E0BA1 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F51B89D1BCE9677009E0BA1 /* Parse.framework */; };
@@ -99,6 +100,7 @@
 		0F2AAB941BCD54D9005D2BC2 /* FBNativeAdDelegate.html */ = {isa = PBXFileReference; lastKnownFileType = text.html.documentation; path = FBNativeAdDelegate.html; sourceTree = "<group>"; };
 		0F2AAB951BCD54D9005D2BC2 /* FBNativeAdsManagerDelegate.html */ = {isa = PBXFileReference; lastKnownFileType = text.html.documentation; path = FBNativeAdsManagerDelegate.html; sourceTree = "<group>"; };
 		0F2AAB961BCD551F005D2BC2 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = "../../../../Downloads/FacebookSDKs-iOS-20151007/FBSDKLoginKit.framework"; sourceTree = "<group>"; };
+		0F3736B81BDE3863009A1CBB /* ReportViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReportViewController.swift; sourceTree = "<group>"; };
 		0F51B89A1BCE5BCA009E0BA1 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		0F51B89C1BCE9677009E0BA1 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
 		0F51B89D1BCE9677009E0BA1 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
@@ -295,6 +297,7 @@
 				0F23A1211BD6435200CD7435 /* Interactor.swift */,
 				0FF19C4B1BBA7F2000B96C5F /* Art.swift */,
 				0FF19C1D1BBA7DB800B96C5F /* Main.storyboard */,
+				0F3736B81BDE3863009A1CBB /* ReportViewController.swift */,
 				0F51B89A1BCE5BCA009E0BA1 /* LoginViewController.swift */,
 				0FDFE7041BC174B5009D2EBD /* MarkerController.swift */,
 				0FDFE7061BC18EB8009D2EBD /* CustomInfoWindow.swift */,
@@ -552,6 +555,7 @@
 				0FF19C1A1BBA7DB800B96C5F /* AppDelegate.swift in Sources */,
 				0FD541E71BC2BF4E0084546E /* ArtInfoView.swift in Sources */,
 				0FF19C4C1BBA7F2000B96C5F /* Art.swift in Sources */,
+				0F3736B91BDE3863009A1CBB /* ReportViewController.swift in Sources */,
 				0FF19C4A1BBA7F1000B96C5F /* UserInfoController.swift in Sources */,
 				0F23A1221BD6435200CD7435 /* Interactor.swift in Sources */,
 				0F58495C1BCD4C7E00BAA982 /* User.swift in Sources */,

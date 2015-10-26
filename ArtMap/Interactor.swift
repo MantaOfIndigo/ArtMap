@@ -11,8 +11,6 @@ import Parse
 
 class Interactor : UIViewController{
     
-    var checkMarkerRetrieve = false
-    
     func retrieveUserList(controller: UserController) -> UserController{
         let query = PFQuery(className:"_User")
         query.findObjectsInBackgroundWithBlock {
@@ -58,7 +56,6 @@ class Interactor : UIViewController{
    
     func retriveDBMarkerInfo(marker: Marker) -> Marker{
         let query = PFQuery(className:"MainDB")
-        self.checkMarkerRetrieve = false
         query.whereKey("artId", equalTo: marker.getId() as AnyObject)
         
         query.getFirstObjectInBackgroundWithBlock {
@@ -74,8 +71,6 @@ class Interactor : UIViewController{
                     if error == nil {
                         if let imageData = imageData {
                             marker.setImage(UIImage(data:imageData)!)
-                            print("fatto")
-                            self.checkMarkerRetrieve = true
                         }
                     }
                 }
@@ -86,8 +81,24 @@ class Interactor : UIViewController{
         
     }
     
-    
-    func getCheckMarkerRetrieve() -> Bool{
-        return self.checkMarkerRetrieve
+    func uploadNewUser(user: User, password : String){
+        let usr = PFUser()
+        usr.username = user.getUsername()
+        usr.password = password
+        usr["checkCounter"] = 0
+        usr["checkIns"] = 0
+        usr.email = user.getEmail()
+        usr["phone"] =  000000000//non implementato
+        usr["publishedPhotos"] = 0
+        usr["reports"] = 0
+        usr["votes"] = 0
+        
+        usr.signUpInBackgroundWithBlock{
+            (succeeded: Bool, error: NSError?) -> Void in
+            if let error = error{
+                _ = error.userInfo["error"] as? NSString
+            }
+        }
     }
 }
+

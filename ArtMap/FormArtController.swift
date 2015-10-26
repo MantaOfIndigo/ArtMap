@@ -17,6 +17,12 @@ class FormArtController : UIViewController{
     @IBOutlet weak var yearLabel: UILabel!
     @IBOutlet weak var stateLabel: UILabel!
     
+    @IBAction func sendReport(sender: UIButton) {
+        if let resultController = storyboard?.instantiateViewControllerWithIdentifier("reportInterface") as? ReportViewController{
+            presentViewController(resultController, animated: true, completion: nil)
+        }
+
+    }
     var setForm : Marker = Marker()
     
     @IBAction func backAction(sender: UIBarButtonItem) {
