@@ -79,8 +79,6 @@ class AddArtController: UIViewController, UIImagePickerControllerDelegate, UINav
         let camera: GMSCameraPosition = GMSCameraPosition.cameraWithLatitude(loc.coordinate.latitude, longitude: loc.coordinate.longitude, zoom: 18.0)
         mapView.camera = camera
         
-
-        
     }
 
 }

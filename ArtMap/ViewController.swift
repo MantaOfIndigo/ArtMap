@@ -114,6 +114,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, GMSMapViewDel
         super.viewDidLoad()
         
         viewMap.delegate = self
+        viewMap.settings.myLocationButton = true
         setMarkers()
         setUsers()
         

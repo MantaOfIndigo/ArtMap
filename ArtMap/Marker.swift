@@ -17,15 +17,12 @@ class Marker: NSObject {
     private var image : UIImage
     private var user : User
     private var art : Art
-    private let intrct : Interactor
     
     override init(){
         self.marker = GMSMarker()
         self.image = UIImage()
         self.art = Art(title: "", author: "", year: 0)!
         self.user = User()
-        
-        self.intrct = Interactor()
         
         super.init()
     }
@@ -41,8 +38,6 @@ class Marker: NSObject {
         self.user = User()
         self.art = Art(title: title, author: author, year: year, status: visibility)!
         
-        
-        self.intrct = Interactor()
      
     }
     init(position: CLLocationCoordinate2D, id: Int){
@@ -58,8 +53,6 @@ class Marker: NSObject {
         self.art = Art()
         self.user = User()
         
-        
-        self.intrct = Interactor()
         
     }
     func setImage(value: UIImage){

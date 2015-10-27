@@ -98,7 +98,10 @@ class LoginViewController : UIViewController, UITextFieldDelegate{
         self.presentViewController(alertController, animated: true, completion: nil)
     }
     
-    @IBAction func login(sender: UIButton) {
-         print("login")
+    @IBAction func login(sender: UIButton)throws {
+        let intrct = Interactor()
+        try intrct.retrieveLogin(email.text!, password: "")
     }
+    
+   
 }

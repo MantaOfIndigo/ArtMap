@@ -10,12 +10,29 @@ import UIKit
 
 class UserInfoController: UIViewController, UINavigationControllerDelegate{
     
+    @IBOutlet weak var userName: UILabel!
+    @IBOutlet weak var checkins: UILabel!
+    @IBOutlet weak var publishedPhotos: UILabel!
+    @IBOutlet weak var reports: UILabel!
+    
+    var currentUser : User = User()
+    
     @IBAction func cancelButton(sender: UIButton) {
         dismissViewControllerAnimated(true, completion: nil)
     }
    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        userName.text = self.currentUser.getUsername()
+        checkins.text = String(self.currentUser.getCheckins())
+        publishedPhotos.text = String(self.currentUser.getPublishedPhotos())
+        reports.text = String(self.currentUser.getReports())
+        
+    }
+    
+    func setUserPage(user: User){
+        self.currentUser = user
     }
     
 }

@@ -6,7 +6,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ArtInfoView" customModule="ArtMap" customModuleProvider="target">
             <connections>
-                <outlet property="authorLabel" destination="tYi-Gq-Ood" id="PaI-9O-WXA"/>
+                <outlet property="authorLink" destination="gQg-gk-Qk8" id="1lc-mJ-v5j"/>
                 <outlet property="bottomArea" destination="MU8-Fm-yym" id="joL-nc-BBC"/>
                 <outlet property="decorationView" destination="MU8-Fm-yym" id="0qP-MB-Tvg"/>
                 <outlet property="imageInfo" destination="yO6-EY-g05" id="Lqy-9f-9Pi"/>
@@ -95,28 +95,31 @@
                                 </mask>
                             </variation>
                         </view>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="autore" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tYi-Gq-Ood">
-                            <rect key="frame" x="60" y="15" width="200" height="20"/>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gQg-gk-Qk8">
+                            <rect key="frame" x="67" y="15" width="200" height="20"/>
                             <constraints>
-                                <constraint firstAttribute="width" constant="200" id="STc-mO-3ku"/>
-                                <constraint firstAttribute="height" constant="20" id="nlW-d4-Cgz"/>
+                                <constraint firstAttribute="width" constant="200" id="Xjw-Ub-ulv"/>
+                                <constraint firstAttribute="height" constant="20" id="cEj-Xr-mzH"/>
                             </constraints>
-                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
-                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            <nil key="highlightedColor"/>
-                        </label>
+                            <state key="normal" title="Button">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="sendUserPage:" destination="-1" eventType="touchUpInside" id="0Uk-Re-2Wh"/>
+                            </connections>
+                        </button>
                     </subviews>
                     <color key="backgroundColor" red="0.2323066788" green="0.66420059970000001" blue="0.55157494819999997" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstAttribute="trailing" secondItem="4Cg-dp-Qpu" secondAttribute="trailing" constant="15" id="0c0-ky-B76"/>
                         <constraint firstItem="5p3-Ka-GxW" firstAttribute="top" secondItem="dou-BX-mxd" secondAttribute="top" constant="15" id="6Rl-Y6-j6v"/>
                         <constraint firstAttribute="height" constant="120" id="Ai9-Bz-gbs"/>
-                        <constraint firstItem="tYi-Gq-Ood" firstAttribute="top" secondItem="dou-BX-mxd" secondAttribute="top" constant="15" id="Cka-1g-5IL"/>
+                        <constraint firstItem="gQg-gk-Qk8" firstAttribute="leading" secondItem="5p3-Ka-GxW" secondAttribute="trailing" constant="15" id="B40-mP-2Tt"/>
                         <constraint firstItem="5p3-Ka-GxW" firstAttribute="leading" secondItem="dou-BX-mxd" secondAttribute="leading" constant="15" id="Eq2-qE-cq5"/>
-                        <constraint firstItem="tYi-Gq-Ood" firstAttribute="leading" secondItem="5p3-Ka-GxW" secondAttribute="trailing" constant="8" id="HBu-OK-NPF"/>
                         <constraint firstAttribute="bottom" secondItem="MU8-Fm-yym" secondAttribute="bottom" constant="-2" id="JlJ-Qn-5uh"/>
                         <constraint firstItem="4Cg-dp-Qpu" firstAttribute="top" secondItem="dou-BX-mxd" secondAttribute="top" constant="10" id="MPU-lu-826"/>
                         <constraint firstAttribute="trailing" secondItem="MU8-Fm-yym" secondAttribute="trailing" id="OTm-yt-CV0"/>
+                        <constraint firstItem="gQg-gk-Qk8" firstAttribute="top" secondItem="dou-BX-mxd" secondAttribute="top" constant="15" id="wdl-CN-E5n"/>
                         <constraint firstItem="MU8-Fm-yym" firstAttribute="leading" secondItem="dou-BX-mxd" secondAttribute="leading" id="zDO-q7-0Qs"/>
                     </constraints>
                 </view>

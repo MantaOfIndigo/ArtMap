@@ -80,7 +80,21 @@ class Interactor : UIViewController{
         return marker
         
     }
+    func retrieveLogin(email: String, password: String)throws -> Bool{
+        let query = PFQuery(className:"_User")
+        query.whereKey("email", equalTo: email as AnyObject)
+        query.selectKeys(["email", "password"])
+        let object = try query.findObjects()
+        for obj in object{
+            print(obj["password"])
+            if obj["password"] as! String == password{
+                    return true
+                }
+        }
     
+        return false
+    }
+    //func uploadNewReport()
     func uploadNewUser(user: User, password : String){
         let usr = PFUser()
         usr.username = user.getUsername()

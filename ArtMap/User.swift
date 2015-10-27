@@ -90,5 +90,23 @@ class User: NSObject {
     func getEmail() -> String{
         return self.email
     }
+    func getCheckins() -> Int{
+        if self.checkins == nil{
+            return 0
+        }
+        return self.checkins!
+    }
+    func getPublishedPhotos() -> Int{
+        if self.picturesUploaded == nil{
+            return 0
+        }
+        return self.picturesUploaded!
+    }
+    func getReports() -> Int{
+        if self.reports == nil{
+            return 0
+        }
+        return self.reports!
+    }
 
 }

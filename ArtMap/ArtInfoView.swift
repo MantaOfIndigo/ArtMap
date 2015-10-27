@@ -15,7 +15,7 @@ import QuartzCore
     @IBOutlet weak var imageInfo: UIImageView!
     @IBOutlet weak var decorationView: UIView!
     @IBOutlet weak var bottomArea: UIView!
-    @IBOutlet weak var authorLabel: UILabel!
+    @IBOutlet weak var authorLink: UIButton!
     
     private var artInformation : Marker = Marker()
     
@@ -28,6 +28,15 @@ import QuartzCore
         
         newView.modalTransitionStyle = UIModalTransitionStyle.CoverVertical
         self.presentViewController(newView, animated: true, completion: nil)
+    }
+    
+    @IBAction func sendUserPage(sender: UIButton) {
+        let storyboard : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+         let resultController = storyboard.instantiateViewControllerWithIdentifier("userInterface") as? UserInfoController
+        
+            resultController!.setUserPage(artInformation.getUser())
+            presentViewController(resultController!, animated: true, completion: nil)
+        
     }
     
     @IBAction func exit(sender: UIButton) {
@@ -43,6 +52,7 @@ import QuartzCore
     }
     
     
+    
     override func viewDidLoad() {
         
         super.viewDidLoad()
@@ -53,7 +63,7 @@ import QuartzCore
         self.view.frame.size = CGSize(width: UIScreen.mainScreen().bounds.width, height: UIScreen.mainScreen().bounds.height)
         self.infoView?.layer.shadowOpacity = 0.8
         self.infoView?.layer.shadowOffset = CGSizeMake(0.0, 0.0)
-        self.authorLabel.text = artInformation.getUser().getUsername()
+        self.authorLink.setTitle(artInformation.getUser().getUsername(), forState: .Normal)
         
     }
     
