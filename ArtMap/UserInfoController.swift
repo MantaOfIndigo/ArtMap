@@ -21,10 +21,14 @@ class UserInfoController: UIViewController, UINavigationControllerDelegate{
         dismissViewControllerAnimated(true, completion: nil)
     }
    
+    @IBAction func logOut(sender: UIButton) {
+        NSUserDefaults.standardUserDefaults().setObject(nil, forKey: "username")
+        dismissViewControllerAnimated(true, completion: nil)
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        userName.text = self.currentUser.getUsername()
+        userName.text = self.currentUser.getUsername().uppercaseString
         checkins.text = String(self.currentUser.getCheckins())
         publishedPhotos.text = String(self.currentUser.getPublishedPhotos())
         reports.text = String(self.currentUser.getReports())

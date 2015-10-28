@@ -18,6 +18,7 @@ class LoginViewController : UIViewController, UITextFieldDelegate{
     @IBOutlet weak var username: UITextField!
     
     var userController : UserController?
+    let launcher = AlertLauncher()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,63 +46,54 @@ class LoginViewController : UIViewController, UITextFieldDelegate{
             //carica
             let intrct = Interactor()
             intrct.uploadNewUser(User(username: username.text!, email: email.text!), password: password.text!)
+            
+            dismissViewControllerAnimated(true, completion: nil)
         }
         
-        dismissViewControllerAnimated(true, completion: nil)
     }
     
-    func isValidEmail(testStr:String) -> Bool {
-        
-        print("validate emilId: \(testStr)")
-        
-        let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,4}"
-        
-        let emailTest = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
-        
-        let result = emailTest.evaluateWithObject(testStr)
-        
-        return result
-        
-    }
+
     
     func checkParameters()-> Bool{
         if password.text != confirmPassword.text{
-            launchAlert( "Password non confermata", message: "Password ripetuta non correttamente")
+            launcher.launchAlert( "Password non confermata", message: "Password ripetuta non correttamente", toView: self)
             return false
         }
         if password.text?.characters.count < 5 || password.text?.characters.count > 12{
-            launchAlert("Formato password non corretto", message: "La password deve avere un minimo di 5 e un massimo di 12 caratteri")
+            launcher.launchAlert("Formato password non corretto", message: "La password deve avere un minimo di 5 e un massimo di 12 caratteri", toView: self)
             return false
         }
-        if isValidEmail(email.text!) == false {
-            launchAlert("Email non valida", message: "Controlla che l'indirizzo sia esatto")
+        if launcher.isValidEmail(email.text!) == false {
+            launcher.launchAlert("Email non valida", message: "Controlla che l'indirizzo sia esatto", toView: self)
             return false
         }
         if ((userController?.checkEmail(email.text!)) == false){
-            launchAlert("Email non valida", message: "Questo indirizzo email è già stato utilizzato")
+            launcher.launchAlert("Email non valida", message: "Questo indirizzo email è già stato utilizzato", toView: self)
             return false
         }
         if ((userController?.checkUsername(username.text!)) == false){
-            launchAlert("Username non valido", message: "Questo username è già stato utilizzato")
+            launcher.launchAlert("Username non valido", message: "Questo username è già stato utilizzato", toView: self)
             return false
         }
         
         return true
     }
     
-    func launchAlert(title: String, message: String){
-        password.text = ""
-        confirmPassword.text = ""
-        
-        let alertController = UIAlertController(title: title, message: message, preferredStyle: .Alert)
-        alertController.addAction(UIAlertAction(title: "Indietro", style: UIAlertActionStyle.Default, handler: nil))
-        self.presentViewController(alertController, animated: true, completion: nil)
-    }
     
-    @IBAction func login(sender: UIButton)throws {
+    
+    @IBAction func loginAction(sender: UIButton) {
         let intrct = Interactor()
-        try intrct.retrieveLogin(email.text!, password: "")
+        do{
+            if try intrct.retrieveLogin(email.text!, password: password.text!)  == true{
+                
+                dismissViewControllerAnimated(true, completion: nil)
+            }
+        }catch{
+            print("trmo")
+        }
+
     }
+   
     
    
 }

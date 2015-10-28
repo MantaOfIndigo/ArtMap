@@ -35,13 +35,17 @@ class Interactor : UIViewController{
     func retrieveUserRecord(user: String) -> User{
         let query = PFQuery(className:"_User")
         query.whereKey("username", equalTo: user as AnyObject)
-        print("user:  ", user)
         var returnUser = User()
-        query.getFirstObjectInBackgroundWithBlock {
-            (object: PFObject?, error: NSError?) -> Void in
-            if error == nil{
-                returnUser = User(object: object!)
+        do{
+            if let tmp : NSArray = try query.findObjects(){
+                for usr in tmp{
+                    returnUser = User(object: usr as! PFObject)
+                }
+            }else{
+                print("No such items")
             }
+        }catch{
+            print("Queery Error")
         }
         
         return returnUser
@@ -56,8 +60,22 @@ class Interactor : UIViewController{
    
     func retriveDBMarkerInfo(marker: Marker) -> Marker{
         let query = PFQuery(className:"MainDB")
+        var mrkImageFile : PFFile
         query.whereKey("artId", equalTo: marker.getId() as AnyObject)
-        
+        do{
+            if let tmp : NSArray = try query.findObjects(){
+                for mkr in tmp{
+                        marker.setInfoFromRecord(mkr as! PFObject)
+                        mrkImageFile = mkr["image"] as! PFFile
+                        if let img : NSData = try mrkImageFile.getData(){
+                            marker.setImage(UIImage(data: img)!)
+                        }
+
+                    }
+            }
+        }catch{
+    }
+        /*
         query.getFirstObjectInBackgroundWithBlock {
             (object: PFObject?, error: NSError?) -> Void in
             if error != nil || object == nil {
@@ -76,23 +94,32 @@ class Interactor : UIViewController{
                 }
             }
         }
-        
+        */
         return marker
         
     }
     func retrieveLogin(email: String, password: String)throws -> Bool{
-        let query = PFQuery(className:"_User")
+        let query = PFQuery(className: "_User")
         query.whereKey("email", equalTo: email as AnyObject)
-        query.selectKeys(["email", "password"])
-        let object = try query.findObjects()
-        for obj in object{
-            print(obj["password"])
-            if obj["password"] as! String == password{
-                    return true
+        do{
+            if let c : NSArray = try query.findObjects(){
+            
+                for f in c{
+                    PFUser.logInWithUsernameInBackground(f["username"] as! String, password: password){
+                    (user: PFUser?, error: NSError?) -> Void in
+                        if user != nil {
+                            NSUserDefaults.standardUserDefaults().setObject(f["username"], forKey: "username")
+                        }else{
+                            NSUserDefaults.standardUserDefaults().setObject("NOSUCHUSER", forKey: "username")
+                        }
+                    }
                 }
+            }
+        }catch{
+            print("Queery Error")
+            return false
         }
-    
-        return false
+        return true
     }
     //func uploadNewReport()
     func uploadNewUser(user: User, password : String){
@@ -102,7 +129,7 @@ class Interactor : UIViewController{
         usr["checkCounter"] = 0
         usr["checkIns"] = 0
         usr.email = user.getEmail()
-        usr["phone"] =  000000000//non implementato
+        usr["phone"] =  "000000000"//non implementato
         usr["publishedPhotos"] = 0
         usr["reports"] = 0
         usr["votes"] = 0
