@@ -67,7 +67,7 @@ class User: NSObject {
         self.idUser = object["objectId"] as? String
         self.points = 0
         super.init()
-         self.calculatePoint()
+        self.calculatePoint()
     }
     
     func calculatePoint(){

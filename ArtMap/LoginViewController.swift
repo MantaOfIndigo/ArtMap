@@ -45,7 +45,9 @@ class LoginViewController : UIViewController, UITextFieldDelegate{
         if checkParameters(){
             //carica
             let intrct = Interactor()
-            intrct.uploadNewUser(User(username: username.text!, email: email.text!), password: password.text!)
+            let newUser = User(username: username.text!, email: email.text!)
+            intrct.uploadNewUser(newUser, password: password.text!)
+            NSUserDefaults.standardUserDefaults().setObject(newUser.getUsername(), forKey: "username")
             
             dismissViewControllerAnimated(true, completion: nil)
         }
@@ -70,6 +72,8 @@ class LoginViewController : UIViewController, UITextFieldDelegate{
         if ((userController?.checkEmail(email.text!)) == false){
             launcher.launchAlert("Email non valida", message: "Questo indirizzo email è già stato utilizzato", toView: self)
             return false
+        }else{
+            
         }
         if ((userController?.checkUsername(username.text!)) == false){
             launcher.launchAlert("Username non valido", message: "Questo username è già stato utilizzato", toView: self)
@@ -85,11 +89,10 @@ class LoginViewController : UIViewController, UITextFieldDelegate{
         let intrct = Interactor()
         do{
             if try intrct.retrieveLogin(email.text!, password: password.text!)  == true{
-                
                 dismissViewControllerAnimated(true, completion: nil)
             }
         }catch{
-            print("trmo")
+            print("Query Error")
         }
 
     }

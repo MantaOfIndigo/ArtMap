@@ -15,17 +15,21 @@ PODS:
     - Bolts (~> 1.1)
     - FBSDKCoreKit/arc
   - GoogleMaps (1.10.4)
+  - Parse (1.9.1):
+    - Bolts/Tasks (>= 1.4.0)
   - SwiftyJSON (2.3.0)
 
 DEPENDENCIES:
   - FBSDKCoreKit
   - GoogleMaps
+  - Parse
   - SwiftyJSON (>= 2.2.0)
 
 SPEC CHECKSUMS:
   Bolts: 0e9bce58b9b9f5e8a7a4d47b16d2fabec289072b
   FBSDKCoreKit: eb580bfc2040ad44f4c0b4f4d0befb1d35bce59c
   GoogleMaps: 134bcf57e8d489efbc0c29d532ed421554fabdb2
+  Parse: 54a965c8c19a6dde90284ab654dbcc77ef8c001b
   SwiftyJSON: 8d6b61a70277ef2a5d710d372e06e7e2d87fb9e4
 
 COCOAPODS: 0.38.2

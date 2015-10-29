@@ -10,6 +10,7 @@ import UIKit
 //import GoogleMaps
 import FBSDKCoreKit
 import Parse
+import ParseFacebookUtilsV4
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -30,7 +31,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         */
         Parse.setApplicationId("xcOaOqfRorTUBCeSMxXskMZnvRPZ9lJRbmjKWRD0", clientKey: "ZckF2p9D9QhLrmXVxl6EqPu3AhgRVyDsYFIuJQpD")
-
+        
         return FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
     }
 

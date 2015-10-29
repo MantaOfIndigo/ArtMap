@@ -52,8 +52,6 @@ class Interactor : UIViewController{
     }
     
     func retriveDBMarkerImage(marker: Marker) -> UIImage{
-        //UIImageWriteToSavedPhotosAlbum(retriveDBMarkerInfo(marker).getImage(), self, "image:didFinishSavingWithError:contextInfo", nil)
-        
         return retriveDBMarkerInfo(marker).getImage()
     }
     
@@ -74,30 +72,13 @@ class Interactor : UIViewController{
                     }
             }
         }catch{
-    }
-        /*
-        query.getFirstObjectInBackgroundWithBlock {
-            (object: PFObject?, error: NSError?) -> Void in
-            if error != nil || object == nil {
-                print("The getFirstObject request failed.")
-            } else {
-                marker.setInfoFromRecord(object!)
-                
-                let userImageFile = object!["image"] as! PFFile
-                userImageFile.getDataInBackgroundWithBlock {
-                    (imageData: NSData?, error: NSError?) -> Void in
-                    if error == nil {
-                        if let imageData = imageData {
-                            marker.setImage(UIImage(data:imageData)!)
-                        }
-                    }
-                }
-            }
+            print("Query Error")
         }
-        */
+        
         return marker
         
     }
+    
     func retrieveLogin(email: String, password: String)throws -> Bool{
         let query = PFQuery(className: "_User")
         query.whereKey("email", equalTo: email as AnyObject)
@@ -121,7 +102,10 @@ class Interactor : UIViewController{
         }
         return true
     }
-    //func uploadNewReport()
+    
+    func uploadNewReport(){
+        
+    }
     func uploadNewUser(user: User, password : String){
         let usr = PFUser()
         usr.username = user.getUsername()

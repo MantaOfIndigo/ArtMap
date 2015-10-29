@@ -66,6 +66,10 @@ You can get the attribution text by making a call to
 [GMSServices openSourceLicenseInfo].
 
 
+## Parse
+
+See https://www.parse.com/about/terms
+
 ## SwiftyJSON
 
 The MIT License (MIT)

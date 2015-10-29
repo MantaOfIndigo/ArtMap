@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "029AE000A809AF8090F9ECDE"
+               BlueprintIdentifier = "D34BEFCCF85EE9C4F1708253"
                BuildableName = "Pods_ArtMap.framework"
                BlueprintName = "Pods-ArtMap"
                ReferencedContainer = "container:Pods.xcodeproj">

@@ -14,6 +14,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Parse.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-ArtMap.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -27,22 +32,27 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>227B005BC6CA1CB1673173D0EBF44349</key>
+		<key>090A98A3C5B5E87CE7614B6F91142D13</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>7EFF8008E3CE0BA2BDEDE07BECB1CD16</key>
+		<key>5288C134EDAEF6B4FCBBDDC071EA25E7</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>9AA340D3097B7B60D9C2BC6078D0F819</key>
+		<key>A02E8959F3CE47697161529A776B7DBA</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
 		<key>B9A04D3C9B208813656510FDA8ADAE02</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>C1929030DAAF144AFFA9833DF0EC397C</key>
 		<dict>
 			<key>primary</key>
 			<true/>
