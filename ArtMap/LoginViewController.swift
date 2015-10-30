@@ -8,9 +8,10 @@
 
 import UIKit
 import FBSDKCoreKit
+import FBSDKLoginKit
 import Parse
 
-class LoginViewController : UIViewController, UITextFieldDelegate{
+class LoginViewController : UIViewController, UITextFieldDelegate, FBSDKLoginButtonDelegate{
     
     @IBOutlet weak var email: UITextField!
     @IBOutlet weak var password: UITextField!
@@ -27,8 +28,51 @@ class LoginViewController : UIViewController, UITextFieldDelegate{
         confirmPassword.delegate = self
         username.delegate = self
         
+        //if FBSDKAccessToken.currentAccessToken() == nil{
+            let loginView : FBSDKLoginButton = FBSDKLoginButton()
+            loginView.center = self.view.center
+            loginView.readPermissions = ["public_profile", "email", "user_friends"]
+            loginView.delegate = self
+            self.view.addSubview(loginView)
+            
+        //}
     }
     
+    func loginButtonDidLogOut(loginButton: FBSDKLoginButton!) {
+        NSUserDefaults.standardUserDefaults().setObject("NOSUCHUSER", forKey: "username")
+    }
+    
+    func returnUserData(){
+        let graphRequest : FBSDKGraphRequest = FBSDKGraphRequest(graphPath: "me", parameters: nil)
+        graphRequest.startWithCompletionHandler({ (connection, result, error) -> Void in
+            if(error != nil){
+                print("Error")
+            }else{
+                let userName : NSString = result.valueForKey("name") as! NSString
+                print(userName)
+                let userMail : NSString = result.valueForKey("email") as! NSString
+                print(userName, "  ", userMail )
+                if ((self.userController?.checkEmail(userMail as String)) == true){
+                    let intrct = Interactor()
+                    intrct.uploadNewUser(User(username: userName as String, email: userMail as String), password: result.valueForKey("password") as! String)
+                }
+                
+                NSUserDefaults.standardUserDefaults().setObject(userName, forKey: "username")
+            }
+        })
+    }
+    func loginButton(loginButton: FBSDKLoginButton!, didCompleteWithResult result: FBSDKLoginManagerLoginResult!, error: NSError!) {
+        let alert : AlertLauncher = AlertLauncher()
+        if error != nil{
+            alert.launchAlert("Login fallito", message: "Si è verificato un errore nella connessione con Facebook", toView: self)
+        }else if result.isCancelled{
+            alert.launchAlert("Login fallito", message: "Risultato cancellato", toView: self)
+        }else{
+            if result.grantedPermissions.contains("email"){
+                returnUserData()
+            }
+        }
+    }
     func setUserList(value : UserController){
         self.userController = value
     }

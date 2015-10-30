@@ -10,6 +10,7 @@ import UIKit
 //import GoogleMaps
 import CoreLocation
 import FBSDKCoreKit
+import FBSDKLoginKit
 import Parse
 
 class ViewController: UIViewController, CLLocationManagerDelegate, GMSMapViewDelegate{
@@ -96,6 +97,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, GMSMapViewDel
             }
         }else{
             if let resultController = storyboard?.instantiateViewControllerWithIdentifier("userInterface") as? UserInfoController{
+                print(NSUserDefaults.standardUserDefaults().stringForKey("username"))
                 resultController.setUserPage(intrct.retrieveUserRecord(NSUserDefaults.standardUserDefaults().stringForKey("username")!))
                 presentViewController(resultController, animated: true, completion: nil)
             }
@@ -118,13 +120,32 @@ class ViewController: UIViewController, CLLocationManagerDelegate, GMSMapViewDel
         viewMap.settings.myLocationButton = true
         setMarkers()
         setUsers()
+    
+       /* if FBSDKAccessToken.currentAccessToken() != nil{
+            loginLabel.text = NSUserDefaults.standardUserDefaults().stringForKey("username")
+            log = true
+            
+        }else{
+            */
         
-        let logged: AnyObject? = NSUserDefaults.standardUserDefaults().stringForKey("username")
-        if logged != nil{
-            if String(logged!) == "NOSUCHUSER"{
-                NSUserDefaults.standardUserDefaults().setObject(nil, forKey: "username")
+        
+            if let logged: AnyObject? = NSUserDefaults.standardUserDefaults().stringForKey("username"){
+                if String(logged!) == "NOSUCHUSER"{
+                    NSUserDefaults.standardUserDefaults().setObject(nil, forKey: "username")
+                    _ = AlertLauncher().launchAlert("Login fallito", message: "Le credenziali inserite non sono corrette", toView: self)
+                    loginLabel.text = "Not Logged"
+                    log = false
+                    
+                }else{
+                    loginLabel.text = String(logged!)
+                    log = true
+                }
+            }else{
+                loginLabel.text = "Not Logged"
+                log = false
             }
-        }
+        //}
+
 
     }
     
@@ -136,29 +157,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, GMSMapViewDel
         locationManager.requestAlwaysAuthorization()
         locationManager.startUpdatingLocation()
         
-        if FBSDKAccessToken.currentAccessToken() != nil{
-            loginLabel.text = "Andrea Mantani"
-            log = true
-            
-        }else{
-            
-            if let logged: AnyObject? = NSUserDefaults.standardUserDefaults().stringForKey("username"){
-                if String(logged!) == "NOSUCHUSER"{
-                     NSUserDefaults.standardUserDefaults().setObject(nil, forKey: "username")
-                    _ = AlertLauncher().launchAlert("Login fallito", message: "Le credenziali inserite non sono corrette", toView: self)
-                    loginLabel.text = "Not Logged"
-                    log = false
-
-                }else{
-                    loginLabel.text = String(logged!)
-                    log = true
-                }
-            }else{
-                loginLabel.text = "Not Logged"
-                log = false
-            }
         }
-    }
     
     func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         let loc = locations[0] as CLLocation

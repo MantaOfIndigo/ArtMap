@@ -4,6 +4,10 @@
 <dict>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
+	<key>LSApplicationQueriesSchemes</key>
+	<array>
+		<string>fbauth2</string>
+	</array>
 	<key>FacebookAppID</key>
 	<string>790257021053855</string>
 	<key>FacebookDisplayName</key>
@@ -13,7 +17,7 @@
 		<dict>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string></string>
+				<string>fb790257021053855</string>
 			</array>
 		</dict>
 	</array>
