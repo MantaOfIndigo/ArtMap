@@ -84,14 +84,18 @@ class Interactor : UIViewController{
         query.whereKey("email", equalTo: email as AnyObject)
         do{
             if let c : NSArray = try query.findObjects(){
-            
-                for f in c{
-                    PFUser.logInWithUsernameInBackground(f["username"] as! String, password: password){
-                    (user: PFUser?, error: NSError?) -> Void in
-                        if user != nil {
-                            NSUserDefaults.standardUserDefaults().setObject(f["username"], forKey: "username")
-                        }else{
-                            NSUserDefaults.standardUserDefaults().setObject("NOSUCHUSER", forKey: "username")
+                if c.count == 0 {
+                    NSUserDefaults.standardUserDefaults().setObject("NOSUCHUSER", forKey: "username")
+                    return false
+                }else{
+                    for f in c{
+                        PFUser.logInWithUsernameInBackground(f["username"] as! String, password: password){
+                            (user: PFUser?, error: NSError?) -> Void in
+                            if user != nil {
+                                NSUserDefaults.standardUserDefaults().setObject(f["username"], forKey: "username")
+                            }else{
+                                NSUserDefaults.standardUserDefaults().setObject("NOSUCHUSER", forKey: "username")
+                            }
                         }
                     }
                 }
@@ -100,6 +104,7 @@ class Interactor : UIViewController{
             print("Queery Error")
             return false
         }
+        
         return true
     }
     

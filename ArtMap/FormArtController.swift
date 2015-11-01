@@ -40,26 +40,35 @@ class FormArtController : UIViewController{
         imageForm.image = setForm.getImage()
         
         let tmp = setForm.getArt()
+        
         titleLabel.text = tmp.getTitle().capitalizedString
-        if tmp.getTitle() == nil {
+        if tmp.getTitle() == "" {
             titleLabel.text = "NESSUN TITOLO"
+            titleLabel.textColor = UIColor.grayColor().colorWithAlphaComponent(0.6)
         }
         authorLabel.text = tmp.getAuthor().capitalizedString
         if tmp.getAuthor() == ""{
             authorLabel.text = "NESSUN AUTORE"
+            authorLabel.textColor = UIColor.grayColor().colorWithAlphaComponent(0.6)
         }
         yearLabel.text = String(tmp.getYear())
         if tmp.getYear() == 0 {
             yearLabel.text = "NESSUNA DATA"
+            yearLabel.textColor = UIColor.grayColor().colorWithAlphaComponent(0.6)
         }
         if tmp.getState() != 0{
             stateLabel.text = "NON AGGIORNATO"
+            stateLabel.textColor = UIColor.grayColor().colorWithAlphaComponent(0.6)
         }
         super.viewDidLoad()
 
     }
-    func setForm(value: Marker){
+    func setFormInfo(value: Marker){
         self.setForm = value
+        
+        print(value.getArt().getTitle())
+        
+        print(self.setForm.getArt().getTitle())
         
     }
     

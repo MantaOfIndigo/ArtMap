@@ -120,7 +120,7 @@ class Art: NSObject {
         if self.author == nil{
             return ""
         }
-        return self.title!
+        return self.author!
     }
     func getYear() -> Int!{
         if self.year == nil{

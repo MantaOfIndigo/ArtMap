@@ -24,7 +24,11 @@ class UserInfoController: UIViewController, UINavigationControllerDelegate{
     }
    
     @IBAction func logOut(sender: UIButton) {
-        NSUserDefaults.standardUserDefaults().setObject(nil, forKey: "username")
+        NSUserDefaults.standardUserDefaults().setObject("NOLOGGED", forKey: "username")
+   
+        let loginManager = FBSDKLoginManager()
+        loginManager.logOut()
+        
         dismissViewControllerAnimated(true, completion: nil)
     }
     override func viewDidLoad() {
@@ -35,10 +39,13 @@ class UserInfoController: UIViewController, UINavigationControllerDelegate{
         publishedPhotos.text = String(self.presentedUser.getPublishedPhotos())
         reports.text = String(self.presentedUser.getReports())
         
-        if NSUserDefaults.standardUserDefaults().stringForKey("username") != self.presentedUser.getUsername(){
-            self.logoutButton.hidden = true
-        }else{
+        
+        if self.presentedUser.compareUsernames(NSUserDefaults.standardUserDefaults().stringForKey("username")!){
             self.logoutButton.hidden = false
+        }else if self.presentedUser.getUsername() == NSUserDefaults.standardUserDefaults().stringForKey("username"){
+            self.logoutButton.hidden = false
+        }else{
+            self.logoutButton.hidden = true
         }
         
     }

@@ -49,13 +49,17 @@ class LoginViewController : UIViewController, UITextFieldDelegate, FBSDKLoginBut
                 print("Error")
             }else{
                 let userName : NSString = result.valueForKey("name") as! NSString
-                print(userName)
-                let userMail : NSString = result.valueForKey("email") as! NSString
-                print(userName, "  ", userMail )
-                if ((self.userController?.checkEmail(userMail as String)) == true){
-                    let intrct = Interactor()
-                    intrct.uploadNewUser(User(username: userName as String, email: userMail as String), password: result.valueForKey("password") as! String)
+                self.userController?.retrieveByUsername(userName as String)
+                
+                if let userMail : NSString = result.valueForKey("email") as? NSString{
+                    print(userName, "  ", userMail )
+                    if ((self.userController?.checkEmail(userMail as String)) == true){
+                        let intrct = Interactor()
+                        intrct.uploadNewUser(User(username: userName as String, email: userMail as String), password: result.valueForKey("password") as! String)
+                    }
                 }
+                
+               
                 
                 NSUserDefaults.standardUserDefaults().setObject(userName, forKey: "username")
             }
@@ -87,7 +91,6 @@ class LoginViewController : UIViewController, UITextFieldDelegate, FBSDKLoginBut
     @IBAction func signIn(sender: UIButton) {
         
         if checkParameters(){
-            //carica
             let intrct = Interactor()
             let newUser = User(username: username.text!, email: email.text!)
             intrct.uploadNewUser(newUser, password: password.text!)
@@ -134,6 +137,8 @@ class LoginViewController : UIViewController, UITextFieldDelegate, FBSDKLoginBut
         do{
             if try intrct.retrieveLogin(email.text!, password: password.text!)  == true{
                 dismissViewControllerAnimated(true, completion: nil)
+            }else{
+                _ = AlertLauncher().launchAlert("Login Fallito", message: "La mail inserita non esiste", toView: self)
             }
         }catch{
             print("Query Error")

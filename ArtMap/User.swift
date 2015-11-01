@@ -108,5 +108,26 @@ class User: NSObject {
         }
         return self.reports!
     }
+    func compareUsernames(compare: String)-> Bool{
+        let tmpStr : String
+        let comparator : String
+        
+        if compare.characters.count > self.username.characters.count{
+            tmpStr = compare
+            comparator = self.username
+        }else{
+            tmpStr = self.username
+            comparator = compare
+        }
+        
+        let range = tmpStr.startIndex..<tmpStr.endIndex.advancedBy(-1)
+        let sub = tmpStr[range]
+        
+        if sub == comparator{
+            return true
+        }
+        
+        return false
+    }
 
 }

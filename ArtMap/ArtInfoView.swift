@@ -24,7 +24,7 @@ import QuartzCore
         let storyboard : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let newView : FormArtController = storyboard.instantiateViewControllerWithIdentifier("formInterface") as! FormArtController
         
-        newView.setForm(artInformation)
+        newView.setFormInfo(artInformation)
         
         newView.modalTransitionStyle = UIModalTransitionStyle.CoverVertical
         self.presentViewController(newView, animated: true, completion: nil)

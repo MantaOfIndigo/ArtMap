@@ -98,7 +98,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, GMSMapViewDel
         }else{
             if let resultController = storyboard?.instantiateViewControllerWithIdentifier("userInterface") as? UserInfoController{
                 print(NSUserDefaults.standardUserDefaults().stringForKey("username"))
-                resultController.setUserPage(intrct.retrieveUserRecord(NSUserDefaults.standardUserDefaults().stringForKey("username")!))
+                resultController.setUserPage((self.userController?.retrieveByUsername(NSUserDefaults.standardUserDefaults().stringForKey("username")!))!)
                 presentViewController(resultController, animated: true, completion: nil)
             }
         }
@@ -128,23 +128,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, GMSMapViewDel
         }else{
             */
         
-        
-            if let logged: AnyObject? = NSUserDefaults.standardUserDefaults().stringForKey("username"){
-                if String(logged!) == "NOSUCHUSER"{
-                    NSUserDefaults.standardUserDefaults().setObject(nil, forKey: "username")
-                    _ = AlertLauncher().launchAlert("Login fallito", message: "Le credenziali inserite non sono corrette", toView: self)
-                    loginLabel.text = "Not Logged"
-                    log = false
-                    
-                }else{
-                    loginLabel.text = String(logged!)
-                    log = true
-                }
-            }else{
-                loginLabel.text = "Not Logged"
-                log = false
-            }
-        //}
+                //}
 
 
     }
@@ -156,6 +140,26 @@ class ViewController: UIViewController, CLLocationManagerDelegate, GMSMapViewDel
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.requestAlwaysAuthorization()
         locationManager.startUpdatingLocation()
+        
+        
+        if let logged: AnyObject? = NSUserDefaults.standardUserDefaults().stringForKey("username"){
+            if String(logged!) == "NOSUCHUSER"{
+                _ = AlertLauncher().launchAlert("Login fallito", message: "Le credenziali inserite non sono corrette", toView: self)
+                loginLabel.text = "Not Logged"
+                log = false
+                
+            }else if String(logged!) == "NOLOGGED"{
+                loginLabel.text = "Not Logged"
+                log = false
+            }else{
+                loginLabel.text = String(logged!)
+                log = true
+            }
+        }else{
+            loginLabel.text = "Not Logged"
+            log = false
+        }
+
         
         }
     

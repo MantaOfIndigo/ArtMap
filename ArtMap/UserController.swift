@@ -45,4 +45,32 @@ class UserController: NSObject{
         }
         return true
     }
+    
+    func retrieveByUsername(username: String) -> User?{
+        
+        
+        for user in self.userList{
+            
+            if user.getUsername() == username{
+                return user
+            }else if user.getUsername().containsString(username){
+                if user.compareUsernames(username){
+                    return user
+                }
+                
+            }
+        }
+        return nil
+    }
+    
+    func retrieveByMail(email: String) -> User?{
+        for user in self.userList{
+            if user.getEmail() == email{
+                return user
+            }
+        }
+        return nil
+    }
+    
+     
 }
