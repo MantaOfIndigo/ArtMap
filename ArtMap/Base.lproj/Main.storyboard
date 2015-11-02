@@ -801,7 +801,7 @@
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="m8g-hF-AgL" userLabel="titolo">
                                                         <rect key="frame" x="0.0" y="400" width="600" height="100"/>
                                                         <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="   LA POSIZIONE DELL'OPERA SULLA MAPPA È CORRETTA?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L3G-Fa-aZq">
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="     AGGIORNA POSIZIONE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L3G-Fa-aZq">
                                                                 <rect key="frame" x="0.0" y="0.0" width="600" height="100"/>
                                                                 <color key="backgroundColor" red="0.1607279982" green="0.46563289140000003" blue="0.38697434949999998" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <constraints>

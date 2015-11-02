@@ -21,8 +21,12 @@ class ReportViewController : UIViewController, UIPickerViewDataSource, UIPickerV
     
     @IBOutlet weak var mapView: GMSMapView!
     
+    var artInfo : Marker = Marker()
     var pickerValues: [String] = [String]()
     var locationManager: CLLocationManager?
+    var visibility : String?
+    var longitude : Double?
+    var latitude : Double?
     
     @IBAction func back(sender: UIButton) {
         locationManager?.stopUpdatingLocation()
@@ -31,12 +35,25 @@ class ReportViewController : UIViewController, UIPickerViewDataSource, UIPickerV
     @IBAction func sendReport(sender: UIButton) {
         locationManager?.stopUpdatingLocation()
         
-        if setPosition.on{
-            //prendi la locazione
-        }else{
+        let logged: String? = NSUserDefaults.standardUserDefaults().stringForKey("username")
+        if logged != "NOSUCHUSER" && logged != "NOLOGGED"{
+        
+            let intrc = Interactor()
             
+            let artReport = Art(title: titleText.text, author: authorText.text, year: Int(yearText.text!))
+            
+            if setPosition.on{
+                intrc.uploadNewReport(artInfo.getId() ,position: CLLocationCoordinate2DMake(latitude!, longitude!), art: artReport!, visibility: visibility! , geoAccuracy: (locationManager?.desiredAccuracy)!, isInPosition: false)
+            }else{
+                intrc.uploadNewReport(artInfo.getId() ,position: CLLocationCoordinate2DMake(0, 0), art: artReport!, visibility: visibility! , geoAccuracy: 0, isInPosition: true)
+            }
+            
+        }else{
+            let alert = AlertLauncher()
+            alert.launchAlert("Report fallito", message: "Devi prima effettuare il login per inviare un report", toView: self)
         }
     }
+   
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -51,14 +68,35 @@ class ReportViewController : UIViewController, UIPickerViewDataSource, UIPickerV
         locationManager!.requestAlwaysAuthorization()
         locationManager!.startUpdatingLocation()
         
+        setPosition.addTarget(self, action: Selector("switchChanged:"), forControlEvents: UIControlEvents.ValueChanged)
+        
+        titleText.placeholder = artInfo.getArt().getTitle()
+        authorText.placeholder = artInfo.getArt().getAuthor()
+        yearText.placeholder = String(artInfo.getArt().getYear())
+        
+        
         
     }
+    
+    func switchChanged(setPosition: UISwitch){
+        if setPosition.on{
+            locationManager?.startUpdatingLocation()
+        }else{
+            locationManager?.stopUpdatingLocation()
+        }
+    }
+    
     func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         let loc = locations[0] as CLLocation
         
         let camera: GMSCameraPosition = GMSCameraPosition.cameraWithLatitude(loc.coordinate.latitude, longitude: loc.coordinate.longitude, zoom: 16)
+        
+        latitude = loc.coordinate.latitude
+        longitude = loc.coordinate.longitude
+        
         mapView.camera = camera
         mapView.settings.myLocationButton = true
+        mapView.settings.compassButton = true
         
     }
     
@@ -69,6 +107,11 @@ class ReportViewController : UIViewController, UIPickerViewDataSource, UIPickerV
         return pickerValues.count
     }
     func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        visibility = pickerValues[row]
         return pickerValues[row]
+    }
+    
+    func setReportInfo(value: Marker){
+        self.artInfo = value
     }
 }

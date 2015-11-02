@@ -15,7 +15,6 @@ class Art: NSObject {
     // title: Titolo
     // author: Autore opera
     // year: Anno di realizzazione
-    // status: Visibile - true, Non visibile - false
     private var title: String?
     private var author: String?
     private var year: Int?
@@ -56,7 +55,7 @@ class Art: NSObject {
         super.init()
     }
     //costruttore per tutti gli attributi
-    init?(title:String, author:String, year:Int){
+    init?(title:String?, author:String?, year:Int?){
         self.title = title
         self.author = author
         self.year = year

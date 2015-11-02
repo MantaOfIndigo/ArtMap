@@ -19,6 +19,7 @@ class FormArtController : UIViewController{
     
     @IBAction func sendReport(sender: UIButton) {
         if let resultController = storyboard?.instantiateViewControllerWithIdentifier("reportInterface") as? ReportViewController{
+            resultController.setReportInfo(setForm)
             presentViewController(resultController, animated: true, completion: nil)
         }
 

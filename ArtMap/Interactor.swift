@@ -108,7 +108,31 @@ class Interactor : UIViewController{
         return true
     }
     
-    func uploadNewReport(){
+    func uploadNewReport(id: Int, position: CLLocationCoordinate2D, art: Art, visibility: String, geoAccuracy: CLLocationAccuracy, isInPosition: Bool){
+        
+        let newRecord = PFObject(className: "Report")
+            
+        newRecord["artId"] = id
+        newRecord["author"] = art.getAuthor()
+        newRecord["geoAccuracy"] = geoAccuracy
+        if isInPosition{
+            newRecord["isInPosition"] = "Yes"
+        }else{
+            newRecord["isInPosition"] = "No"
+        }
+        newRecord["latitude"] = position.latitude
+        newRecord["longitude"] = position.longitude
+        newRecord["status"] = visibility
+        newRecord["title"] = art.getTitle()
+        newRecord["username"] = NSUserDefaults.standardUserDefaults().stringForKey("username")
+        newRecord["year"] = String(art.getYear())
+        
+        newRecord.saveInBackgroundWithBlock{
+            (success: Bool, error: NSError?) -> Void in
+            if let error = error {
+                _=error.userInfo["error"] as? NSString
+            }
+        }
         
     }
     func uploadNewUser(user: User, password : String){
