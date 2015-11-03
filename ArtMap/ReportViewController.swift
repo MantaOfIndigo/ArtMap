@@ -27,6 +27,7 @@ class ReportViewController : UIViewController, UIPickerViewDataSource, UIPickerV
     var visibility : String?
     var longitude : Double?
     var latitude : Double?
+    var geoAccuracy : Double?
     
     @IBAction func back(sender: UIButton) {
         locationManager?.stopUpdatingLocation()
@@ -43,7 +44,7 @@ class ReportViewController : UIViewController, UIPickerViewDataSource, UIPickerV
             let artReport = Art(title: titleText.text, author: authorText.text, year: Int(yearText.text!))
             
             if setPosition.on{
-                intrc.uploadNewReport(artInfo.getId() ,position: CLLocationCoordinate2DMake(latitude!, longitude!), art: artReport!, visibility: visibility! , geoAccuracy: (locationManager?.desiredAccuracy)!, isInPosition: false)
+                intrc.uploadNewReport(artInfo.getId() ,position: CLLocationCoordinate2DMake(latitude!, longitude!), art: artReport!, visibility: visibility! , geoAccuracy: geoAccuracy!, isInPosition: false)
             }else{
                 intrc.uploadNewReport(artInfo.getId() ,position: CLLocationCoordinate2DMake(0, 0), art: artReport!, visibility: visibility! , geoAccuracy: 0, isInPosition: true)
             }
@@ -93,6 +94,9 @@ class ReportViewController : UIViewController, UIPickerViewDataSource, UIPickerV
         
         latitude = loc.coordinate.latitude
         longitude = loc.coordinate.longitude
+        geoAccuracy = loc.horizontalAccuracy
+        
+        labelAccuracy.text = "Accuratezza posizione:  " + String(geoAccuracy!) + " metri"
         
         mapView.camera = camera
         mapView.settings.myLocationButton = true

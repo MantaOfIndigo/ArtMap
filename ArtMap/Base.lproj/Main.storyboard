@@ -644,14 +644,14 @@
                                         </items>
                                     </navigationBar>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GTh-78-eSQ" customClass="GMSMapView">
-                                        <rect key="frame" x="0.0" y="44" width="600" height="300"/>
+                                        <rect key="frame" x="0.0" y="44" width="600" height="220"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="300" id="cyH-La-aAB"/>
+                                            <constraint firstAttribute="height" constant="220" id="cyH-La-aAB"/>
                                         </constraints>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="   Accuratezza posizione:   " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vlC-VE-EJS">
-                                        <rect key="frame" x="0.0" y="344" width="600" height="25"/>
+                                        <rect key="frame" x="0.0" y="264" width="600" height="25"/>
                                         <color key="backgroundColor" red="0.1607279982" green="0.46563289140000003" blue="0.38697434949999998" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="25" id="4HV-fc-TRO"/>
@@ -660,8 +660,8 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="   Consiglio: Attiva GPS, Wifi e Internet" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CVU-Xt-E0B">
-                                        <rect key="frame" x="0.0" y="369" width="600" height="25"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="   Consiglio: Attiva GPS, Wifi e Internet" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CVU-Xt-E0B">
+                                        <rect key="frame" x="0.0" y="289" width="600" height="25"/>
                                         <color key="backgroundColor" red="0.1607279982" green="0.46563289140000003" blue="0.38697434949999998" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="25" id="EiE-Fe-A50"/>
@@ -670,8 +670,8 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6gu-Ba-Isz">
-                                        <rect key="frame" x="0.0" y="394" width="600" height="556"/>
+                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6gu-Ba-Isz">
+                                        <rect key="frame" x="0.0" y="314" width="600" height="636"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="BbG-Xq-bkd">
                                                 <rect key="frame" x="0.0" y="0.0" width="600" height="500"/>
