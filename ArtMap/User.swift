@@ -77,11 +77,28 @@ class User: NSObject {
         // altre formule per i punti
     }
     
-    func saveUser(exist: Bool)-> Bool{
-        // se presente aggiorni nuovi dati
-        // se nuovo aggiungilo a database
-        
-        return false
+    func addReport(){
+        if self.reports != nil{
+            self.reports = self.reports! + 1
+        }
+    }
+    
+    func addPublishedPhoto(){
+        if self.picturesUploaded != nil{
+            self.picturesUploaded = self.picturesUploaded! + 1
+        }
+    }
+    
+    func addCheckins(){
+        if self.checkins != nil{
+            self.checkins = self.checkins! + 1
+        }
+    }
+    
+    func addCheckCounter(){
+        if self.checkCounter != nil{
+            self.checkCounter = self.checkCounter! + 1
+        }
     }
     
     func getUsername() -> String{

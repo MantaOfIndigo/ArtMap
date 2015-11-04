@@ -28,6 +28,7 @@ class UserInfoController: UIViewController, UINavigationControllerDelegate{
    
         let loginManager = FBSDKLoginManager()
         loginManager.logOut()
+        PFUser.logOut()
         
         dismissViewControllerAnimated(true, completion: nil)
     }
@@ -40,9 +41,7 @@ class UserInfoController: UIViewController, UINavigationControllerDelegate{
         reports.text = String(self.presentedUser.getReports())
         
         
-        if self.presentedUser.compareUsernames(NSUserDefaults.standardUserDefaults().stringForKey("username")!){
-            self.logoutButton.hidden = false
-        }else if self.presentedUser.getUsername() == NSUserDefaults.standardUserDefaults().stringForKey("username"){
+        if self.presentedUser.getUsername() == PFUser.currentUser()!["username"] as! String{
             self.logoutButton.hidden = false
         }else{
             self.logoutButton.hidden = true

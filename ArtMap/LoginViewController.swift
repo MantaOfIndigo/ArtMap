@@ -10,8 +10,9 @@ import UIKit
 import FBSDKCoreKit
 import FBSDKLoginKit
 import Parse
+import ParseUI
 
-class LoginViewController : UIViewController, UITextFieldDelegate, FBSDKLoginButtonDelegate{
+class LoginViewController : UIViewController, UITextFieldDelegate, FBSDKLoginButtonDelegate  {
     
     @IBOutlet weak var email: UITextField!
     @IBOutlet weak var password: UITextField!
@@ -39,11 +40,13 @@ class LoginViewController : UIViewController, UITextFieldDelegate, FBSDKLoginBut
     }
     
     func loginButtonDidLogOut(loginButton: FBSDKLoginButton!) {
-        NSUserDefaults.standardUserDefaults().setObject("NOSUCHUSER", forKey: "username")
+        PFUser.logOut()
     }
     
     func returnUserData(){
-        let graphRequest : FBSDKGraphRequest = FBSDKGraphRequest(graphPath: "me", parameters: nil)
+        let intrct = Interactor()
+        
+        let graphRequest : FBSDKGraphRequest = FBSDKGraphRequest(graphPath: "me", parameters: ["fields":"name, email"])
         graphRequest.startWithCompletionHandler({ (connection, result, error) -> Void in
             if(error != nil){
                 print("Error")
@@ -52,22 +55,36 @@ class LoginViewController : UIViewController, UITextFieldDelegate, FBSDKLoginBut
                 self.userController?.retrieveByUsername(userName as String)
                 
                 if let userMail : NSString = result.valueForKey("email") as? NSString{
-                    print(userName, "  ", userMail )
                     if ((self.userController?.checkEmail(userMail as String)) == true){
-                        let intrct = Interactor()
+                        
                         intrct.uploadNewUser(User(username: userName as String, email: userMail as String), password: result.valueForKey("password") as! String)
                     }
                 }
                 
                
+               // PFUser.
+               // PFUser.setValue(userName, forKey: "username")
+               // PFUser.setValue(result.valueForKey("email") , forKey: "email")
                 
-                NSUserDefaults.standardUserDefaults().setObject(userName, forKey: "username")
+                print(PFUser.currentUser())
             }
         })
     }
     func loginButton(loginButton: FBSDKLoginButton!, didCompleteWithResult result: FBSDKLoginManagerLoginResult!, error: NSError!) {
         let alert : AlertLauncher = AlertLauncher()
-        if error != nil{
+        
+        var fbLoginManager : FBSDKLoginManager = FBSDKLoginManager()
+        fbLoginManager.logInWithReadPermissions(["email"], handler: { (result, error) -> Void in
+            if error == nil{
+                var fbloginresult : FBSDKLoginManagerLoginResult = result
+                if fbloginresult.grantedPermissions.contains("email"){
+                    self.getFBUserData()
+                    fbLoginManager.logOut()
+                }
+            }
+        })
+        
+       /* if error != nil{
             alert.launchAlert("Login fallito", message: "Si è verificato un errore nella connessione con Facebook", toView: self)
         }else if result.isCancelled{
             alert.launchAlert("Login fallito", message: "Risultato cancellato", toView: self)
@@ -76,7 +93,44 @@ class LoginViewController : UIViewController, UITextFieldDelegate, FBSDKLoginBut
                 returnUserData()
             }
         }
+        
+        var fbLoginManager : FBSDKLoginManager = FBSDKLoginManager()
+        fbLoginManager.logInWithReadPermissions(["email"], handler: { (result, error) -> Void in
+            if error == nil{
+                var fbloginresult : FBSDKLoginManagerLoginResult = result
+                if fbloginresult.grantedPermissions.contains("email"){
+                    self.getFBUserData()
+                    fbLoginManager.logOut()
+                }
+            }
+        })*/
+        
     }
+   
+   /* func loginButtonWillLogin(loginButton: FBSDKLoginButton!) -> Bool {
+        var fbLoginManager : FBSDKLoginManager = FBSDKLoginManager()
+        fbLoginManager.logInWithReadPermissions(["email"], handler: { (result, error) -> Void in
+            if error == nil{
+                var fbloginresult : FBSDKLoginManagerLoginResult = result
+                if fbloginresult.grantedPermissions.contains("email"){
+                    self.getFBUserData()
+                    fbLoginManager.logOut()
+                }
+            }
+        })
+        return true
+    }*/
+    
+    func getFBUserData(){
+        if FBSDKAccessToken.currentAccessToken() != nil {
+            FBSDKGraphRequest(graphPath: "me", parameters: ["fields": "name, email"]).startWithCompletionHandler({ (connection, result, error) -> Void in
+                if (error == nil){
+                    print(result)
+                }
+            })
+        }
+    }
+    
     func setUserList(value : UserController){
         self.userController = value
     }
@@ -93,9 +147,20 @@ class LoginViewController : UIViewController, UITextFieldDelegate, FBSDKLoginBut
         if checkParameters(){
             let intrct = Interactor()
             let newUser = User(username: username.text!, email: email.text!)
-            intrct.uploadNewUser(newUser, password: password.text!)
-            NSUserDefaults.standardUserDefaults().setObject(newUser.getUsername(), forKey: "username")
             
+            /*let loginViewController = PFLogInViewController()
+            loginViewController.delegate = self
+            //loginViewController.fields = PFLogInFields.Facebook
+            loginViewController.emailAsUsername = true
+            */
+            intrct.uploadNewUser(newUser, password: password.text!)
+                do{
+                try PFUser.logInWithUsername(newUser.getUsername(), password: password.text!)
+                }catch{
+                    print("cane")
+            }
+            
+            print(PFUser.currentUser())
             dismissViewControllerAnimated(true, completion: nil)
         }
         

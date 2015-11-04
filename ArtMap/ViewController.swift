@@ -12,8 +12,9 @@ import CoreLocation
 import FBSDKCoreKit
 import FBSDKLoginKit
 import Parse
+import ParseUI
 
-class ViewController: UIViewController, CLLocationManagerDelegate, GMSMapViewDelegate{
+class ViewController: UIViewController, CLLocationManagerDelegate, GMSMapViewDelegate, PFLogInViewControllerDelegate{
 
     var locationManager: CLLocationManager!
     var markerController: MarkerController?
@@ -89,19 +90,32 @@ class ViewController: UIViewController, CLLocationManagerDelegate, GMSMapViewDel
     @IBOutlet weak var loginLabel: UILabel!
     
     @IBAction func prepareUserProfile(sender: UITapGestureRecognizer) {
-        //if loggato
-        if !log {
-            if let resultController = storyboard?.instantiateViewControllerWithIdentifier("loginInterface") as? LoginViewController{
-                resultController.setUserList(userController!)
-                presentViewController(resultController, animated: true, completion: nil)
+            /**/
+            
+               if PFUser.currentUser() == nil{
+                        /*let loginViewController = PFLogInViewController()
+                        loginViewController.delegate = self
+                        loginViewController.fields = PFLogInFields.Facebook
+                        loginViewController.emailAsUsername = true
+                        self.presentViewController(loginViewController, animated: false, completion: nil)*/
+                if let resultController = storyboard?.instantiateViewControllerWithIdentifier("loginInterface") as? LoginViewController{
+                    resultController.setUserList(userController!)
+                    presentViewController(resultController, animated: true, completion: nil)
+                }
+                
+               }else{
+                if let resultController = storyboard?.instantiateViewControllerWithIdentifier("userInterface") as? UserInfoController{
+                    print(PFUser.currentUser()!["username"])
+                    print(self.userController?.retrieveByUsername(PFUser.currentUser()!["username"] as! String)?.getUsername())
+                    resultController.setUserPage((self.userController?.retrieveByMail(PFUser.currentUser()!["email"] as! String))!)
+                    presentViewController(resultController, animated: true, completion: nil)
+                }
             }
-        }else{
-            if let resultController = storyboard?.instantiateViewControllerWithIdentifier("userInterface") as? UserInfoController{
-                print(NSUserDefaults.standardUserDefaults().stringForKey("username"))
-                resultController.setUserPage((self.userController?.retrieveByUsername(NSUserDefaults.standardUserDefaults().stringForKey("username")!))!)
-                presentViewController(resultController, animated: true, completion: nil)
-            }
-        }
+    }
+   
+    func logInViewController(logInController: PFLogInViewController, didLogInUser user: PFUser){
+        self.dismissViewControllerAnimated(true, completion: nil)
+        
     }
     @IBOutlet weak var viewMap: GMSMapView!
     var placesClient: GMSPlacesClient?
@@ -126,9 +140,9 @@ class ViewController: UIViewController, CLLocationManagerDelegate, GMSMapViewDel
             log = true
             
         }else{
-            */
+            
         
-                //}
+                }*/
 
 
     }
@@ -142,22 +156,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate, GMSMapViewDel
         locationManager.startUpdatingLocation()
         
         
-        if let logged: AnyObject? = NSUserDefaults.standardUserDefaults().stringForKey("username"){
-            if String(logged!) == "NOSUCHUSER"{
-                _ = AlertLauncher().launchAlert("Login fallito", message: "Le credenziali inserite non sono corrette", toView: self)
-                loginLabel.text = "Not Logged"
-                log = false
-                
-            }else if String(logged!) == "NOLOGGED"{
-                loginLabel.text = "Not Logged"
-                log = false
-            }else{
-                loginLabel.text = String(logged!)
-                log = true
-            }
-        }else{
-            loginLabel.text = "Not Logged"
-            log = false
+        if PFUser.currentUser() != nil{
+            loginLabel.text = PFUser.currentUser()!["username"] as! String
         }
 
         

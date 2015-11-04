@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Social
 
 class FormArtController : UIViewController{
     
@@ -29,6 +30,17 @@ class FormArtController : UIViewController{
     @IBAction func backAction(sender: UIBarButtonItem) {
         dismissViewControllerAnimated(true, completion: nil)
     }
+    
+    @IBAction func shareButton(sender: UIBarButtonItem) {
+        if SLComposeViewController.isAvailableForServiceType(SLServiceTypeFacebook){
+            let fbshare: SLComposeViewController = SLComposeViewController(forServiceType: SLServiceTypeFacebook)
+            self.presentViewController(fbshare, animated: true, completion: nil)
+        }else{
+            let alert = AlertLauncher()
+            alert.launchAlert("Accounts", message: "Occorre eseguire il login con Facebook prima di condividere", toView: self)
+        }
+        
+    }
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
     }
@@ -36,6 +48,7 @@ class FormArtController : UIViewController{
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
+    
     
     override func viewDidLoad() {
         imageForm.image = setForm.getImage()

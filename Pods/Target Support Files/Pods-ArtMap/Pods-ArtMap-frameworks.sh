@@ -54,12 +54,18 @@ code_sign_if_enabled() {
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework 'Pods-ArtMap/Bolts.framework'
   install_framework 'Pods-ArtMap/FBSDKCoreKit.framework'
+  install_framework 'Pods-ArtMap/FBSDKLoginKit.framework'
   install_framework 'Pods-ArtMap/Parse.framework'
+  install_framework 'Pods-ArtMap/ParseFacebookUtilsV4.framework'
+  install_framework 'Pods-ArtMap/ParseUI.framework'
   install_framework 'Pods-ArtMap/SwiftyJSON.framework'
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework 'Pods-ArtMap/Bolts.framework'
   install_framework 'Pods-ArtMap/FBSDKCoreKit.framework'
+  install_framework 'Pods-ArtMap/FBSDKLoginKit.framework'
   install_framework 'Pods-ArtMap/Parse.framework'
+  install_framework 'Pods-ArtMap/ParseFacebookUtilsV4.framework'
+  install_framework 'Pods-ArtMap/ParseUI.framework'
   install_framework 'Pods-ArtMap/SwiftyJSON.framework'
 fi

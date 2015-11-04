@@ -7,5 +7,8 @@ pod ‘FBSDKCoreKit’
 pod 'SwiftyJSON', '>= 2.2.0'
 pod ‘GoogleMaps’
 pod ‘Parse’
+pod ‘ParseUI’
+pod ‘ParseFacebookUtilsV4’
+pod ‘FBSDKLoginKit’
 end
 

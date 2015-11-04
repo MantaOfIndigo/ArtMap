@@ -10,7 +10,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ArtMap/ViewController.swift"
-            timestampString = "468083350.095704"
+            timestampString = "468344941.631583"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "172"
@@ -26,7 +26,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ArtMap/ViewController.swift"
-            timestampString = "468083350.095704"
+            timestampString = "468344941.631583"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "171"
@@ -102,11 +102,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ArtMap/ViewController.swift"
-            timestampString = "467912960.003389"
+            timestampString = "468344941.631583"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "119"
-            endingLineNumber = "119"
+            startingLineNumber = "133"
+            endingLineNumber = "133"
             landmarkName = "viewDidLoad()"
             landmarkType = "5">
          </BreakpointContent>
@@ -160,11 +160,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ArtMap/ViewController.swift"
-            timestampString = "468065273.814615"
+            timestampString = "468344941.631583"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "134"
-            endingLineNumber = "134"
+            startingLineNumber = "148"
+            endingLineNumber = "148"
             landmarkName = "viewDidLoad()"
             landmarkType = "5">
          </BreakpointContent>
@@ -176,11 +176,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ArtMap/ViewController.swift"
-            timestampString = "468065273.814615"
+            timestampString = "468344941.631583"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "135"
-            endingLineNumber = "135"
+            startingLineNumber = "149"
+            endingLineNumber = "149"
             landmarkName = "ViewController"
             landmarkType = "3">
          </BreakpointContent>
@@ -224,7 +224,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ArtMap/ViewController.swift"
-            timestampString = "468083350.095704"
+            timestampString = "468344941.631583"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "167"
@@ -240,7 +240,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ArtMap/ViewController.swift"
-            timestampString = "468083350.095704"
+            timestampString = "468344941.631583"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "164"
@@ -256,7 +256,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ArtMap/ViewController.swift"
-            timestampString = "468083350.095704"
+            timestampString = "468344941.631583"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "166"
@@ -352,7 +352,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ArtMap/ViewController.swift"
-            timestampString = "468083350.095704"
+            timestampString = "468344941.631583"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "178"
@@ -432,11 +432,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ArtMap/FormArtController.swift"
-            timestampString = "468151506.902368"
+            timestampString = "468326607.630022"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "33"
-            endingLineNumber = "33"
+            startingLineNumber = "45"
+            endingLineNumber = "45"
             landmarkName = "init(nibName:bundle:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -448,11 +448,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ArtMap/FormArtController.swift"
-            timestampString = "468151506.902368"
+            timestampString = "468326607.630022"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "69"
-            endingLineNumber = "69"
+            startingLineNumber = "82"
+            endingLineNumber = "82"
             landmarkName = "setFormInfo(_:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -624,7 +624,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ArtMap/ViewController.swift"
-            timestampString = "468083350.095704"
+            timestampString = "468344941.631583"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "203"
@@ -688,11 +688,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ArtMap/ViewController.swift"
-            timestampString = "467911784.631532"
+            timestampString = "468329310.273457"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "39"
-            endingLineNumber = "39"
+            startingLineNumber = "40"
+            endingLineNumber = "40"
             landmarkName = "setMarkers()"
             landmarkType = "5">
          </BreakpointContent>
@@ -704,11 +704,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ArtMap/ViewController.swift"
-            timestampString = "467912960.003389"
+            timestampString = "468344941.631583"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "121"
-            endingLineNumber = "121"
+            startingLineNumber = "135"
+            endingLineNumber = "135"
             landmarkName = "viewDidLoad()"
             landmarkType = "5">
          </BreakpointContent>
@@ -736,11 +736,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ArtMap/ViewController.swift"
-            timestampString = "467912960.003389"
+            timestampString = "468344941.631583"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "123"
-            endingLineNumber = "123"
+            startingLineNumber = "137"
+            endingLineNumber = "137"
             landmarkName = "viewDidLoad()"
             landmarkType = "5">
          </BreakpointContent>
@@ -752,39 +752,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ArtMap/ViewController.swift"
-            timestampString = "467911784.631532"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "77"
-            endingLineNumber = "77"
-            landmarkName = "setUsers()"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "ArtMap/ViewController.swift"
-            timestampString = "467911784.631532"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "48"
-            endingLineNumber = "48"
-            landmarkName = "setMarkers()"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "ArtMap/ViewController.swift"
-            timestampString = "467911784.631532"
+            timestampString = "468329310.273457"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "78"
@@ -800,23 +768,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ArtMap/ViewController.swift"
-            timestampString = "468065273.814615"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "136"
-            endingLineNumber = "136"
-            landmarkName = "viewDidAppear(_:)"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "ArtMap/ViewController.swift"
-            timestampString = "467911784.631532"
+            timestampString = "468329310.273457"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "49"
@@ -831,12 +783,60 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "ArtMap/Interactor.swift"
-            timestampString = "467739914.792525"
+            filePath = "ArtMap/ViewController.swift"
+            timestampString = "468329310.273457"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "57"
-            endingLineNumber = "57"
+            startingLineNumber = "79"
+            endingLineNumber = "79"
+            landmarkName = "setUsers()"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ArtMap/ViewController.swift"
+            timestampString = "468344941.631583"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "150"
+            endingLineNumber = "150"
+            landmarkName = "viewDidAppear(_:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ArtMap/ViewController.swift"
+            timestampString = "468329310.273457"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "50"
+            endingLineNumber = "50"
+            landmarkName = "setMarkers()"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ArtMap/Interactor.swift"
+            timestampString = "468344941.631583"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "75"
+            endingLineNumber = "75"
             landmarkName = "Interactor"
             landmarkType = "3">
          </BreakpointContent>
@@ -848,7 +848,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ArtMap/ViewController.swift"
-            timestampString = "468083350.095704"
+            timestampString = "468344941.631583"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "200"
@@ -864,7 +864,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ArtMap/ViewController.swift"
-            timestampString = "468083350.095704"
+            timestampString = "468344941.631583"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "201"
@@ -880,7 +880,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ArtMap/ViewController.swift"
-            timestampString = "468083350.095704"
+            timestampString = "468344941.631583"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "196"
@@ -896,11 +896,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ArtMap/LoginViewController.swift"
-            timestampString = "468151382.711462"
+            timestampString = "468353557.596918"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "115"
-            endingLineNumber = "115"
+            startingLineNumber = "180"
+            endingLineNumber = "180"
             landmarkName = "checkParameters()"
             landmarkType = "5">
          </BreakpointContent>
@@ -960,11 +960,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ArtMap/LoginViewController.swift"
-            timestampString = "467911784.631532"
+            timestampString = "468345409.535767"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "25"
-            endingLineNumber = "25"
+            startingLineNumber = "26"
+            endingLineNumber = "26"
             landmarkName = "viewDidLoad()"
             landmarkType = "5">
          </BreakpointContent>
@@ -976,11 +976,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ArtMap/LoginViewController.swift"
-            timestampString = "468151382.711462"
+            timestampString = "468353557.596918"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "132"
-            endingLineNumber = "132"
+            startingLineNumber = "197"
+            endingLineNumber = "197"
             landmarkName = "LoginViewController"
             landmarkType = "3">
          </BreakpointContent>
@@ -992,11 +992,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ArtMap/Interactor.swift"
-            timestampString = "468175347.103349"
+            timestampString = "468344941.631583"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "146"
-            endingLineNumber = "146"
+            startingLineNumber = "170"
+            endingLineNumber = "170"
             landmarkName = "uploadNewUser(_:password:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -1008,11 +1008,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ArtMap/Interactor.swift"
-            timestampString = "468175347.103349"
+            timestampString = "468344941.631583"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "137"
-            endingLineNumber = "137"
+            startingLineNumber = "161"
+            endingLineNumber = "161"
             landmarkName = "uploadNewReport(_:position:art:visibility:geoAccuracy:isInPosition:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -1024,11 +1024,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ArtMap/Interactor.swift"
-            timestampString = "468175347.103349"
+            timestampString = "468344941.631583"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "137"
-            endingLineNumber = "137"
+            startingLineNumber = "161"
+            endingLineNumber = "161"
             landmarkName = "uploadNewReport(_:position:art:visibility:geoAccuracy:isInPosition:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -1040,11 +1040,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ArtMap/Interactor.swift"
-            timestampString = "468175347.103349"
+            timestampString = "468344941.631583"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "140"
-            endingLineNumber = "140"
+            startingLineNumber = "164"
+            endingLineNumber = "164"
             landmarkName = "uploadNewUser(_:password:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -1056,11 +1056,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ArtMap/LoginViewController.swift"
-            timestampString = "468151382.711462"
+            timestampString = "468353557.596918"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "134"
-            endingLineNumber = "134"
+            startingLineNumber = "199"
+            endingLineNumber = "199"
             landmarkName = "LoginViewController"
             landmarkType = "3">
          </BreakpointContent>
@@ -1072,11 +1072,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ArtMap/Interactor.swift"
-            timestampString = "468175347.103349"
+            timestampString = "468344941.631583"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "151"
-            endingLineNumber = "151"
+            startingLineNumber = "175"
+            endingLineNumber = "175"
             landmarkName = "uploadNewUser(_:password:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -1088,11 +1088,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ArtMap/Interactor.swift"
-            timestampString = "467739893.33874"
+            timestampString = "468344941.631583"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "42"
-            endingLineNumber = "42"
+            startingLineNumber = "60"
+            endingLineNumber = "60"
             landmarkName = "retrieveUserRecord(_:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -1104,11 +1104,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ArtMap/Interactor.swift"
-            timestampString = "467739944.976407"
+            timestampString = "468344941.631583"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "41"
-            endingLineNumber = "41"
+            startingLineNumber = "59"
+            endingLineNumber = "59"
             landmarkName = "retrieveUserRecord(_:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -1120,11 +1120,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ArtMap/LoginViewController.swift"
-            timestampString = "468151382.711462"
+            timestampString = "468353557.596918"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "76"
-            endingLineNumber = "76"
+            startingLineNumber = "93"
+            endingLineNumber = "93"
             landmarkName = "loginButton(_:didCompleteWithResult:error:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -1136,43 +1136,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ArtMap/LoginViewController.swift"
-            timestampString = "468151382.711462"
+            timestampString = "468346602.525228"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "55"
-            endingLineNumber = "55"
-            landmarkName = "returnUserData()"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "ArtMap/LoginViewController.swift"
-            timestampString = "468151382.711462"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "56"
-            endingLineNumber = "56"
-            landmarkName = "returnUserData()"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "ArtMap/LoginViewController.swift"
-            timestampString = "468151382.711462"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "64"
-            endingLineNumber = "64"
+            startingLineNumber = "58"
+            endingLineNumber = "58"
             landmarkName = "returnUserData()"
             landmarkType = "5">
          </BreakpointContent>
@@ -1184,11 +1152,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ArtMap/Interactor.swift"
-            timestampString = "468066248.6266"
+            timestampString = "468344941.631583"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "64"
-            endingLineNumber = "64"
+            startingLineNumber = "82"
+            endingLineNumber = "82"
             landmarkName = "retriveDBMarkerInfo(_:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -1216,11 +1184,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ArtMap/Interactor.swift"
-            timestampString = "468066373.974799"
+            timestampString = "468344941.631583"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "78"
-            endingLineNumber = "78"
+            startingLineNumber = "96"
+            endingLineNumber = "96"
             landmarkName = "retriveDBMarkerInfo(_:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -1280,11 +1248,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ArtMap/FormArtController.swift"
-            timestampString = "468151506.902368"
+            timestampString = "468326607.630022"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "70"
-            endingLineNumber = "70"
+            startingLineNumber = "83"
+            endingLineNumber = "83"
             landmarkName = "setFormInfo(_:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -1296,11 +1264,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ArtMap/FormArtController.swift"
-            timestampString = "468151506.902368"
+            timestampString = "468326607.630022"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "45"
-            endingLineNumber = "45"
+            startingLineNumber = "58"
+            endingLineNumber = "58"
             landmarkName = "viewDidLoad()"
             landmarkType = "5">
          </BreakpointContent>
@@ -1312,11 +1280,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ArtMap/FormArtController.swift"
-            timestampString = "468151506.902368"
+            timestampString = "468326607.630022"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "50"
-            endingLineNumber = "50"
+            startingLineNumber = "63"
+            endingLineNumber = "63"
             landmarkName = "viewDidLoad()"
             landmarkType = "5">
          </BreakpointContent>
@@ -1328,11 +1296,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ArtMap/FormArtController.swift"
-            timestampString = "468151506.902368"
+            timestampString = "468326607.630022"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "51"
-            endingLineNumber = "51"
+            startingLineNumber = "64"
+            endingLineNumber = "64"
             landmarkName = "viewDidLoad()"
             landmarkType = "5">
          </BreakpointContent>
@@ -1376,11 +1344,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ArtMap/Interactor.swift"
-            timestampString = "468081608.724236"
+            timestampString = "468344941.631583"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "36"
-            endingLineNumber = "36"
+            startingLineNumber = "54"
+            endingLineNumber = "54"
             landmarkName = "retrieveUserRecord(_:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -1392,39 +1360,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ArtMap/UserInfoController.swift"
-            timestampString = "468084131.365324"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "43"
-            endingLineNumber = "43"
-            landmarkName = "viewDidLoad()"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "ArtMap/UserInfoController.swift"
-            timestampString = "468084131.365324"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "46"
-            endingLineNumber = "46"
-            landmarkName = "viewDidLoad()"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "ArtMap/UserInfoController.swift"
-            timestampString = "468084131.365324"
+            timestampString = "468341937.44455"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "44"
@@ -1439,13 +1375,13 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "ArtMap/ViewController.swift"
-            timestampString = "468083822.449165"
+            filePath = "ArtMap/UserInfoController.swift"
+            timestampString = "468341937.44455"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "147"
-            endingLineNumber = "147"
-            landmarkName = "viewDidAppear(_:)"
+            startingLineNumber = "45"
+            endingLineNumber = "45"
+            landmarkName = "viewDidLoad()"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1456,11 +1392,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ArtMap/ViewController.swift"
-            timestampString = "468083834.267705"
+            timestampString = "468344941.631583"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "146"
-            endingLineNumber = "146"
+            startingLineNumber = "161"
+            endingLineNumber = "161"
             landmarkName = "viewDidAppear(_:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -1472,11 +1408,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ArtMap/LoginViewController.swift"
-            timestampString = "468151382.711462"
+            timestampString = "468353557.596918"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "138"
-            endingLineNumber = "138"
+            startingLineNumber = "203"
+            endingLineNumber = "203"
             landmarkName = "loginAction(_:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -1488,11 +1424,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ArtMap/Interactor.swift"
-            timestampString = "468084131.365324"
+            timestampString = "468344941.631583"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "97"
-            endingLineNumber = "97"
+            startingLineNumber = "119"
+            endingLineNumber = "119"
             landmarkName = "retrieveLogin(_:password:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -1520,12 +1456,188 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ArtMap/Interactor.swift"
-            timestampString = "468175347.103349"
+            timestampString = "468344941.631583"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "113"
-            endingLineNumber = "113"
+            startingLineNumber = "135"
+            endingLineNumber = "135"
             landmarkName = "uploadNewReport(_:position:art:visibility:geoAccuracy:isInPosition:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ArtMap/ViewController.swift"
+            timestampString = "468344941.631583"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "98"
+            endingLineNumber = "98"
+            landmarkName = "prepareUserProfile(_:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ArtMap/ViewController.swift"
+            timestampString = "468344941.631583"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "95"
+            endingLineNumber = "95"
+            landmarkName = "prepareUserProfile(_:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ArtMap/ViewController.swift"
+            timestampString = "468344941.631583"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "98"
+            endingLineNumber = "98"
+            landmarkName = "prepareUserProfile(_:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ArtMap/ViewController.swift"
+            timestampString = "468344941.631583"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "107"
+            endingLineNumber = "107"
+            landmarkName = "prepareUserProfile(_:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ArtMap/LoginViewController.swift"
+            timestampString = "468353557.596918"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "163"
+            endingLineNumber = "163"
+            landmarkName = "signIn(_:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ArtMap/LoginViewController.swift"
+            timestampString = "468353557.596918"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "158"
+            endingLineNumber = "158"
+            landmarkName = "signIn(_:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ArtMap/LoginViewController.swift"
+            timestampString = "468353557.596918"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "159"
+            endingLineNumber = "159"
+            landmarkName = "signIn(_:)"
+            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ArtMap.LoginViewController.signIn (ArtMap.LoginViewController)(__ObjC.UIButton) -&gt; ()"
+                  moduleName = "ArtMap"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/andreamantani/Desktop/Apps/applicazione/ArtMap/ArtMap/LoginViewController.swift"
+                  timestampString = "468346603.573189"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "111"
+                  endingLineNumber = "111"
+                  offsetFromSymbolStart = "2434">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ArtMap.LoginViewController.signIn (ArtMap.LoginViewController)(__ObjC.UIButton) -&gt; ()"
+                  moduleName = "ArtMap"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/andreamantani/Desktop/Apps/applicazione/ArtMap/ArtMap/LoginViewController.swift"
+                  timestampString = "468346603.573474"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "111"
+                  endingLineNumber = "111"
+                  offsetFromSymbolStart = "3409">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ArtMap/LoginViewController.swift"
+            timestampString = "468353557.596918"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "160"
+            endingLineNumber = "160"
+            landmarkName = "signIn(_:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ArtMap/LoginViewController.swift"
+            timestampString = "468353557.596918"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "129"
+            endingLineNumber = "129"
+            landmarkName = "getFBUserData()"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

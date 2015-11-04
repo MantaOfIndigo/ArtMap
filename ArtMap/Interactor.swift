@@ -31,6 +31,24 @@ class Interactor : UIViewController{
         
     }
 
+    func retrieveUserObject(user: String) -> PFObject{
+        let query = PFQuery(className:"_User")
+        query.whereKey("username", equalTo: user as AnyObject)
+        var returnUser = PFObject(className: "_User")
+        do{
+            if let tmp : NSArray = try query.findObjects(){
+                for usr in tmp{
+                    returnUser = usr as! PFObject
+                }
+            }else{
+                print("No such items")
+            }
+        }catch{
+            print("Queery Error")
+        }
+        
+        return returnUser
+    }
     
     func retrieveUserRecord(user: String) -> User{
         let query = PFQuery(className:"_User")
@@ -92,9 +110,13 @@ class Interactor : UIViewController{
                         PFUser.logInWithUsernameInBackground(f["username"] as! String, password: password){
                             (user: PFUser?, error: NSError?) -> Void in
                             if user != nil {
-                                NSUserDefaults.standardUserDefaults().setObject(f["username"], forKey: "username")
+                                do{
+                                try PFUser.logInWithUsername(f["username"] as! String, password: password)
+                                } catch{
+                                    NSUserDefaults.standardUserDefaults().setObject("ERRORLOG", forKey: "error")
+                                }
                             }else{
-                                NSUserDefaults.standardUserDefaults().setObject("NOSUCHUSER", forKey: "username")
+                                PFUser.logOut()
                             }
                         }
                     }
@@ -124,8 +146,10 @@ class Interactor : UIViewController{
         newRecord["longitude"] = position.longitude
         newRecord["status"] = visibility
         newRecord["title"] = art.getTitle()
-        newRecord["username"] = NSUserDefaults.standardUserDefaults().stringForKey("username")
+        newRecord["username"] = PFUser.currentUser()!["username"] as! String
         newRecord["year"] = String(art.getYear())
+        
+        //UserController().retrieveByUsername(PFUser.currentUser()!["username"] as! String)?.addReport()
         
         newRecord.saveInBackgroundWithBlock{
             (success: Bool, error: NSError?) -> Void in
@@ -154,5 +178,15 @@ class Interactor : UIViewController{
             }
         }
     }
+    
+    /*func uploadUserParameter(username: String, parameter: String){
+        let newParameter = PFQuery(className: "_User")
+        newParameter.getObjectInBackgroundWithId(userId){
+            (user: PFObject?, error: NSError?) -> Void in
+            //Aggiorna valori parametri
+        }
+        
+        newParameter
+    }*/
 }
 

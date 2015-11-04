@@ -72,5 +72,27 @@ class UserController: NSObject{
         return nil
     }
     
+    func uploadInfoUser(username : String, parameter: String){
+        
+        let upUser = self.retrieveByUsername(username)
+        
+        if parameter == "REPORT"{
+            upUser?.addReport()
+        }
+        if parameter == "UPPHOTO"{
+            upUser?.addPublishedPhoto()
+        }
+        if parameter == "CHECKIN"{
+            upUser?.addCheckins()
+        }
+        if parameter == "COUNTER"{
+            upUser?.addCheckCounter()
+        }
+        
+        //let intrct = Interactor()
+        
+        //intrct.uploadUserParameter(upUser.getUsername, parameter: parameter)
+    }
+    
      
 }
