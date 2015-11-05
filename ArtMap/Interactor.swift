@@ -159,6 +159,8 @@ class Interactor : UIViewController{
         }
         
     }
+    
+    
     func uploadNewUser(user: User, password : String){
         let usr = PFUser()
         usr.username = user.getUsername()

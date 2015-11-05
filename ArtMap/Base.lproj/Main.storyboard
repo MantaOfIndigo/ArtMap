@@ -977,16 +977,6 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EzP-2Q-l0R">
-                                                <rect key="frame" x="263" y="423" width="75" height="33"/>
-                                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
-                                                <state key="normal" title="Registrati">
-                                                    <color key="titleColor" red="0.79493400584575802" green="1" blue="0.90428273715034169" alpha="1" colorSpace="calibratedRGB"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="signIn:" destination="elC-MW-IJT" eventType="touchUpInside" id="qD1-X1-cFp"/>
-                                                </connections>
-                                            </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Per registrarti compila i seguenti campi:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QB2-Oh-J86">
                                                 <rect key="frame" x="149" y="242" width="303" height="21"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -1001,6 +991,16 @@
                                                 </state>
                                                 <connections>
                                                     <action selector="showPrivacy:" destination="elC-MW-IJT" eventType="touchUpInside" id="vvy-mp-Dzx"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EzP-2Q-l0R">
+                                                <rect key="frame" x="263" y="423" width="75" height="33"/>
+                                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                                                <state key="normal" title="Registrati">
+                                                    <color key="titleColor" red="0.79493400584575802" green="1" blue="0.90428273715034169" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="signIn:" destination="elC-MW-IJT" eventType="touchUpInside" id="qD1-X1-cFp"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -1051,8 +1051,10 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="SignInUIButton" destination="EzP-2Q-l0R" id="Ctr-4j-wd8"/>
                         <outlet property="confirmPassword" destination="frH-fL-vCZ" id="7Ij-Gk-7h9"/>
                         <outlet property="email" destination="wYK-Xe-b96" id="x7P-TG-Qj5"/>
+                        <outlet property="loginUIButton" destination="WzJ-1K-IKq" id="HC5-68-zJk"/>
                         <outlet property="password" destination="gSy-bv-Pwt" id="cbb-qy-qCa"/>
                         <outlet property="username" destination="EdA-ay-ml2" id="I7e-Wf-ZMd"/>
                     </connections>

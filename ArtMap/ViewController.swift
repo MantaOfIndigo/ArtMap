@@ -158,6 +158,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate, GMSMapViewDel
         
         if PFUser.currentUser() != nil{
             loginLabel.text = PFUser.currentUser()!["username"] as! String
+        }else{
+            loginLabel.text = ""
         }
 
         
