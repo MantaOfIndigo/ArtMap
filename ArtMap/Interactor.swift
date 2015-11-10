@@ -181,6 +181,9 @@ class Interactor : UIViewController{
         }
     }
     
+    func uploadArt(user: User, marker: Marker){
+        
+    }
     /*func uploadUserParameter(username: String, parameter: String){
         let newParameter = PFQuery(className: "_User")
         newParameter.getObjectInBackgroundWithId(userId){

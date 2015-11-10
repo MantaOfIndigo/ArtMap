@@ -34,7 +34,7 @@ class FormArtController : UIViewController{
     }
     
     @IBAction func shareButton(sender: UIBarButtonItem) {
-        if SLComposeViewController.isAvailableForServiceType(SLServiceTypeFacebook){
+        /*if SLComposeViewController.isAvailableForServiceType(SLServiceTypeFacebook){
             let fbshare: SLComposeViewController = SLComposeViewController(forServiceType: SLServiceTypeFacebook)
             self.presentViewController(fbshare, animated: true, completion: nil)
         }else{
@@ -42,7 +42,21 @@ class FormArtController : UIViewController{
             alert.launchAlert("Accounts", message: "Occorre eseguire il login con Facebook prima di condividere", toView: self)
         }
         
+        /*let link = FBSDKShareLinkContent()
+        link.contentURL = NSURL(string: "www.artmap.com")
+        let photo = FBSDKSharePhoto()
+        photo.image = setForm.getImage()
+        photo.userGenerated = false
+        let photoContent = FBSDKSharePhotoContent()
+        photoContent.photos = [photo]
+        
+        let b = FBSDKShareButton()
+        b.shareContent = photoContent */*/
+        
+        let act = UIActivityViewController(activityItems: [setForm.getImage(), NSURL(string: "www.google.com")! ], applicationActivities: nil)
+        self.presentViewController(act, animated: true, completion: nil)
     }
+    
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
     }

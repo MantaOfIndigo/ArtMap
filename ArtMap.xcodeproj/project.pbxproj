@@ -33,6 +33,8 @@
 		0FA4FB471BE2375100BAFCEF /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FA4FB451BE2375100BAFCEF /* FBSDKShareKit.framework */; };
 		0FA4FB491BE2377300BAFCEF /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FA4FB481BE2377300BAFCEF /* FBSDKLoginKit.framework */; };
 		0FA4FB4B1BE2378400BAFCEF /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FA4FB4A1BE2378400BAFCEF /* FBSDKShareKit.framework */; };
+		0FA4FB4D1BF245DC00BAFCEF /* AddArtInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FA4FB4C1BF245DC00BAFCEF /* AddArtInfoView.swift */; };
+		0FA4FB4F1BF2460A00BAFCEF /* AddArtInfoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0FA4FB4E1BF2460A00BAFCEF /* AddArtInfoView.xib */; };
 		0FD541E51BC2B68D0084546E /* Marker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FD541E41BC2B68D0084546E /* Marker.swift */; };
 		0FD541E71BC2BF4E0084546E /* ArtInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FD541E61BC2BF4E0084546E /* ArtInfoView.swift */; };
 		0FD541E91BC414340084546E /* ArtInfoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0FD541E81BC414340084546E /* ArtInfoView.xib */; };
@@ -130,6 +132,8 @@
 		0FA4FB451BE2375100BAFCEF /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKShareKit.framework; sourceTree = "<group>"; };
 		0FA4FB481BE2377300BAFCEF /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = "../../../../Downloads/FacebookSDKs-iOS-20151026/FBSDKLoginKit.framework"; sourceTree = "<group>"; };
 		0FA4FB4A1BE2378400BAFCEF /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKShareKit.framework; path = "../../../../Downloads/FacebookSDKs-iOS-20151026/FBSDKShareKit.framework"; sourceTree = "<group>"; };
+		0FA4FB4C1BF245DC00BAFCEF /* AddArtInfoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddArtInfoView.swift; sourceTree = "<group>"; };
+		0FA4FB4E1BF2460A00BAFCEF /* AddArtInfoView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddArtInfoView.xib; sourceTree = "<group>"; };
 		0FD541E41BC2B68D0084546E /* Marker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Marker.swift; sourceTree = "<group>"; };
 		0FD541E61BC2BF4E0084546E /* ArtInfoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtInfoView.swift; sourceTree = "<group>"; };
 		0FD541E81BC414340084546E /* ArtInfoView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ArtInfoView.xib; sourceTree = "<group>"; };
@@ -311,6 +315,7 @@
 				0FF19C1B1BBA7DB800B96C5F /* ViewController.swift */,
 				0FD541E41BC2B68D0084546E /* Marker.swift */,
 				0FF19C471BBA7EFA00B96C5F /* AddArtController.swift */,
+				0FA4FB4C1BF245DC00BAFCEF /* AddArtInfoView.swift */,
 				0FF19C491BBA7F1000B96C5F /* UserInfoController.swift */,
 				0F58495B1BCD4C7E00BAA982 /* User.swift */,
 				0F23A1231BD68FD700CD7435 /* UserController.swift */,
@@ -325,6 +330,7 @@
 				0FD541E61BC2BF4E0084546E /* ArtInfoView.swift */,
 				0FDFE7081BC18F05009D2EBD /* InfoWindow.xib */,
 				0FD541E81BC414340084546E /* ArtInfoView.xib */,
+				0FA4FB4E1BF2460A00BAFCEF /* AddArtInfoView.xib */,
 				0F1527D61BC90A6D003F665B /* FormArtController.swift */,
 				0FF19C201BBA7DB800B96C5F /* Assets.xcassets */,
 				0FF19C221BBA7DB800B96C5F /* LaunchScreen.storyboard */,
@@ -502,6 +508,7 @@
 				0FF19C211BBA7DB800B96C5F /* Assets.xcassets in Resources */,
 				0FF19C1F1BBA7DB800B96C5F /* Main.storyboard in Resources */,
 				0FDFE7091BC18F05009D2EBD /* InfoWindow.xib in Resources */,
+				0FA4FB4F1BF2460A00BAFCEF /* AddArtInfoView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -586,6 +593,7 @@
 				0F3736B91BDE3863009A1CBB /* ReportViewController.swift in Sources */,
 				0FF19C4A1BBA7F1000B96C5F /* UserInfoController.swift in Sources */,
 				0F23A1221BD6435200CD7435 /* Interactor.swift in Sources */,
+				0FA4FB4D1BF245DC00BAFCEF /* AddArtInfoView.swift in Sources */,
 				0F58495C1BCD4C7E00BAA982 /* User.swift in Sources */,
 				0FF19C481BBA7EFA00B96C5F /* AddArtController.swift in Sources */,
 				0FDFE7051BC174B5009D2EBD /* MarkerController.swift in Sources */,
