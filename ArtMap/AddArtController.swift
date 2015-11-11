@@ -98,6 +98,9 @@ class AddArtController: UIViewController, UIImagePickerControllerDelegate, UINav
     
     func addtmp(){
         let popview : AddArtInfoView = AddArtInfoView(nibName: "AddArtInfoView", bundle: nil)
+        
+        popview.locationToUpload(CLLocationCoordinate2DMake(latitude, longitude), accuracy:Int(geoAccuracy), image: UIImage())
+        
         popview.showInView(self.view, animated: true)
     }
     

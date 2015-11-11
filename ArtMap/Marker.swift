@@ -55,6 +55,18 @@ class Marker: NSObject {
         
         
     }
+    
+    init(position: CLLocationCoordinate2D, user: User){
+        self.marker = GMSMarker()
+        self.marker.icon = UIImage(named: "marker")
+        self.marker.position = position
+        self.marker.appearAnimation = kGMSMarkerAnimationPop
+        self.marker.infoWindowAnchor = CGPointMake(0.44, 0.45);
+        
+        self.image = UIImage()
+        self.art = Art()
+        self.user = user
+    }
     func setImage(value: UIImage){
         self.image = value
     }

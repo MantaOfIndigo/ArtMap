@@ -15,6 +15,7 @@ class Art: NSObject {
     // title: Titolo
     // author: Autore opera
     // year: Anno di realizzazione
+    // visibility: 0 danneggiato - 1 visibile - 2 rimosso
     private var title: String?
     private var author: String?
     private var year: Int?

@@ -181,7 +181,8 @@ class Interactor : UIViewController{
         }
     }
     
-    func uploadArt(user: User, marker: Marker){
+    func uploadArt(username: String, location: CLLocationCoordinate2D, image: UIImage, accuracy: Int, art: Art){
+        
         
     }
     /*func uploadUserParameter(username: String, parameter: String){
