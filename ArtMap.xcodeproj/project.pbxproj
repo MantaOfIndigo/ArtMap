@@ -34,7 +34,7 @@
 		0FA4FB491BE2377300BAFCEF /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FA4FB481BE2377300BAFCEF /* FBSDKLoginKit.framework */; };
 		0FA4FB4B1BE2378400BAFCEF /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FA4FB4A1BE2378400BAFCEF /* FBSDKShareKit.framework */; };
 		0FA4FB4D1BF245DC00BAFCEF /* AddArtInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FA4FB4C1BF245DC00BAFCEF /* AddArtInfoView.swift */; };
-		0FA4FB4F1BF2460A00BAFCEF /* AddArtInfoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0FA4FB4E1BF2460A00BAFCEF /* AddArtInfoView.xib */; };
+		0FA4FB511BF4E0A500BAFCEF /* AddArtInfoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0FA4FB501BF4E0A500BAFCEF /* AddArtInfoView.xib */; };
 		0FD541E51BC2B68D0084546E /* Marker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FD541E41BC2B68D0084546E /* Marker.swift */; };
 		0FD541E71BC2BF4E0084546E /* ArtInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FD541E61BC2BF4E0084546E /* ArtInfoView.swift */; };
 		0FD541E91BC414340084546E /* ArtInfoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0FD541E81BC414340084546E /* ArtInfoView.xib */; };
@@ -133,7 +133,7 @@
 		0FA4FB481BE2377300BAFCEF /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = "../../../../Downloads/FacebookSDKs-iOS-20151026/FBSDKLoginKit.framework"; sourceTree = "<group>"; };
 		0FA4FB4A1BE2378400BAFCEF /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKShareKit.framework; path = "../../../../Downloads/FacebookSDKs-iOS-20151026/FBSDKShareKit.framework"; sourceTree = "<group>"; };
 		0FA4FB4C1BF245DC00BAFCEF /* AddArtInfoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddArtInfoView.swift; sourceTree = "<group>"; };
-		0FA4FB4E1BF2460A00BAFCEF /* AddArtInfoView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddArtInfoView.xib; sourceTree = "<group>"; };
+		0FA4FB501BF4E0A500BAFCEF /* AddArtInfoView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddArtInfoView.xib; sourceTree = "<group>"; };
 		0FD541E41BC2B68D0084546E /* Marker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Marker.swift; sourceTree = "<group>"; };
 		0FD541E61BC2BF4E0084546E /* ArtInfoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtInfoView.swift; sourceTree = "<group>"; };
 		0FD541E81BC414340084546E /* ArtInfoView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ArtInfoView.xib; sourceTree = "<group>"; };
@@ -328,9 +328,9 @@
 				0FDFE7041BC174B5009D2EBD /* MarkerController.swift */,
 				0FDFE7061BC18EB8009D2EBD /* CustomInfoWindow.swift */,
 				0FD541E61BC2BF4E0084546E /* ArtInfoView.swift */,
+				0FA4FB501BF4E0A500BAFCEF /* AddArtInfoView.xib */,
 				0FDFE7081BC18F05009D2EBD /* InfoWindow.xib */,
 				0FD541E81BC414340084546E /* ArtInfoView.xib */,
-				0FA4FB4E1BF2460A00BAFCEF /* AddArtInfoView.xib */,
 				0F1527D61BC90A6D003F665B /* FormArtController.swift */,
 				0FF19C201BBA7DB800B96C5F /* Assets.xcassets */,
 				0FF19C221BBA7DB800B96C5F /* LaunchScreen.storyboard */,
@@ -503,12 +503,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0FA4FB511BF4E0A500BAFCEF /* AddArtInfoView.xib in Resources */,
 				0FF19C241BBA7DB800B96C5F /* LaunchScreen.storyboard in Resources */,
 				0FD541E91BC414340084546E /* ArtInfoView.xib in Resources */,
 				0FF19C211BBA7DB800B96C5F /* Assets.xcassets in Resources */,
 				0FF19C1F1BBA7DB800B96C5F /* Main.storyboard in Resources */,
 				0FDFE7091BC18F05009D2EBD /* InfoWindow.xib in Resources */,
-				0FA4FB4F1BF2460A00BAFCEF /* AddArtInfoView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

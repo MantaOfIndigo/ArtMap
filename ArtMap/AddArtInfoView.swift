@@ -13,7 +13,6 @@ import QuartzCore
     
     
     @IBOutlet weak var innerView: UIView!
-    @IBOutlet weak var outerView: UIView!
     @IBOutlet weak var buttonView: UIView!
     @IBOutlet weak var stackButtonArea: UIStackView!
     
@@ -22,8 +21,9 @@ import QuartzCore
     @IBOutlet weak var yearText: UITextField!
     @IBOutlet weak var visible: UISwitch!
     
-    @IBOutlet weak var sendButton: UIButton!
+    
     @IBOutlet weak var backButton: UIButton!
+    @IBOutlet weak var sendButton: UIButton!
     
     var status = Int()
     
@@ -41,7 +41,7 @@ import QuartzCore
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.outerView.backgroundColor = UIColor.blackColor().colorWithAlphaComponent(0.6)
+        self.view.backgroundColor = UIColor.blackColor().colorWithAlphaComponent(0.6)
         self.view.frame.size = CGSize(width: UIScreen.mainScreen().bounds.width, height: UIScreen.mainScreen().bounds.height)
         self.innerView.layer.shadowOpacity = 0.8
         self.innerView.layer.shadowOffset = CGSizeMake(0.0, 0.0)
@@ -52,9 +52,7 @@ import QuartzCore
         
         visible.setOn(true, animated: false)
         visible.addTarget(self, action: Selector("switchChanged:"), forControlEvents:UIControlEvents.ValueChanged)
-        sendButton.addTarget(self, action: Selector("send:"), forControlEvents: UIControlEvents.TouchUpInside)
-        backButton.addTarget(self, action: Selector("back:"), forControlEvents: UIControlEvents.TouchUpInside)
-        
+        self.sendButton.titleLabel?.text = "mannaggamado"
     }
     
     func showInView(superView: UIView!, animated: Bool){
@@ -71,10 +69,6 @@ import QuartzCore
         })
     }
     
-    @IBAction func sdfsdfds(sender: AnyObject) {
-        print("diocane!")
-    }
-    
     func switchChanged(setStatus: UISwitch){
         if visible.on{
             status = 1
@@ -82,12 +76,6 @@ import QuartzCore
         }else{
             status = 0
         }
-    }
-    
-   
-    
-    func back(sender: UIButton) {
-        dismissViewControllerAnimated(true, completion: nil)
     }
     
     func send(sender: UIButton) {
@@ -102,8 +90,11 @@ import QuartzCore
 
     }
     
+    @IBAction func sendArt(sender: UIButton) {
+        print("chitemmuort")
+    }
     
-    @IBAction func jjjj(sender: UIButton) {
+    @IBAction func backAction(sender: UIButton) {
         print("cicc")
     }
     

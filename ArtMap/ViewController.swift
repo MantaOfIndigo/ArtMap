@@ -188,7 +188,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate, GMSMapViewDel
         self.popview = ArtInfoView(nibName: "ArtInfoView", bundle: nil)
         if let tmp = markerController?.getMarker(marker)! {
             popview.setInformation(intrct.retriveDBMarkerInfo(tmp))
-            print(intrct.retriveDBMarkerInfo(tmp).getUser().getUsername())
         }
         self.popview.showInView(self.view, animated: true, image: image)
     }
