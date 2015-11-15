@@ -33,8 +33,6 @@
 		0FA4FB471BE2375100BAFCEF /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FA4FB451BE2375100BAFCEF /* FBSDKShareKit.framework */; };
 		0FA4FB491BE2377300BAFCEF /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FA4FB481BE2377300BAFCEF /* FBSDKLoginKit.framework */; };
 		0FA4FB4B1BE2378400BAFCEF /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FA4FB4A1BE2378400BAFCEF /* FBSDKShareKit.framework */; };
-		0FA4FB511BF4E0A500BAFCEF /* AddArtInfoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0FA4FB501BF4E0A500BAFCEF /* AddArtInfoView.xib */; };
-		0FA4FB521BF8896800BAFCEF /* AddArtInfoView.xib in Sources */ = {isa = PBXBuildFile; fileRef = 0FA4FB501BF4E0A500BAFCEF /* AddArtInfoView.xib */; };
 		0FA4FB551BF889FD00BAFCEF /* AddArtInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FA4FB541BF889FD00BAFCEF /* AddArtInfoView.swift */; };
 		0FD541E51BC2B68D0084546E /* Marker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FD541E41BC2B68D0084546E /* Marker.swift */; };
 		0FD541E71BC2BF4E0084546E /* ArtInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FD541E61BC2BF4E0084546E /* ArtInfoView.swift */; };
@@ -133,7 +131,6 @@
 		0FA4FB451BE2375100BAFCEF /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKShareKit.framework; sourceTree = "<group>"; };
 		0FA4FB481BE2377300BAFCEF /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = "../../../../Downloads/FacebookSDKs-iOS-20151026/FBSDKLoginKit.framework"; sourceTree = "<group>"; };
 		0FA4FB4A1BE2378400BAFCEF /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKShareKit.framework; path = "../../../../Downloads/FacebookSDKs-iOS-20151026/FBSDKShareKit.framework"; sourceTree = "<group>"; };
-		0FA4FB501BF4E0A500BAFCEF /* AddArtInfoView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddArtInfoView.xib; sourceTree = "<group>"; };
 		0FA4FB541BF889FD00BAFCEF /* AddArtInfoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddArtInfoView.swift; sourceTree = "<group>"; };
 		0FD541E41BC2B68D0084546E /* Marker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Marker.swift; sourceTree = "<group>"; };
 		0FD541E61BC2BF4E0084546E /* ArtInfoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtInfoView.swift; sourceTree = "<group>"; };
@@ -328,7 +325,6 @@
 				0FDFE7041BC174B5009D2EBD /* MarkerController.swift */,
 				0FDFE7061BC18EB8009D2EBD /* CustomInfoWindow.swift */,
 				0FD541E61BC2BF4E0084546E /* ArtInfoView.swift */,
-				0FA4FB501BF4E0A500BAFCEF /* AddArtInfoView.xib */,
 				0FA4FB541BF889FD00BAFCEF /* AddArtInfoView.swift */,
 				0FDFE7081BC18F05009D2EBD /* InfoWindow.xib */,
 				0FD541E81BC414340084546E /* ArtInfoView.xib */,
@@ -504,7 +500,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0FA4FB511BF4E0A500BAFCEF /* AddArtInfoView.xib in Resources */,
 				0FF19C241BBA7DB800B96C5F /* LaunchScreen.storyboard in Resources */,
 				0FD541E91BC414340084546E /* ArtInfoView.xib in Resources */,
 				0FF19C211BBA7DB800B96C5F /* Assets.xcassets in Resources */,
@@ -582,7 +577,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0FA4FB521BF8896800BAFCEF /* AddArtInfoView.xib in Sources */,
 				0F51B89B1BCE5BCA009E0BA1 /* LoginViewController.swift in Sources */,
 				0FDFE7071BC18EB8009D2EBD /* CustomInfoWindow.swift in Sources */,
 				0FF19C1C1BBA7DB800B96C5F /* ViewController.swift in Sources */,

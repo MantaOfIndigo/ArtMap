@@ -8,7 +8,7 @@
 
 import UIKit
 
-@objc class AddArtInfoView: UIViewController, UITextFieldDelegate{
+class AddArtInfoView: UIViewController, UITextFieldDelegate{
 
     @IBOutlet weak var titleText: UITextField!
     @IBOutlet weak var authorText: UITextField!
@@ -19,12 +19,10 @@ import UIKit
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.blackColor().colorWithAlphaComponent(0.6)
         self.view.frame.size = CGSize(width: UIScreen.mainScreen().bounds.width, height: UIScreen.mainScreen().bounds.height)
-        
+       
     }
     
-    @IBAction func asd(sender: AnyObject) {
-        print("porcidui")
-    }
+  
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)!
     }
@@ -40,31 +38,9 @@ import UIKit
     
     @IBAction func exit(sender: UIButton) {
     }
-    @IBOutlet weak var exit: UIButton!
+    
     func locationToUpload(position: CLLocationCoordinate2D, accuracy: Int, image: UIImage){
     
     }
     
-    func showInView(superView: UIView, animated: Bool){
-        superView.addSubview(self.view)
-        if animated{
-            self.showAnimate()
-        }
-    }
-    
-    func showAnimate(){
-        self.view.alpha = 0
-        UIView.animateWithDuration(0.20, animations: {
-            self.view.alpha = 1
-        })
-    }
-    
-    func removeAnimate(){
-        UIView.animateWithDuration(0.20, animations: {
-            self.view.alpha = 0
-            }, completion: {
-                (finished: Bool) in
-                self.view.removeFromSuperview()
-        })
-    }
 }

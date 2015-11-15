@@ -37,7 +37,7 @@ class AddArtController: UIViewController, UIImagePickerControllerDelegate, UINav
     @IBAction func useCamera(sender: AnyObject) {
         
         addtmp()
-        
+        /*
         if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera){
             
             imagePicker = UIImagePickerController()
@@ -48,7 +48,7 @@ class AddArtController: UIViewController, UIImagePickerControllerDelegate, UINav
             imagePicker.allowsEditing = false
             
             self.presentViewController(imagePicker, animated: true, completion: nil)
-        }
+        }*/
     }
    
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
@@ -97,11 +97,13 @@ class AddArtController: UIViewController, UIImagePickerControllerDelegate, UINav
     }
     
     func addtmp(){
-        let popview : AddArtInfoView = AddArtInfoView(nibName: "AddArtInfoView", bundle: nil)
+        let popview = AddArtInfoView()
         
-        popview.locationToUpload(CLLocationCoordinate2DMake(latitude, longitude), accuracy:Int(geoAccuracy), image: UIImage())
+        if let resultController = storyboard?.instantiateViewControllerWithIdentifier("addInformation") as? AddArtInfoView{
+            resultController.locationToUpload(CLLocationCoordinate2DMake(latitude, longitude), accuracy:Int(geoAccuracy), image: UIImage())
+            presentViewController(resultController, animated: true, completion: nil)
+        }
         
-        popview.showInView(self.view, animated: true)
     }
     
 }

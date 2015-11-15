@@ -93,22 +93,20 @@ class ViewController: UIViewController, CLLocationManagerDelegate, GMSMapViewDel
             /**/
             
                if PFUser.currentUser() == nil{
-                        /*let loginViewController = PFLogInViewController()
-                        loginViewController.delegate = self
-                        loginViewController.fields = PFLogInFields.Facebook
-                        loginViewController.emailAsUsername = true
-                        self.presentViewController(loginViewController, animated: false, completion: nil)*/
+        
                 if let resultController = storyboard?.instantiateViewControllerWithIdentifier("loginInterface") as? LoginViewController{
                     resultController.setUserList(userController!)
                     presentViewController(resultController, animated: true, completion: nil)
                 }
                 
                }else{
+                
                 if let resultController = storyboard?.instantiateViewControllerWithIdentifier("userInterface") as? UserInfoController{
                     print(PFUser.currentUser()!["username"])
                     print(self.userController?.retrieveByUsername(PFUser.currentUser()!["username"] as! String)?.getUsername())
                     resultController.setUserPage((self.userController?.retrieveByMail(PFUser.currentUser()!["email"] as! String))!)
                     presentViewController(resultController, animated: true, completion: nil)
+                    
                 }
             }
     }
