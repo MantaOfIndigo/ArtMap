@@ -6,16 +6,11 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AddArtInfoView" customModule="ArtMap" customModuleProvider="target">
             <connections>
-                <outlet property="authorText" destination="ch6-HI-2tI" id="z5D-ss-emD"/>
-                <outlet property="backButton" destination="W2k-Pz-Jrn" id="E7x-US-pMa"/>
-                <outlet property="buttonView" destination="Rh1-QJ-PLj" id="pEa-Ca-LcT"/>
-                <outlet property="innerView" destination="Abx-GM-qS5" id="dAU-dL-9Kk"/>
-                <outlet property="sendButton" destination="qcP-4V-K1z" id="sCh-lX-aud"/>
-                <outlet property="stackButtonArea" destination="rQV-cC-6Uv" id="ncz-fT-56B"/>
-                <outlet property="titleText" destination="Gkp-Vi-cRJ" id="1Xk-3l-qMp"/>
-                <outlet property="view" destination="XVD-7Z-S0F" id="9d2-Jd-CfD"/>
-                <outlet property="visible" destination="P5n-st-RaK" id="QkV-Lg-4ty"/>
-                <outlet property="yearText" destination="0th-wX-HC7" id="pHR-bz-TOT"/>
+                <outlet property="authorText" destination="ch6-HI-2tI" id="iup-sY-03L"/>
+                <outlet property="titleText" destination="Gkp-Vi-cRJ" id="NJW-LJ-wAn"/>
+                <outlet property="view" destination="XVD-7Z-S0F" id="NM0-cm-Icd"/>
+                <outlet property="visible" destination="P5n-st-RaK" id="tg6-jt-FSS"/>
+                <outlet property="yearText" destination="0th-wX-HC7" id="3i0-jR-d2f"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -136,6 +131,9 @@
                                             <state key="normal" title="INDIETRO">
                                                 <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             </state>
+                                            <connections>
+                                                <action selector="exit:" destination="-1" eventType="touchUpInside" id="oD3-dn-CaQ"/>
+                                            </connections>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qcP-4V-K1z">
                                             <rect key="frame" x="150" y="0.0" width="341" height="50"/>
@@ -152,6 +150,9 @@
                                                     <exclude reference="IWi-zd-uYn"/>
                                                 </mask>
                                             </variation>
+                                            <connections>
+                                                <action selector="sender:" destination="-1" eventType="touchUpInside" id="Orn-fh-Fo9"/>
+                                            </connections>
                                         </button>
                                     </subviews>
                                     <constraints>
@@ -180,6 +181,7 @@
                         <constraint firstAttribute="trailing" secondItem="Abx-GM-qS5" secondAttribute="trailing" id="fGu-Ob-ntq"/>
                         <constraint firstItem="Abx-GM-qS5" firstAttribute="leading" secondItem="jhv-66-qIL" secondAttribute="leading" id="p10-U4-fUx"/>
                         <constraint firstAttribute="trailing" secondItem="Abx-GM-qS5" secondAttribute="trailing" id="q7u-jp-Otm"/>
+                        <constraint firstAttribute="height" constant="359" id="uvO-aC-Lvf"/>
                     </constraints>
                 </stackView>
             </subviews>

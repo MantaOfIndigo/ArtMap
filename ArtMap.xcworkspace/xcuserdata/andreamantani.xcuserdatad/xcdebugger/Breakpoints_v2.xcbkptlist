@@ -1712,13 +1712,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ArtMap/AddArtInfoView.swift"
-            timestampString = "469035607.834916"
+            timestampString = "469275015.497428"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "105"
-            endingLineNumber = "105"
-            landmarkName = "locationToUpload(_:accuracy:image:)"
-            landmarkType = "5">
+            startingLineNumber = "167"
+            endingLineNumber = "167">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1728,13 +1726,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ArtMap/AddArtInfoView.swift"
-            timestampString = "469035607.834916"
+            timestampString = "469275015.497428"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "89"
-            endingLineNumber = "89"
-            landmarkName = "send(_:)"
-            landmarkType = "5">
+            startingLineNumber = "151"
+            endingLineNumber = "151">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1744,12 +1740,26 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ArtMap/AddArtInfoView.swift"
-            timestampString = "469035607.834916"
+            timestampString = "469275015.497428"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "83"
-            endingLineNumber = "83"
-            landmarkName = "send(_:)"
+            startingLineNumber = "145"
+            endingLineNumber = "145">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ArtMap/AddArtInfoView.swift"
+            timestampString = "469275015.497428"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "27"
+            endingLineNumber = "27"
+            landmarkName = "asd(_:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
