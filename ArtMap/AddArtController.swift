@@ -60,6 +60,12 @@ class AddArtController: UIViewController, UIImagePickerControllerDelegate, UINav
         locationManager?.stopUpdatingLocation()
 
         if sender === saveButton{
+            if let resultController = storyboard?.instantiateViewControllerWithIdentifier("addInformation") as? AddArtInfoView{
+                resultController.locationToUpload(CLLocationCoordinate2DMake(latitude, longitude), accuracy:Int(geoAccuracy), image: UIImage())
+                //resultController.imageToSend = immagine dalla fotocamera
+                presentViewController(resultController, animated: true, completion: nil)
+            }
+
             //Crea nuovo oggetto Art e invialo
             
             /*let new = Marker(position: <#T##CLLocationCoordinate2D#>, title: <#T##String#>, author: <#T##String#>, year: <#T##Int#>, visibility: <#T##Int#>)*/
@@ -68,7 +74,7 @@ class AddArtController: UIViewController, UIImagePickerControllerDelegate, UINav
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        saveButton.enabled = false
+        //saveButton.enabled = false
         
         locationManager = CLLocationManager()
         locationManager!.delegate = self

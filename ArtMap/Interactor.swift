@@ -183,6 +183,27 @@ class Interactor : UIViewController{
     
     func uploadArt(username: String, location: CLLocationCoordinate2D, image: UIImage, accuracy: Int, art: Art){
         
+        let newRecord = PFObject(className: "UploadedImage")
+        
+        newRecord["author"] = art.getAuthor()
+        newRecord["geoAccuracy"] = accuracy
+        newRecord["imageFile"] = image
+        //newRecord["imageId"] = imageId
+        newRecord["latitude"] = location.latitude
+        newRecord["longitude"] = location.longitude
+        newRecord["title"] = art.getTitle()
+        newRecord["username"] = username
+        newRecord["year"] = String(art.getYear())
+        
+        //UserController().retrieveByUsername(PFUser.currentUser()!["username"] as! String)?.addReport()
+        
+        newRecord.saveInBackgroundWithBlock{
+            (success: Bool, error: NSError?) -> Void in
+            if let error = error {
+                _=error.userInfo["error"] as? NSString
+            }
+        }
+
         
     }
     /*func uploadUserParameter(username: String, parameter: String){
