@@ -103,7 +103,7 @@ class LoginViewController : UIViewController, UITextFieldDelegate, FBSDKLoginBut
             if checkParameters(){
                 let intrct = Interactor()
                 let newUser = User(username: username.text!, email: email.text!)
-
+                userController?.addNewUserToList(newUser)
                 intrct.uploadNewUser(newUser, password: password.text!)
                 do{
                 try PFUser.logInWithUsername(newUser.getUsername(), password: password.text!)

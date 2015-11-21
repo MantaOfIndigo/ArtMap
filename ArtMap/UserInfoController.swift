@@ -14,6 +14,7 @@ class UserInfoController: UIViewController, UINavigationControllerDelegate{
     @IBOutlet weak var checkins: UILabel!
     @IBOutlet weak var publishedPhotos: UILabel!
     @IBOutlet weak var reports: UILabel!
+    @IBOutlet weak var points: UILabel!
     
     @IBOutlet weak var logoutButton: UIButton!
     
@@ -39,20 +40,30 @@ class UserInfoController: UIViewController, UINavigationControllerDelegate{
         checkins.text = String(self.presentedUser.getCheckins())
         publishedPhotos.text = String(self.presentedUser.getPublishedPhotos())
         reports.text = String(self.presentedUser.getReports())
-        
-        
-        if self.presentedUser.getUsername() == PFUser.currentUser()!["username"] as! String{
-            self.logoutButton.hidden = false
-        }else{
+        points.text = String(self.presentedUser.getPoints())
+        if PFUser.currentUser() == nil{
             self.logoutButton.hidden = true
+        }else{
+            if self.presentedUser.getUsername() == PFUser.currentUser()!["username"] as! String{
+                self.logoutButton.hidden = false
+            }else{
+                self.logoutButton.hidden = true
+            }
         }
+        
+       
         
     }
     override func viewDidAppear(animated: Bool) {
        
     }
     func setUserPage(user: User){
-        self.presentedUser = user
+        self.presentedUser = Interactor().retrieveUserRecord(user.getUsername())
+        if presentedUser.getUsername() == ""{
+            presentedUser = User(username: user.getUsername())
+        }
+        
+        
     }
     
 }

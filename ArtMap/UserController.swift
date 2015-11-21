@@ -71,7 +71,9 @@ class UserController: NSObject{
         }
         return nil
     }
-    
+    func addNewUserToList(user: User){
+        userList.append(user)
+    }
     func uploadInfoUser(username : String, parameter: String){
         
         let upUser = self.retrieveByUsername(username)

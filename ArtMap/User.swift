@@ -14,7 +14,7 @@ class User: NSObject {
     private let idUser : String?
     private let username : String
     private let email : String
-    private var points : Int
+    private var points : Int?
     private var picturesUploaded : Int?
     private var reports : Int?
     private var checkins : Int?
@@ -124,6 +124,12 @@ class User: NSObject {
             return 0
         }
         return self.reports!
+    }
+    func getPoints() -> Int{
+        if self.points == nil{
+            return 0
+        }
+        return self.points!
     }
     func compareUsernames(compare: String)-> Bool{
         let tmpStr : String

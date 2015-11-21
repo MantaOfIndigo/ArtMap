@@ -15,10 +15,10 @@ class AddArtInfoView: UIViewController, UITextFieldDelegate{
     @IBOutlet weak var yearText: UITextField!
     @IBOutlet weak var visible: UISwitch!
     @IBOutlet weak var sendHD: UISwitch!
-   
+    // la visibilità non viene impostata dall'utente
     var imageToSend = UIImage()
     var author = String()
-    var geoAccuracy = Int()
+    var geoAccuracy = Double()
     var imageId = String()
     var position = CLLocationCoordinate2DMake(0, 0)
     var titleArt = String()
@@ -43,7 +43,7 @@ class AddArtInfoView: UIViewController, UITextFieldDelegate{
     
     @IBAction func send(sender: UIButton) {
         if prepareFields(){
-            Interactor().uploadArt(PFUser.currentUser()!["username"] as! String, location: position, image: imageToSend, accuracy: geoAccuracy, art: Art(title: titleArt, author: author, year: Int(year)!, status: 0)!)
+            Interactor().uploadArt(PFUser.currentUser()!["username"] as! String, location: position, image: imageToSend, accuracy: Int(geoAccuracy), art: Art(title: titleArt, author: author, year: Int(year)!, status: 0)!)
         }
     }
     
@@ -64,6 +64,13 @@ class AddArtInfoView: UIViewController, UITextFieldDelegate{
             
             return false
         }
+        
+        geoAccuracy = round(geoAccuracy)
+        
+        if sendHD.on{
+            print("invio in HD")
+        }
+        
         
         return true
     }

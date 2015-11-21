@@ -26,8 +26,7 @@ class AddArtController: UIViewController, UIImagePickerControllerDelegate, UINav
     @IBOutlet weak var addCameraImage: UIImageView!
     @IBOutlet weak var saveButton: UIBarButtonItem!
     
-    var longitude = Double()
-    var latitude = Double()
+    var position = CLLocationCoordinate2D()
     var geoAccuracy = Double()
     
     @IBAction func cancelButton(sender: UIBarButtonItem) {
@@ -35,8 +34,6 @@ class AddArtController: UIViewController, UIImagePickerControllerDelegate, UINav
     }
     
     @IBAction func useCamera(sender: AnyObject) {
-        
-        addtmp()
         /*
         if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera){
             
@@ -49,6 +46,10 @@ class AddArtController: UIViewController, UIImagePickerControllerDelegate, UINav
             
             self.presentViewController(imagePicker, animated: true, completion: nil)
         }*/
+        
+    // if la foto è valida{
+            saveButton.enabled = true
+    //  }
     }
    
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
@@ -61,9 +62,9 @@ class AddArtController: UIViewController, UIImagePickerControllerDelegate, UINav
 
         if sender === saveButton{
             if let resultController = storyboard?.instantiateViewControllerWithIdentifier("addInformation") as? AddArtInfoView{
-                resultController.locationToUpload(CLLocationCoordinate2DMake(latitude, longitude), accuracy:Int(geoAccuracy), image: UIImage())
+                resultController.geoAccuracy = self.geoAccuracy
+                resultController.position = self.position
                 //resultController.imageToSend = immagine dalla fotocamera
-                presentViewController(resultController, animated: true, completion: nil)
             }
 
             //Crea nuovo oggetto Art e invialo
@@ -74,7 +75,7 @@ class AddArtController: UIViewController, UIImagePickerControllerDelegate, UINav
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        //saveButton.enabled = false
+        saveButton.enabled = false
         
         locationManager = CLLocationManager()
         locationManager!.delegate = self
@@ -84,17 +85,11 @@ class AddArtController: UIViewController, UIImagePickerControllerDelegate, UINav
         
     }
     
-    func checkValidObject(){
-        //posizione GPS valida
-        // foto scattata
-        saveButton.enabled = true
-    }
-    
     func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         let loc = locations[0] as CLLocation
         
-        longitude = loc.coordinate.longitude
-        latitude = loc.coordinate.latitude
+        position.longitude = loc.coordinate.longitude
+        position.latitude = loc.coordinate.latitude
         geoAccuracy = loc.horizontalAccuracy
         
         let camera: GMSCameraPosition = GMSCameraPosition.cameraWithLatitude(loc.coordinate.latitude, longitude: loc.coordinate.longitude, zoom: 18.0)
@@ -102,15 +97,7 @@ class AddArtController: UIViewController, UIImagePickerControllerDelegate, UINav
         
     }
     
-    func addtmp(){
-        let popview = AddArtInfoView()
-        
-        if let resultController = storyboard?.instantiateViewControllerWithIdentifier("addInformation") as? AddArtInfoView{
-            resultController.locationToUpload(CLLocationCoordinate2DMake(latitude, longitude), accuracy:Int(geoAccuracy), image: UIImage())
-            presentViewController(resultController, animated: true, completion: nil)
-        }
-        
-    }
+  
     
 }
 

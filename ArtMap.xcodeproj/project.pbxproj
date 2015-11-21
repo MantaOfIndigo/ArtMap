@@ -24,6 +24,7 @@
 		0F51B8B11BCE970B009E0BA1 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F51B8B01BCE970B009E0BA1 /* Security.framework */; };
 		0F51B8B31BCE9713009E0BA1 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F51B8B21BCE9713009E0BA1 /* StoreKit.framework */; };
 		0F51B8B51BCE9725009E0BA1 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F51B8B41BCE9725009E0BA1 /* SystemConfiguration.framework */; };
+		0F5326A51C0076E900508A7A /* PrivacyController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F5326A41C0076E900508A7A /* PrivacyController.swift */; };
 		0F58495C1BCD4C7E00BAA982 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F58495B1BCD4C7E00BAA982 /* User.swift */; };
 		0FA4FB3D1BE234F400BAFCEF /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FA4FB3C1BE234F400BAFCEF /* Parse.framework */; };
 		0FA4FB3F1BE2350000BAFCEF /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FA4FB3E1BE2350000BAFCEF /* Bolts.framework */; };
@@ -122,6 +123,7 @@
 		0F51B8B01BCE970B009E0BA1 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		0F51B8B21BCE9713009E0BA1 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		0F51B8B41BCE9725009E0BA1 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		0F5326A41C0076E900508A7A /* PrivacyController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrivacyController.swift; sourceTree = "<group>"; };
 		0F58495B1BCD4C7E00BAA982 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		0FA4FB3C1BE234F400BAFCEF /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Parse.framework; path = "../../../../Downloads/parse-library-1-2/Parse.framework"; sourceTree = "<group>"; };
 		0FA4FB3E1BE2350000BAFCEF /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = "../../../../Downloads/parse-library-1-2/Bolts.framework"; sourceTree = "<group>"; };
@@ -320,6 +322,7 @@
 				0F3736BA1BE12C3C009A1CBB /* AlertLauncher.swift */,
 				0FF19C4B1BBA7F2000B96C5F /* Art.swift */,
 				0FF19C1D1BBA7DB800B96C5F /* Main.storyboard */,
+				0F5326A41C0076E900508A7A /* PrivacyController.swift */,
 				0F3736B81BDE3863009A1CBB /* ReportViewController.swift */,
 				0F51B89A1BCE5BCA009E0BA1 /* LoginViewController.swift */,
 				0FDFE7041BC174B5009D2EBD /* MarkerController.swift */,
@@ -585,6 +588,7 @@
 				0FF19C1A1BBA7DB800B96C5F /* AppDelegate.swift in Sources */,
 				0FD541E71BC2BF4E0084546E /* ArtInfoView.swift in Sources */,
 				0FF19C4C1BBA7F2000B96C5F /* Art.swift in Sources */,
+				0F5326A51C0076E900508A7A /* PrivacyController.swift in Sources */,
 				0F3736BB1BE12C3D009A1CBB /* AlertLauncher.swift in Sources */,
 				0F3736B91BDE3863009A1CBB /* ReportViewController.swift in Sources */,
 				0FF19C4A1BBA7F1000B96C5F /* UserInfoController.swift in Sources */,

@@ -63,6 +63,38 @@ class ViewController: UIViewController, CLLocationManagerDelegate, GMSMapViewDel
         userController = UserController()
         
         let query = PFQuery(className:"_User")
+        
+        do{
+            if let tmp : NSArray = try query.findObjects(){
+                for usr in tmp{
+                    self.userController!.createList(usr as! PFObject)
+                }
+                
+                print(userController?.count())
+                
+                if PFUser.currentUser() == nil {
+                    self.loginLabel.text = ""
+                }else{
+                    if self.userController?.checkUsername(PFUser.currentUser()!["username"] as! String) == false{
+                        self.loginLabel.text = PFUser.currentUser()!["username"] as? String
+                    }else{
+                        PFUser.logOut()
+                    }
+
+                }
+               
+                
+                if self.markerFlag{
+                    self.markerController?.linkUser((self.userController?.getList())!)
+                }
+            }else {
+                print("No such users")
+            }
+        } catch {
+            print("Query error")
+        }
+        
+        /*
         query.findObjectsInBackgroundWithBlock {
             (objects: [PFObject]?, error: NSError?) -> Void in
             if error == nil {
@@ -82,7 +114,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, GMSMapViewDel
             } else{
                 print("Error")
             }
-        }
+        }*/
     }
 
     
@@ -154,14 +186,18 @@ class ViewController: UIViewController, CLLocationManagerDelegate, GMSMapViewDel
         locationManager.startUpdatingLocation()
         
         
-        if PFUser.currentUser() != nil{
-            loginLabel.text = PFUser.currentUser()!["username"] as! String
+        if PFUser.currentUser() != nil && userController?.count() != 0{
+            if ((userController?.checkUsername(PFUser.currentUser()!["username"] as! String)) == false){
+                loginLabel.text = PFUser.currentUser()!["username"] as? String
+            }else{
+                PFUser.logOut()
+            }
         }else{
             loginLabel.text = ""
         }
 
         
-        }
+    }
     
     func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         let loc = locations[0] as CLLocation
