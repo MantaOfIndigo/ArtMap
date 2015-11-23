@@ -178,16 +178,10 @@
                                         <constraints>
                                             <constraint firstItem="ZOz-v6-OXG" firstAttribute="leading" secondItem="BsD-By-JZF" secondAttribute="leading" constant="32" id="1UU-xZ-G7F"/>
                                             <constraint firstAttribute="trailing" secondItem="NDA-6a-QNB" secondAttribute="trailing" constant="22" id="36S-1R-Hdd"/>
-                                            <constraint firstItem="NDA-6a-QNB" firstAttribute="leading" secondItem="ZOz-v6-OXG" secondAttribute="trailing" constant="8" id="6pN-T4-pao"/>
                                             <constraint firstAttribute="height" constant="75" id="bmG-pQ-TU3"/>
                                             <constraint firstAttribute="bottom" secondItem="ZOz-v6-OXG" secondAttribute="bottom" constant="27" id="dcq-Qk-RHY"/>
                                             <constraint firstAttribute="bottom" secondItem="NDA-6a-QNB" secondAttribute="bottom" constant="24" id="x8s-Cb-bcT"/>
                                         </constraints>
-                                        <variation key="default">
-                                            <mask key="constraints">
-                                                <exclude reference="6pN-T4-pao"/>
-                                            </mask>
-                                        </variation>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tco-Oy-uin">
                                         <rect key="frame" x="0.0" y="95" width="560" height="255"/>
@@ -1167,7 +1161,7 @@
                             </view>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="iTl-UX-FQv">
                                 <rect key="frame" x="20" y="79" width="560" height="501"/>
-                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <mutableString key="text">ArtMap! non vuole in alcun modo contribuire al dilagante fenomeno dello spamming su Internet. A tal fine la informiamo che i suoi dati non verranno in nessun caso diffusi in rete o ceduti a terzi, fatti salvi eventuali obblighi di legge e necessità tecniche legate all'erogazione del servizio. Il trattamento è finalizzato all'erogazione dei servisti richiesti e all'elaborazione di statistiche sull'uso dei servizi stessi. Non è nè sarà finalizzato ad invio di informazioni promozionali, sia in formato digitale che cartaceo. Il trattamento sarà realizzato con l'ausilio di strumenti informatici da parte degli operatori di ArtMap!. In qualsiasi momento sarà possibile richiedere gratuitamente la verifica, la cancellazione, la modifica dei propri dati, o ricevere l'elenco degli incaricati del trattamento, scrivendo una mail a artmapworld@gmail.com. Oltre a uniformarci a tutti gli obblighi previsti dal D. lgs. 196/2003, garantiamo inoltre la massima attenzione alla protezione dei dati da accessi fraudolenti ed alla cancellazione immediata dalle nostre liste a seguito di una sua richiesta in tal senso. Al momento della registrazione l'utente autorizza ArtMap! alla pubblicazione e/o diffusione tramite l'applicazione, a titolo gratuito e senza limiti di tempo, nonchè autorizza la conservazione delle foto e dei video stessi negli archivi informatici di ArtMap! e prende atto che la finalità di tali pubblicazioni sono meramente di carattere informativo e senza scopi di lucro. ArtMap! non intende minare in alcun modo la capacità dell'utente di mantenere la proprietà intellettuale delle proprie foto.</mutableString>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
