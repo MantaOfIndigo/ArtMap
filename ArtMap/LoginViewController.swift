@@ -23,9 +23,8 @@ class LoginViewController : UIViewController, UITextFieldDelegate, FBSDKLoginBut
     @IBOutlet weak var loginUIButton: UIButton!
     @IBOutlet weak var SignInUIButton: UIButton!
     
-    var userController : UserController?
-    let launcher = AlertLauncher()
-    let intrct = Interactor()
+    private var userController : UserController?
+    private let permissions = [ "email","user_birthday", "public_profile", "user_friends"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,7 +35,7 @@ class LoginViewController : UIViewController, UITextFieldDelegate, FBSDKLoginBut
         
         let loginView : FBSDKLoginButton = FBSDKLoginButton()
         loginView.center = self.view.center
-        loginView.addTarget(self, action: Selector("fbLogPressed:"),forControlEvents: UIControlEvents.TouchDown)
+        //loginView.addTarget(self, action: Selector("fbLogPressed:"),forControlEvents: UIControlEvents.TouchDown)
         
         loginView.readPermissions = ["public_profile", "email", "user_friends"]
         loginView.delegate = self
@@ -44,27 +43,33 @@ class LoginViewController : UIViewController, UITextFieldDelegate, FBSDKLoginBut
         
     }
     
-    let permissions = [ "email","user_birthday", "public_profile", "user_friends"]
     
-    func fbLogPressed(sender: FBSDKLoginButton){
+    /*func fbLogPressed(sender: FBSDKLoginButton){
         
         loginUIButton.enabled = false
         SignInUIButton.enabled = false
-        
         PFFacebookUtils.logInInBackgroundWithReadPermissions(permissions){
             (user: PFUser?, error: NSError?) -> Void in
-            if let user = user{
-                if (self.userController?.checkEmail(user["email"] as! String) == true){
-                    self.intrct.uploadNewUser(User(username: user.username!, email: user.email!), password: String(user.password))
-                }else{
-                    print(user.password)
-                }
+            if error == nil && user != nil{
+                print(user?.valueForKey("username"))
+                if let user = user{
+                    if (self.userController?.checkEmail(user["email"] as! String) == true){
+                        Interactor().uploadNewUser(User(username: user.username!, email: user.email!), password: String(user.password))
+                    }else{
+                        if PFUser.currentUser() != nil{
+                            self.dismissViewControllerAnimated(true, completion: nil)
+                        }else{
+                            AlertLauncher().launchAlert("Login fallito", message: String(error!.userInfo), toView: self)
+                        
+                        }
+                    }
                 
-                self.loginUIButton.enabled = true
-                self.SignInUIButton.enabled = true
+                    self.loginUIButton.enabled = true
+                    self.SignInUIButton.enabled = true
+                }
             }
         }
-    }
+    }*/
     
     override func viewDidAppear(animated: Bool) {
         if PFUser.currentUser() != nil{
@@ -77,27 +82,82 @@ class LoginViewController : UIViewController, UITextFieldDelegate, FBSDKLoginBut
     }
     
     func loginButton(loginButton: FBSDKLoginButton!, didCompleteWithResult result: FBSDKLoginManagerLoginResult!, error: NSError!) {
-       
         
-        if result != nil{
-            dismissViewControllerAnimated(true, completion: nil)
-        }else{
-            AlertLauncher().launchAlert("Login fallito", message: String(error.userInfo), toView: self)
+        var email : String?
+        var username : String?
+      //  print(result)
+        if error == nil{
+            
+            let fbRequest = FBSDKGraphRequest(graphPath:"me", parameters: nil, tokenString: FBSDKAccessToken.currentAccessToken().tokenString, version: "v2.3", HTTPMethod: nil)
+            fbRequest.startWithCompletionHandler { (connection : FBSDKGraphRequestConnection!, result : AnyObject!, error : NSError!) -> Void in
+                print(result)
+                if error == nil {
+                    let id = result.valueForKey("id") as? String
+                    email = (result.valueForKey("email") as? String)! + ""
+                    username = (result.valueForKey("name") as? String)!
+                    
+                    
+                    
+                    if id != nil && username != nil{
+                        if self.userController?.checkUsername(username!) == true{
+                            Interactor().uploadNewFBUser(User(username: username!, email: email!), idFB : id!)
+                                self.userController?.addNewUserToList(User(username: username!, email: email!))
+                        }else{
+                            PFUser.logInWithUsernameInBackground(username!, password: "", block: { (user : PFUser?, error : NSError?) -> Void in
+                                if user != nil{
+                                    self.dismissViewControllerAnimated(true, completion: nil)
+                                }else{
+                                    AlertLauncher().launchAlert("Login Fallito", message: "Il login via Facebook è momentaneamente fuori servizio", toView: self)
+                                }
+                            })
+                        }
+                    }else{
+                        AlertLauncher().launchAlertWithConfirm("Login Fallito", message: "Il login via Facebook è momentaneamente fuori servizio", toView: self)
+                    }
+                }else{
+                    AlertLauncher().launchAlertWithConfirm("Login Fallito", message: "Il login via Facebook è momentaneamente fuori servizio", toView: self)
+                }
+                
+                
+            }
+        }else {
+            AlertLauncher().launchAlertWithConfirm("Login Fallito", message: "Il login via Facebook è momentaneamente fuori servizio", toView: self)
         }
+        
+    
+        
+        PFFacebookUtils.logInInBackgroundWithReadPermissions(self.permissions
+            , block: { (user: PFUser?, error: NSError?) -> Void in
+                print(PFUser.currentUser())
+                if error == nil{
+                    print(user?.valueForKey("username"))
+                    print(user?.valueForKey("password"))
+                }else{
+                    AlertLauncher().launchAlert("Login Fallito", message: "Il login via Facebook è momentaneamente fuori servizio", toView: self)
+                    return
+                }
+                
+        })
     }
     
-    func setUserList(value : UserController){
+            //dismissViewControllerAnimated(true, completion: nil
+    
+    func setUserController(value : UserController){
         self.userController = value
     }
     
-    @IBAction func cancel(sender: UIButton) {
+    @IBAction func exit(sender: AnyObject) {
         dismissViewControllerAnimated(true, completion: nil)
     }
-   
-    @IBAction func showPrivacy(sender: UIButton) {
-        print("lancia view per privacy con testo")
+    
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        return false
     }
-    @IBAction func signIn(sender: UIButton) {
+    
+    
+    @IBAction func signIn(sender: AnyObject) {
         
         if PFUser.currentUser() == nil{
             if checkParameters(){
@@ -106,41 +166,42 @@ class LoginViewController : UIViewController, UITextFieldDelegate, FBSDKLoginBut
                 userController?.addNewUserToList(newUser)
                 intrct.uploadNewUser(newUser, password: password.text!)
                 do{
-                try PFUser.logInWithUsername(newUser.getUsername(), password: password.text!)
+                    try PFUser.logInWithUsername(newUser.getUsername(), password: password.text!)
                     dismissViewControllerAnimated(true, completion: nil)
                 }catch{
-                   print("SignIn error-")
+                    print("SignIn error-")
                 }
-            
+                
                 dismissViewControllerAnimated(true, completion: nil)
             }
         }
-        
-    }
-    
 
+    }
+  
+    
+    
     
     func checkParameters()-> Bool{
         if password.text != confirmPassword.text{
-            launcher.launchAlert( "Password non confermata", message: "Password ripetuta non correttamente", toView: self)
+            AlertLauncher().launchAlert( "Password non confermata", message: "Password ripetuta non correttamente", toView: self)
             return false
         }
         if password.text?.characters.count < 5 || password.text?.characters.count > 12{
-            launcher.launchAlert("Formato password non corretto", message: "La password deve avere un minimo di 5 e un massimo di 12 caratteri", toView: self)
+            AlertLauncher().launchAlert("Formato password non corretto", message: "La password deve avere un minimo di 5 e un massimo di 12 caratteri", toView: self)
             return false
         }
-        if launcher.isValidEmail(email.text!) == false {
-            launcher.launchAlert("Email non valida", message: "Controlla che l'indirizzo sia esatto", toView: self)
+        if AlertLauncher().isValidEmail(email.text!) == false {
+            AlertLauncher().launchAlert("Email non valida", message: "Controlla che l'indirizzo sia esatto", toView: self)
             return false
         }
         if ((userController?.checkEmail(email.text!)) == false){
-            launcher.launchAlert("Email non valida", message: "Questo indirizzo email è già stato utilizzato", toView: self)
+            AlertLauncher().launchAlert("Email non valida", message: "Questo indirizzo email è già stato utilizzato", toView: self)
             return false
         }else{
             
         }
         if ((userController?.checkUsername(username.text!)) == false){
-            launcher.launchAlert("Username non valido", message: "Questo username è già stato utilizzato", toView: self)
+            AlertLauncher().launchAlert("Username non valido", message: "Questo username è già stato utilizzato", toView: self)
             return false
         }
         
@@ -150,11 +211,10 @@ class LoginViewController : UIViewController, UITextFieldDelegate, FBSDKLoginBut
     
     
     @IBAction func loginAction(sender: UIButton) {
-            let intrct = Interactor()
         
         if PFUser.currentUser() == nil{
             do{
-                if try intrct.retrieveLogin(email.text!, password: password.text!)  ==  true{
+                if try Interactor().retrieveLogin(email.text!, password: password.text!)  ==  true{
                     dismissViewControllerAnimated(true, completion: nil)
                 }else{
                     _ = AlertLauncher().launchAlert("Login Fallito", message: "La mail inserita non esiste", toView: self)
@@ -164,7 +224,7 @@ class LoginViewController : UIViewController, UITextFieldDelegate, FBSDKLoginBut
             }
         }
     }
-   
     
-   
+    
+    
 }

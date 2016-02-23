@@ -7,27 +7,29 @@
 //
 
 import UIKit
-//import GoogleMaps
+import GoogleMaps
 import CoreLocation
 import FBSDKCoreKit
 import FBSDKLoginKit
 import Parse
 import ParseUI
 
-class ViewController: UIViewController, CLLocationManagerDelegate, GMSMapViewDelegate, PFLogInViewControllerDelegate{
-
-    var locationManager: CLLocationManager!
-    var markerController: MarkerController?
-    var userController : UserController?
-    var popview: ArtInfoView!
+class ViewController: UIViewController, CLLocationManagerDelegate, GMSMapViewDelegate{
     
-    var markerFlag = false
-    var userFlag = false
+    private var locationManager: CLLocationManager!
+    private var markerController: MarkerController?
+    private var userController : UserController?
+    private var popview: ArtInfoView!
     
-    let intrct : Interactor = Interactor()
-    var log = false
+    private var markerFlag = false
+    private var userFlag = false
     
-    func setMarkers(){
+    
+    @IBOutlet weak var viewMap: GMSMapView!
+    
+    //private var log = false
+    
+    private func setMarkers(){
         markerController = MarkerController()
         
         let query = PFQuery(className:"MainDB")
@@ -42,7 +44,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, GMSMapViewDel
                 if let objects = objects as [PFObject]? {
                     for object in objects {
                         self.markerController!.createList(object).getMarker().map = self.viewMap
-
+                        
                     }
                     
                     self.markerFlag = true
@@ -55,11 +57,11 @@ class ViewController: UIViewController, CLLocationManagerDelegate, GMSMapViewDel
                 print("Error")
             }
         }
-
+        
     }
     
     
-    func setUsers(){
+    private func setUsers(){
         userController = UserController()
         
         let query = PFQuery(className:"_User")
@@ -80,9 +82,9 @@ class ViewController: UIViewController, CLLocationManagerDelegate, GMSMapViewDel
                     }else{
                         PFUser.logOut()
                     }
-
+                    
                 }
-               
+                
                 
                 if self.markerFlag{
                     self.markerController?.linkUser((self.userController?.getList())!)
@@ -93,91 +95,49 @@ class ViewController: UIViewController, CLLocationManagerDelegate, GMSMapViewDel
         } catch {
             print("Query error")
         }
-        
-        /*
-        query.findObjectsInBackgroundWithBlock {
-            (objects: [PFObject]?, error: NSError?) -> Void in
-            if error == nil {
-                
-                print("Successfully retrieved \(objects!.count) users.")
-                if let objects = objects as [PFObject]? {
-                    for object in objects {
-                        self.userController!.createList(object)
-                        
-                    }
-                    
-                    self.userFlag = true
-                    if self.markerFlag && self.userFlag{
-                        self.markerController?.linkUser((self.userController?.getList())!)
-                    }
-                }
-            } else{
-                print("Error")
-            }
-        }*/
     }
-
+    
     
     @IBOutlet weak var photoImg: UIImageView!
     @IBOutlet weak var loginLabel: UILabel!
     
     @IBAction func prepareUserProfile(sender: UITapGestureRecognizer) {
-            /**/
+        
+        if PFUser.currentUser() == nil{
             
-               if PFUser.currentUser() == nil{
-        
-                if let resultController = storyboard?.instantiateViewControllerWithIdentifier("loginInterface") as? LoginViewController{
-                    resultController.setUserList(userController!)
-                    presentViewController(resultController, animated: true, completion: nil)
-                }
-                
-               }else{
-                
-                if let resultController = storyboard?.instantiateViewControllerWithIdentifier("userInterface") as? UserInfoController{
-                    print(PFUser.currentUser()!["username"])
-                    print(self.userController?.retrieveByUsername(PFUser.currentUser()!["username"] as! String)?.getUsername())
-                    resultController.setUserPage((self.userController?.retrieveByMail(PFUser.currentUser()!["email"] as! String))!)
-                    presentViewController(resultController, animated: true, completion: nil)
-                    
-                }
+            if let resultController = storyboard?.instantiateViewControllerWithIdentifier("loginInterface") as? LoginViewController{
+                resultController.setUserController(userController!)
+                presentViewController(resultController, animated: true, completion: nil)
             }
-    }
-   
-    func logInViewController(logInController: PFLogInViewController, didLogInUser user: PFUser){
-        self.dismissViewControllerAnimated(true, completion: nil)
+            
+        }else{
+            
+            if let resultController = storyboard?.instantiateViewControllerWithIdentifier("userInterface") as? UserInfoController{
+                print(PFUser.currentUser()!["username"])
+                print(self.userController?.retrieveByUsername(PFUser.currentUser()!["username"] as! String)?.getUsername())
+                resultController.setUserPage((self.userController?.retrieveByUsername(PFUser.currentUser()!["username"] as! String))!)
+                presentViewController(resultController, animated: true, completion: nil)
+                
+            }
+        }
         
     }
-    @IBOutlet weak var viewMap: GMSMapView!
-    var placesClient: GMSPlacesClient?
-    
-    @IBAction func tapPhoto(sender: UITapGestureRecognizer) {
-        //Apri nuova finestra
-        
-    }
+
     
 
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //NSUserDefaults.standardUserDefaults().removeObjectForKey("tour")
         viewMap.delegate = self
         viewMap.settings.myLocationButton = true
+        viewMap.myLocationEnabled = true;
         setMarkers()
         setUsers()
-    
-       /* if FBSDKAccessToken.currentAccessToken() != nil{
-            loginLabel.text = NSUserDefaults.standardUserDefaults().stringForKey("username")
-            log = true
-            
-        }else{
-            
-        
-                }*/
-
-
     }
     
-    override func viewDidAppear(animated: Bool) {
+    override func viewWillAppear(animated: Bool) {
         super.viewDidAppear(animated)
         locationManager = CLLocationManager()
         locationManager.delegate = self
@@ -185,7 +145,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, GMSMapViewDel
         locationManager.requestAlwaysAuthorization()
         locationManager.startUpdatingLocation()
         
-        
+        print(PFUser.currentUser()?["username"])
         if PFUser.currentUser() != nil && userController?.count() != 0{
             if ((userController?.checkUsername(PFUser.currentUser()!["username"] as! String)) == false){
                 loginLabel.text = PFUser.currentUser()!["username"] as? String
@@ -195,51 +155,51 @@ class ViewController: UIViewController, CLLocationManagerDelegate, GMSMapViewDel
         }else{
             loginLabel.text = ""
         }
-
+        
         
     }
     
     func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         let loc = locations[0] as CLLocation
         
-        placesClient = GMSPlacesClient()
+        let placesClient = GMSPlacesClient()
         let camera: GMSCameraPosition = GMSCameraPosition.cameraWithLatitude(loc.coordinate.latitude, longitude: loc.coordinate.longitude, zoom: 5.0)
         viewMap.camera = camera
         
         locationManager.stopUpdatingLocation()
     }
-  
+    
     
     func mapView(mapView: GMSMapView!, didTapInfoWindowOfMarker marker: GMSMarker!) {
         
         let tmpimage = markerController?.getMarker(marker)?.getImage()
         popUpView(marker, image: tmpimage!)
-               //popview.image.image = markerController!.getImageFromMarker(marker)
-       
+        //popview.image.image = markerController!.getImageFromMarker(marker)
+        
     }
     
-    func popUpView(marker: GMSMarker, image: UIImage){
+    private func popUpView(marker: GMSMarker, image: UIImage){
         self.popview = ArtInfoView(nibName: "ArtInfoView", bundle: nil)
         if let tmp = markerController?.getMarker(marker)! {
-            popview.setInformation(intrct.retriveDBMarkerInfo(tmp))
+            popview.setInformation(Interactor().retriveDBMarkerInfo(tmp))
         }
         self.popview.showInView(self.view, animated: true, image: image)
     }
     
     func mapView(mapView: GMSMapView!, markerInfoWindow marker: GMSMarker) -> UIView! {
         let mark = markerController?.getMarker(marker)
-        let image = tmp(mark!)
+        let image = getImage(mark!)
         var infoWindow : CustomInfoWindow = CustomInfoWindow()
         infoWindow.prepareImage(image)
         infoWindow = NSBundle.mainBundle().loadNibNamed("InfoWindow", owner: self, options: nil).first! as! CustomInfoWindow
-        // devo rendere sincrono sto cazzo di thread altrimenti carica l'immagine dopo che lancia la view
+        
         infoWindow.image.image = image
         
         return infoWindow
     }
     
-    func tmp(mark : Marker) -> UIImage{
-        return intrct.retriveDBMarkerImage(mark)
+    private func getImage(marker : Marker) -> UIImage{
+        return Interactor().retriveDBMarkerImage(marker)
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -247,9 +207,9 @@ class ViewController: UIViewController, CLLocationManagerDelegate, GMSMapViewDel
     }
     
     
-  
-
-
-
+    
+    
+    
+    
 }
 

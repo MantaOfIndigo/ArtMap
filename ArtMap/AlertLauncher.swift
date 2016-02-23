@@ -29,4 +29,13 @@ class AlertLauncher: UIViewController{
         alertController.addAction(UIAlertAction(title: "Indietro", style: UIAlertActionStyle.Default, handler: nil))
         toView.presentViewController(alertController, animated: true, completion: nil)
     }
+    func launchAlertWithConfirm(title: String, message:String, toView: UIViewController){
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: .Alert)
+        alertController.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Cancel, handler: { (action: UIAlertAction) -> Void in
+            toView.dismissViewControllerAnimated(true, completion: nil)
+        }))
+            
+        toView.presentViewController(alertController, animated: true, completion: nil)
+
+    }
 }

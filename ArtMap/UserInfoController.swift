@@ -8,7 +8,7 @@
 
 import UIKit
 
-class UserInfoController: UIViewController, UINavigationControllerDelegate{
+class UserInfoController: UIViewController{
     
     @IBOutlet weak var userName: UILabel!
     @IBOutlet weak var checkins: UILabel!
@@ -16,17 +16,19 @@ class UserInfoController: UIViewController, UINavigationControllerDelegate{
     @IBOutlet weak var reports: UILabel!
     @IBOutlet weak var points: UILabel!
     
+    @IBOutlet weak var tourButton: UIBarButtonItem!
     @IBOutlet weak var logoutButton: UIButton!
     
-    var presentedUser : User = User()
+    private var presentedUser : User = User()
     
-    @IBAction func cancelButton(sender: UIButton) {
+    @IBAction func exit(sender: AnyObject) {
         dismissViewControllerAnimated(true, completion: nil)
+        
     }
-   
+    
     @IBAction func logOut(sender: UIButton) {
-        NSUserDefaults.standardUserDefaults().setObject("NOLOGGED", forKey: "username")
-   
+        //NSUserDefaults.standardUserDefaults().setObject("NOLOGGED", forKey: "username")
+        
         let loginManager = FBSDKLoginManager()
         loginManager.logOut()
         PFUser.logOut()
@@ -46,17 +48,14 @@ class UserInfoController: UIViewController, UINavigationControllerDelegate{
         }else{
             if self.presentedUser.getUsername() == PFUser.currentUser()!["username"] as! String{
                 self.logoutButton.hidden = false
+                self.tourButton.enabled = true
             }else{
+                self.tourButton.enabled = false
                 self.logoutButton.hidden = true
             }
         }
-        
-       
-        
     }
-    override func viewDidAppear(animated: Bool) {
-       
-    }
+
     func setUserPage(user: User){
         self.presentedUser = Interactor().retrieveUserRecord(user.getUsername())
         if presentedUser.getUsername() == ""{

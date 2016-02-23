@@ -7,13 +7,13 @@
 //
 
 import UIKit
-//import GoogleMaps
+import GoogleMaps
 import Parse
 
 class MarkerController: NSObject {
     
     
-    var markerList : [Marker] = [Marker]()
+    private var markerList : [Marker] = [Marker]()
     // devo creare un oggetto che contenga GMSMarker, immagine e identificativo
     // da passare nella lista di ritorno
     override init(){
@@ -21,11 +21,11 @@ class MarkerController: NSObject {
     }
     // formato record
     /*
-        artId   author  image   latitude    longitude    tag    title   user    visibility  year
-        int     string  UIImage double      double       string string  string  bool        int
+    artId   author  image   latitude    longitude    tag    title   user    visibility  year
+    int     string  UIImage double      double       string string  string  bool        int
     */
     func createList(object: PFObject) -> Marker{
-            let loc = CLLocationCoordinate2DMake(object["latitude"] as! Double, object["longitude"] as! Double)
+        let loc = CLLocationCoordinate2DMake(object["latitude"] as! Double, object["longitude"] as! Double)
         let tmp = Marker(position: loc, id: object["artId"] as! Int)
         
         if object["user"] == nil{
@@ -37,8 +37,8 @@ class MarkerController: NSObject {
         
         markerList.append(tmp)
         
-            return tmp
-            
+        return tmp
+        
     }
     
     func getImageFromMarker(marker: Marker) -> UIImage?{
@@ -50,7 +50,15 @@ class MarkerController: NSObject {
         
         return nil
     }
-    
+    func getMarkerFromLocation(marker: GMSMarker) -> Marker?{
+        for index in 0...markerList.count{
+            if markerList[index].getMarker().position.longitude == marker.position.longitude && markerList[index].getMarker().position.latitude == marker.position.latitude{
+                return markerList[index]
+            }
+        }
+        
+        return nil
+    }
     func getMarker(marker:GMSMarker) -> Marker?{
         for index in 0...markerList.count{
             if markerList[index].getMarker().isEqual(marker){
@@ -81,5 +89,5 @@ class MarkerController: NSObject {
         
         return false
     }
-
+    
 }

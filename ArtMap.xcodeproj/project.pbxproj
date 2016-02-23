@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		0F1527D71BC90A6D003F665B /* FormArtController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F1527D61BC90A6D003F665B /* FormArtController.swift */; };
+		0F1AC84A1C74A358007ECC1E /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F1AC8491C74A358007ECC1E /* Route.swift */; };
+		0F1AC8521C74DB19007ECC1E /* DirectionTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F1AC8511C74DB19007ECC1E /* DirectionTableCell.xib */; };
+		0F1AC8541C75C8EB007ECC1E /* TourTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F1AC8531C75C8EB007ECC1E /* TourTableCell.xib */; };
 		0F23A1221BD6435200CD7435 /* Interactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F23A1211BD6435200CD7435 /* Interactor.swift */; };
 		0F23A1241BD68FD700CD7435 /* UserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F23A1231BD68FD700CD7435 /* UserController.swift */; };
 		0F3736B91BDE3863009A1CBB /* ReportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F3736B81BDE3863009A1CBB /* ReportViewController.swift */; };
@@ -26,6 +29,8 @@
 		0F51B8B51BCE9725009E0BA1 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F51B8B41BCE9725009E0BA1 /* SystemConfiguration.framework */; };
 		0F5326A51C0076E900508A7A /* PrivacyController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F5326A41C0076E900508A7A /* PrivacyController.swift */; };
 		0F58495C1BCD4C7E00BAA982 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F58495B1BCD4C7E00BAA982 /* User.swift */; };
+		0F67F5A71C7357EB00956AFF /* Step.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F67F5A61C7357EB00956AFF /* Step.swift */; };
+		0F67F5A91C735A3E00956AFF /* Tour.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F67F5A81C735A3E00956AFF /* Tour.swift */; };
 		0FA4FB3D1BE234F400BAFCEF /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FA4FB3C1BE234F400BAFCEF /* Parse.framework */; };
 		0FA4FB3F1BE2350000BAFCEF /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FA4FB3E1BE2350000BAFCEF /* Bolts.framework */; };
 		0FA4FB411BE2353100BAFCEF /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FA4FB401BE2353100BAFCEF /* Accounts.framework */; };
@@ -35,6 +40,16 @@
 		0FA4FB491BE2377300BAFCEF /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FA4FB481BE2377300BAFCEF /* FBSDKLoginKit.framework */; };
 		0FA4FB4B1BE2378400BAFCEF /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FA4FB4A1BE2378400BAFCEF /* FBSDKShareKit.framework */; };
 		0FA4FB551BF889FD00BAFCEF /* AddArtInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FA4FB541BF889FD00BAFCEF /* AddArtInfoView.swift */; };
+		0FC6E3A41C73569C005841EC /* DirectionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FC6E3A31C73569C005841EC /* DirectionManager.swift */; };
+		0FC78FC51C75DCE800927425 /* TourRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FC78FC41C75DCE800927425 /* TourRecord.swift */; };
+		0FC78FC71C789E0B00927425 /* IndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FC78FC61C789E0B00927425 /* IndicatorView.swift */; };
+		0FC78FC91C78B03A00927425 /* ReportArtistController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FC78FC81C78B03A00927425 /* ReportArtistController.swift */; };
+		0FC78FD21C78CA3A00927425 /* TourTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FC78FD11C78CA3A00927425 /* TourTableCell.swift */; };
+		0FCB30771C7248070002E1FF /* AddTourController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FCB30761C7248070002E1FF /* AddTourController.swift */; };
+		0FCB30791C7248740002E1FF /* ArtistProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FCB30781C7248740002E1FF /* ArtistProfileController.swift */; };
+		0FCB307B1C7249460002E1FF /* TourTabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FCB307A1C7249460002E1FF /* TourTabController.swift */; };
+		0FCB307D1C724CD30002E1FF /* GoogleMaps.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FCB307C1C724CD30002E1FF /* GoogleMaps.framework */; };
+		0FCB307F1C7253540002E1FF /* MapManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FCB307E1C7253540002E1FF /* MapManager.swift */; };
 		0FD541E51BC2B68D0084546E /* Marker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FD541E41BC2B68D0084546E /* Marker.swift */; };
 		0FD541E71BC2BF4E0084546E /* ArtInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FD541E61BC2BF4E0084546E /* ArtInfoView.swift */; };
 		0FD541E91BC414340084546E /* ArtInfoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0FD541E81BC414340084546E /* ArtInfoView.xib */; };
@@ -51,6 +66,7 @@
 		0FF19C481BBA7EFA00B96C5F /* AddArtController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF19C471BBA7EFA00B96C5F /* AddArtController.swift */; };
 		0FF19C4A1BBA7F1000B96C5F /* UserInfoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF19C491BBA7F1000B96C5F /* UserInfoController.swift */; };
 		0FF19C4C1BBA7F2000B96C5F /* Art.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF19C4B1BBA7F2000B96C5F /* Art.swift */; };
+		0FF2FFFF1C7485B10002AB93 /* TourIndicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF2FFFE1C7485B10002AB93 /* TourIndicationController.swift */; };
 		80D8D205C4E20B3A5EF17EB8 /* Pods_ArtMap.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2248431C800505F1B8394BCF /* Pods_ArtMap.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
@@ -74,6 +90,9 @@
 /* Begin PBXFileReference section */
 		0428BF98C3DD5EB1288B7035 /* Pods-ArtMap.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ArtMap.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ArtMap/Pods-ArtMap.debug.xcconfig"; sourceTree = "<group>"; };
 		0F1527D61BC90A6D003F665B /* FormArtController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormArtController.swift; sourceTree = "<group>"; };
+		0F1AC8491C74A358007ECC1E /* Route.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Route.swift; sourceTree = "<group>"; };
+		0F1AC8511C74DB19007ECC1E /* DirectionTableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DirectionTableCell.xib; sourceTree = "<group>"; };
+		0F1AC8531C75C8EB007ECC1E /* TourTableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TourTableCell.xib; sourceTree = "<group>"; };
 		0F23A1211BD6435200CD7435 /* Interactor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Interactor.swift; sourceTree = "<group>"; };
 		0F23A1231BD68FD700CD7435 /* UserController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserController.swift; sourceTree = "<group>"; };
 		0F2AAB721BCD54D9005D2BC2 /* FBAdChoicesView.html */ = {isa = PBXFileReference; lastKnownFileType = text.html.documentation; path = FBAdChoicesView.html; sourceTree = "<group>"; };
@@ -125,6 +144,8 @@
 		0F51B8B41BCE9725009E0BA1 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		0F5326A41C0076E900508A7A /* PrivacyController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrivacyController.swift; sourceTree = "<group>"; };
 		0F58495B1BCD4C7E00BAA982 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		0F67F5A61C7357EB00956AFF /* Step.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Step.swift; sourceTree = "<group>"; };
+		0F67F5A81C735A3E00956AFF /* Tour.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tour.swift; sourceTree = "<group>"; };
 		0FA4FB3C1BE234F400BAFCEF /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Parse.framework; path = "../../../../Downloads/parse-library-1-2/Parse.framework"; sourceTree = "<group>"; };
 		0FA4FB3E1BE2350000BAFCEF /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = "../../../../Downloads/parse-library-1-2/Bolts.framework"; sourceTree = "<group>"; };
 		0FA4FB401BE2353100BAFCEF /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
@@ -134,6 +155,16 @@
 		0FA4FB481BE2377300BAFCEF /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = "../../../../Downloads/FacebookSDKs-iOS-20151026/FBSDKLoginKit.framework"; sourceTree = "<group>"; };
 		0FA4FB4A1BE2378400BAFCEF /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKShareKit.framework; path = "../../../../Downloads/FacebookSDKs-iOS-20151026/FBSDKShareKit.framework"; sourceTree = "<group>"; };
 		0FA4FB541BF889FD00BAFCEF /* AddArtInfoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddArtInfoView.swift; sourceTree = "<group>"; };
+		0FC6E3A31C73569C005841EC /* DirectionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DirectionManager.swift; sourceTree = "<group>"; };
+		0FC78FC41C75DCE800927425 /* TourRecord.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TourRecord.swift; sourceTree = "<group>"; };
+		0FC78FC61C789E0B00927425 /* IndicatorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IndicatorView.swift; sourceTree = "<group>"; };
+		0FC78FC81C78B03A00927425 /* ReportArtistController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReportArtistController.swift; sourceTree = "<group>"; };
+		0FC78FD11C78CA3A00927425 /* TourTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TourTableCell.swift; sourceTree = "<group>"; };
+		0FCB30761C7248070002E1FF /* AddTourController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddTourController.swift; sourceTree = "<group>"; };
+		0FCB30781C7248740002E1FF /* ArtistProfileController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtistProfileController.swift; sourceTree = "<group>"; };
+		0FCB307A1C7249460002E1FF /* TourTabController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TourTabController.swift; sourceTree = "<group>"; };
+		0FCB307C1C724CD30002E1FF /* GoogleMaps.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleMaps.framework; path = ../../ArtMap/GoogleMaps.framework; sourceTree = "<group>"; };
+		0FCB307E1C7253540002E1FF /* MapManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapManager.swift; sourceTree = "<group>"; };
 		0FD541E41BC2B68D0084546E /* Marker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Marker.swift; sourceTree = "<group>"; };
 		0FD541E61BC2BF4E0084546E /* ArtInfoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtInfoView.swift; sourceTree = "<group>"; };
 		0FD541E81BC414340084546E /* ArtInfoView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ArtInfoView.xib; sourceTree = "<group>"; };
@@ -156,6 +187,7 @@
 		0FF19C471BBA7EFA00B96C5F /* AddArtController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddArtController.swift; sourceTree = "<group>"; };
 		0FF19C491BBA7F1000B96C5F /* UserInfoController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInfoController.swift; sourceTree = "<group>"; };
 		0FF19C4B1BBA7F2000B96C5F /* Art.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Art.swift; sourceTree = "<group>"; };
+		0FF2FFFE1C7485B10002AB93 /* TourIndicationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TourIndicationController.swift; sourceTree = "<group>"; };
 		0FF8E02E1BDB8FB100E93BFE /* ArtMap-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ArtMap-Bridging-Header.h"; sourceTree = "<group>"; };
 		2248431C800505F1B8394BCF /* Pods_ArtMap.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ArtMap.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		812F30186C5601B275DA8949 /* Pods-ArtMap.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ArtMap.release.xcconfig"; path = "Pods/Target Support Files/Pods-ArtMap/Pods-ArtMap.release.xcconfig"; sourceTree = "<group>"; };
@@ -181,6 +213,7 @@
 				0F51B8AB1BCE96F0009E0BA1 /* libz.tbd in Frameworks */,
 				0F51B8A91BCE96E4009E0BA1 /* libsqlite3.tbd in Frameworks */,
 				0F51B8A71BCE96CD009E0BA1 /* CoreLocation.framework in Frameworks */,
+				0FCB307D1C724CD30002E1FF /* GoogleMaps.framework in Frameworks */,
 				0F51B8A51BCE96C3009E0BA1 /* CoreGraphics.framework in Frameworks */,
 				0FA4FB471BE2375100BAFCEF /* FBSDKShareKit.framework in Frameworks */,
 				0F51B8A31BCE96BD009E0BA1 /* CFNetwork.framework in Frameworks */,
@@ -286,6 +319,89 @@
 			path = Protocols;
 			sourceTree = "<group>";
 		};
+		0FC78FCA1C78C73500927425 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				0FD541E41BC2B68D0084546E /* Marker.swift */,
+				0FC78FC41C75DCE800927425 /* TourRecord.swift */,
+				0F58495B1BCD4C7E00BAA982 /* User.swift */,
+				0FF19C4B1BBA7F2000B96C5F /* Art.swift */,
+				0F67F5A61C7357EB00956AFF /* Step.swift */,
+				0F67F5A81C735A3E00956AFF /* Tour.swift */,
+				0F1AC8491C74A358007ECC1E /* Route.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		0FC78FCB1C78C76D00927425 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				0F23A1211BD6435200CD7435 /* Interactor.swift */,
+				0FCB307E1C7253540002E1FF /* MapManager.swift */,
+				0F23A1231BD68FD700CD7435 /* UserController.swift */,
+				0FDFE7041BC174B5009D2EBD /* MarkerController.swift */,
+				0FC6E3A31C73569C005841EC /* DirectionManager.swift */,
+				0F3736BA1BE12C3C009A1CBB /* AlertLauncher.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		0FC78FCC1C78C81300927425 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				0FF19C1B1BBA7DB800B96C5F /* ViewController.swift */,
+				0FC78FD01C78C8D000927425 /* User Section */,
+				0FC78FCD1C78C83600927425 /* Tour Section */,
+				0FC78FCE1C78C86900927425 /* Report Section */,
+				0FC78FCF1C78C87D00927425 /* Info Section */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		0FC78FCD1C78C83600927425 /* Tour Section */ = {
+			isa = PBXGroup;
+			children = (
+				0FCB30761C7248070002E1FF /* AddTourController.swift */,
+				0FC78FC61C789E0B00927425 /* IndicatorView.swift */,
+				0FC78FD11C78CA3A00927425 /* TourTableCell.swift */,
+				0FF2FFFE1C7485B10002AB93 /* TourIndicationController.swift */,
+				0FCB307A1C7249460002E1FF /* TourTabController.swift */,
+			);
+			name = "Tour Section";
+			sourceTree = "<group>";
+		};
+		0FC78FCE1C78C86900927425 /* Report Section */ = {
+			isa = PBXGroup;
+			children = (
+				0F3736B81BDE3863009A1CBB /* ReportViewController.swift */,
+				0FC78FC81C78B03A00927425 /* ReportArtistController.swift */,
+			);
+			name = "Report Section";
+			sourceTree = "<group>";
+		};
+		0FC78FCF1C78C87D00927425 /* Info Section */ = {
+			isa = PBXGroup;
+			children = (
+				0FF19C471BBA7EFA00B96C5F /* AddArtController.swift */,
+				0FDFE7061BC18EB8009D2EBD /* CustomInfoWindow.swift */,
+				0FD541E61BC2BF4E0084546E /* ArtInfoView.swift */,
+				0FCB30781C7248740002E1FF /* ArtistProfileController.swift */,
+				0FA4FB541BF889FD00BAFCEF /* AddArtInfoView.swift */,
+				0F1527D61BC90A6D003F665B /* FormArtController.swift */,
+			);
+			name = "Info Section";
+			sourceTree = "<group>";
+		};
+		0FC78FD01C78C8D000927425 /* User Section */ = {
+			isa = PBXGroup;
+			children = (
+				0FF19C491BBA7F1000B96C5F /* UserInfoController.swift */,
+				0F5326A41C0076E900508A7A /* PrivacyController.swift */,
+				0F51B89A1BCE5BCA009E0BA1 /* LoginViewController.swift */,
+			);
+			name = "User Section";
+			sourceTree = "<group>";
+		};
 		0FF19C0D1BBA7DB800B96C5F = {
 			isa = PBXGroup;
 			children = (
@@ -312,30 +428,18 @@
 			isa = PBXGroup;
 			children = (
 				0FF19C191BBA7DB800B96C5F /* AppDelegate.swift */,
-				0FF19C1B1BBA7DB800B96C5F /* ViewController.swift */,
-				0FD541E41BC2B68D0084546E /* Marker.swift */,
-				0FF19C471BBA7EFA00B96C5F /* AddArtController.swift */,
-				0FF19C491BBA7F1000B96C5F /* UserInfoController.swift */,
-				0F58495B1BCD4C7E00BAA982 /* User.swift */,
-				0F23A1231BD68FD700CD7435 /* UserController.swift */,
-				0F23A1211BD6435200CD7435 /* Interactor.swift */,
-				0F3736BA1BE12C3C009A1CBB /* AlertLauncher.swift */,
-				0FF19C4B1BBA7F2000B96C5F /* Art.swift */,
+				0FC78FCA1C78C73500927425 /* Model */,
+				0FC78FCB1C78C76D00927425 /* Controller */,
+				0FC78FCC1C78C81300927425 /* View */,
 				0FF19C1D1BBA7DB800B96C5F /* Main.storyboard */,
-				0F5326A41C0076E900508A7A /* PrivacyController.swift */,
-				0F3736B81BDE3863009A1CBB /* ReportViewController.swift */,
-				0F51B89A1BCE5BCA009E0BA1 /* LoginViewController.swift */,
-				0FDFE7041BC174B5009D2EBD /* MarkerController.swift */,
-				0FDFE7061BC18EB8009D2EBD /* CustomInfoWindow.swift */,
-				0FD541E61BC2BF4E0084546E /* ArtInfoView.swift */,
-				0FA4FB541BF889FD00BAFCEF /* AddArtInfoView.swift */,
+				0F1AC8531C75C8EB007ECC1E /* TourTableCell.xib */,
 				0FDFE7081BC18F05009D2EBD /* InfoWindow.xib */,
 				0FD541E81BC414340084546E /* ArtInfoView.xib */,
-				0F1527D61BC90A6D003F665B /* FormArtController.swift */,
 				0FF19C201BBA7DB800B96C5F /* Assets.xcassets */,
 				0FF19C221BBA7DB800B96C5F /* LaunchScreen.storyboard */,
 				0FF19C251BBA7DB800B96C5F /* Info.plist */,
 				0FF8E02E1BDB8FB100E93BFE /* ArtMap-Bridging-Header.h */,
+				0F1AC8511C74DB19007ECC1E /* DirectionTableCell.xib */,
 			);
 			path = ArtMap;
 			sourceTree = "<group>";
@@ -370,6 +474,7 @@
 		A6B8ADDA12D7E363226320C4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0FCB307C1C724CD30002E1FF /* GoogleMaps.framework */,
 				0FA4FB4A1BE2378400BAFCEF /* FBSDKShareKit.framework */,
 				0FA4FB481BE2377300BAFCEF /* FBSDKLoginKit.framework */,
 				0FA4FB441BE2375100BAFCEF /* FBSDKLoginKit.framework */,
@@ -467,6 +572,7 @@
 				TargetAttributes = {
 					0FF19C151BBA7DB800B96C5F = {
 						CreatedOnToolsVersion = 7.0;
+						DevelopmentTeam = H39CQ4M3WZ;
 					};
 					0FF19C291BBA7DB800B96C5F = {
 						CreatedOnToolsVersion = 7.0;
@@ -504,7 +610,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				0FF19C241BBA7DB800B96C5F /* LaunchScreen.storyboard in Resources */,
+				0F1AC8541C75C8EB007ECC1E /* TourTableCell.xib in Resources */,
 				0FD541E91BC414340084546E /* ArtInfoView.xib in Resources */,
+				0F1AC8521C74DB19007ECC1E /* DirectionTableCell.xib in Resources */,
 				0FF19C211BBA7DB800B96C5F /* Assets.xcassets in Resources */,
 				0FF19C1F1BBA7DB800B96C5F /* Main.storyboard in Resources */,
 				0FDFE7091BC18F05009D2EBD /* InfoWindow.xib in Resources */,
@@ -580,23 +688,36 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0FCB30791C7248740002E1FF /* ArtistProfileController.swift in Sources */,
 				0F51B89B1BCE5BCA009E0BA1 /* LoginViewController.swift in Sources */,
 				0FDFE7071BC18EB8009D2EBD /* CustomInfoWindow.swift in Sources */,
 				0FF19C1C1BBA7DB800B96C5F /* ViewController.swift in Sources */,
+				0FC78FD21C78CA3A00927425 /* TourTableCell.swift in Sources */,
 				0F1527D71BC90A6D003F665B /* FormArtController.swift in Sources */,
 				0F23A1241BD68FD700CD7435 /* UserController.swift in Sources */,
 				0FF19C1A1BBA7DB800B96C5F /* AppDelegate.swift in Sources */,
 				0FD541E71BC2BF4E0084546E /* ArtInfoView.swift in Sources */,
 				0FF19C4C1BBA7F2000B96C5F /* Art.swift in Sources */,
 				0F5326A51C0076E900508A7A /* PrivacyController.swift in Sources */,
+				0FCB307B1C7249460002E1FF /* TourTabController.swift in Sources */,
 				0F3736BB1BE12C3D009A1CBB /* AlertLauncher.swift in Sources */,
 				0F3736B91BDE3863009A1CBB /* ReportViewController.swift in Sources */,
+				0FC78FC91C78B03A00927425 /* ReportArtistController.swift in Sources */,
+				0FF2FFFF1C7485B10002AB93 /* TourIndicationController.swift in Sources */,
 				0FF19C4A1BBA7F1000B96C5F /* UserInfoController.swift in Sources */,
+				0FC6E3A41C73569C005841EC /* DirectionManager.swift in Sources */,
 				0F23A1221BD6435200CD7435 /* Interactor.swift in Sources */,
 				0F58495C1BCD4C7E00BAA982 /* User.swift in Sources */,
+				0F1AC84A1C74A358007ECC1E /* Route.swift in Sources */,
+				0F67F5A71C7357EB00956AFF /* Step.swift in Sources */,
+				0FCB307F1C7253540002E1FF /* MapManager.swift in Sources */,
 				0FA4FB551BF889FD00BAFCEF /* AddArtInfoView.swift in Sources */,
 				0FF19C481BBA7EFA00B96C5F /* AddArtController.swift in Sources */,
+				0FC78FC71C789E0B00927425 /* IndicatorView.swift in Sources */,
+				0FCB30771C7248070002E1FF /* AddTourController.swift in Sources */,
 				0FDFE7051BC174B5009D2EBD /* MarkerController.swift in Sources */,
+				0F67F5A91C735A3E00956AFF /* Tour.swift in Sources */,
+				0FC78FC51C75DCE800927425 /* TourRecord.swift in Sources */,
 				0FD541E51BC2B68D0084546E /* Marker.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -689,7 +810,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -730,7 +851,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OBJC_BRIDGING_HEADER = "";
@@ -745,6 +866,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -752,6 +876,7 @@
 					"$(PROJECT_DIR)/build/Debug-iphoneos",
 				);
 				INFOPLIST_FILE = ArtMap/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
 					"$(inherited)",
@@ -792,6 +917,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = it.labinfo.ArtMap;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "ArtMap/ArtMap-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -803,6 +929,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -810,6 +939,7 @@
 					"$(PROJECT_DIR)/build/Debug-iphoneos",
 				);
 				INFOPLIST_FILE = ArtMap/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
 					"$(inherited)",
@@ -850,6 +980,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = it.labinfo.ArtMap;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "ArtMap/ArtMap-Bridging-Header.h";
 			};
 			name = Release;

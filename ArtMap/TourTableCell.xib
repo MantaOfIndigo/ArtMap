@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9532" systemVersion="14F1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="cell" selectionStyle="default" indentationWidth="10" rowHeight="93" id="5Oz-Qz-XCn" customClass="TourTableCell" customModule="ArtMap" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="609" height="93"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="5Oz-Qz-XCn" id="xwZ-lu-0OL">
+                <rect key="frame" x="0.0" y="0.0" width="609" height="92"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LTi-KB-u4T">
+                        <rect key="frame" x="0.0" y="0.0" width="93" height="93"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="93" id="2fO-X2-zuI"/>
+                            <constraint firstAttribute="height" constant="93" id="3rG-yy-RFC"/>
+                            <constraint firstAttribute="width" constant="93" id="SzV-pA-1gK"/>
+                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="93" id="yPA-5s-KRf"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="32"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label autoresizesSubviews="NO" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalCompressionResistancePriority="752" verticalCompressionResistancePriority="752" text="Artists:  " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ul1-3u-sf4">
+                        <rect key="frame" x="103" y="54" width="472" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="413" id="cP8-Qw-aQ9"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="cP8-Qw-aQ9"/>
+                            </mask>
+                        </variation>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Locazione attuale  →" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ohM-V8-X95">
+                        <rect key="frame" x="103" y="17" width="161" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="21" id="37p-4t-JmL"/>
+                            <constraint firstAttribute="width" constant="161" id="CvS-5H-knf"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="numero opere" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fkF-n2-tY4">
+                        <rect key="frame" x="11" y="0.0" width="71" height="24"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="93" id="A6B-np-mO1"/>
+                            <constraint firstAttribute="width" constant="93" id="DrD-hY-kgM"/>
+                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="93" id="LSX-M3-f0c"/>
+                            <constraint firstAttribute="height" constant="24" id="WOo-cc-u1j"/>
+                            <constraint firstAttribute="width" constant="71" id="pVU-qS-GCt"/>
+                            <constraint firstAttribute="width" constant="93" id="xlM-NA-gTT"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="11"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="A6B-np-mO1"/>
+                                <exclude reference="DrD-hY-kgM"/>
+                                <exclude reference="LSX-M3-f0c"/>
+                                <exclude reference="xlM-NA-gTT"/>
+                            </mask>
+                        </variation>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="LTi-KB-u4T" firstAttribute="leading" secondItem="xwZ-lu-0OL" secondAttribute="leading" id="0TL-pX-1HP"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="LTi-KB-u4T" secondAttribute="bottom" constant="-9" id="8Kf-cG-8dd"/>
+                    <constraint firstItem="ohM-V8-X95" firstAttribute="top" secondItem="xwZ-lu-0OL" secondAttribute="top" constant="17" id="9lJ-q2-S1V"/>
+                    <constraint firstItem="LTi-KB-u4T" firstAttribute="leading" secondItem="xwZ-lu-0OL" secondAttribute="leading" id="ArN-uH-uif"/>
+                    <constraint firstItem="fkF-n2-tY4" firstAttribute="top" secondItem="xwZ-lu-0OL" secondAttribute="topMargin" constant="-8" id="Bet-9f-cbo"/>
+                    <constraint firstItem="LTi-KB-u4T" firstAttribute="centerY" secondItem="xwZ-lu-0OL" secondAttribute="centerY" id="DsA-rs-c5C"/>
+                    <constraint firstItem="Ul1-3u-sf4" firstAttribute="top" secondItem="ohM-V8-X95" secondAttribute="bottom" constant="16" id="F8g-Ei-c6A"/>
+                    <constraint firstItem="LTi-KB-u4T" firstAttribute="top" secondItem="xwZ-lu-0OL" secondAttribute="top" id="FwD-7s-dtb"/>
+                    <constraint firstItem="ohM-V8-X95" firstAttribute="leading" secondItem="xwZ-lu-0OL" secondAttribute="leading" constant="103" id="JKM-1d-f0h"/>
+                    <constraint firstItem="LTi-KB-u4T" firstAttribute="top" secondItem="xwZ-lu-0OL" secondAttribute="top" id="OVd-oF-5XR"/>
+                    <constraint firstItem="ohM-V8-X95" firstAttribute="top" secondItem="xwZ-lu-0OL" secondAttribute="topMargin" constant="9" id="RLZ-1O-WmQ"/>
+                    <constraint firstItem="ohM-V8-X95" firstAttribute="leading" secondItem="Ul1-3u-sf4" secondAttribute="leading" id="ZBm-jl-wc8"/>
+                    <constraint firstItem="LTi-KB-u4T" firstAttribute="leading" secondItem="xwZ-lu-0OL" secondAttribute="leading" id="ZHG-fk-xvj"/>
+                    <constraint firstItem="ohM-V8-X95" firstAttribute="leading" secondItem="xwZ-lu-0OL" secondAttribute="leadingMargin" constant="95" id="ZN0-1u-nsm"/>
+                    <constraint firstItem="LTi-KB-u4T" firstAttribute="top" secondItem="xwZ-lu-0OL" secondAttribute="top" id="g21-8J-Xnw"/>
+                    <constraint firstItem="ohM-V8-X95" firstAttribute="leading" secondItem="LTi-KB-u4T" secondAttribute="trailing" constant="10" id="gHb-hR-cXG"/>
+                    <constraint firstItem="ohM-V8-X95" firstAttribute="leading" secondItem="xwZ-lu-0OL" secondAttribute="leading" constant="103" id="h1L-YJ-chN"/>
+                    <constraint firstItem="ohM-V8-X95" firstAttribute="top" secondItem="xwZ-lu-0OL" secondAttribute="top" constant="17" id="hNR-IX-z3E"/>
+                    <constraint firstItem="Ul1-3u-sf4" firstAttribute="trailing" secondItem="xwZ-lu-0OL" secondAttribute="trailingMargin" constant="-26" id="krh-Am-sej"/>
+                    <constraint firstItem="LTi-KB-u4T" firstAttribute="top" secondItem="xwZ-lu-0OL" secondAttribute="topMargin" constant="-8" id="nhP-9y-k97"/>
+                    <constraint firstItem="fkF-n2-tY4" firstAttribute="leading" secondItem="xwZ-lu-0OL" secondAttribute="leadingMargin" constant="3" id="sRP-Qz-6ri"/>
+                    <constraint firstItem="LTi-KB-u4T" firstAttribute="leading" secondItem="xwZ-lu-0OL" secondAttribute="leadingMargin" constant="-8" id="x3y-Xb-Q0k"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="lblArtist" destination="Ul1-3u-sf4" id="mMZ-Ge-Vz7"/>
+                <outlet property="lblIndexId" destination="LTi-KB-u4T" id="Cpe-8r-TeI"/>
+            </connections>
+        </tableViewCell>
+    </objects>
+</document>

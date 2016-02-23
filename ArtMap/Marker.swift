@@ -7,11 +7,11 @@
 //
 
 import UIKit
-//import GoogleMaps
+import GoogleMaps
 import Parse
 
-class Marker: NSObject {
-   
+class Marker: NSObject, UIActivityItemSource {
+    
     private var marker : GMSMarker
     private var id : Int = Int()
     private var image : UIImage
@@ -31,21 +31,21 @@ class Marker: NSObject {
         self.marker = GMSMarker()
         self.marker.icon = UIImage(named: "marker")
         self.marker.position = position
-        self.marker.appearAnimation = kGMSMarkerAnimationPop
+        //self.marker.appearAnimation = kGMSMarkerAnimationPop
         self.marker.infoWindowAnchor = CGPointMake(0.44, 0.45);
         
         self.image = UIImage()
         self.user = User()
         self.art = Art(title: title, author: author, year: year, status: visibility)!
         
-     
+        
     }
     init(position: CLLocationCoordinate2D, id: Int){
         
         self.marker = GMSMarker()
         self.marker.icon = UIImage(named: "marker")
         self.marker.position = position
-        self.marker.appearAnimation = kGMSMarkerAnimationPop
+        //self.marker.appearAnimation =
         self.marker.infoWindowAnchor = CGPointMake(0.44, 0.45);
         
         self.image = UIImage()
@@ -60,7 +60,7 @@ class Marker: NSObject {
         self.marker = GMSMarker()
         self.marker.icon = UIImage(named: "marker")
         self.marker.position = position
-        self.marker.appearAnimation = kGMSMarkerAnimationPop
+        //self.marker.appearAnimation = kGMSMarkerAnimationPop
         self.marker.infoWindowAnchor = CGPointMake(0.44, 0.45);
         
         self.image = UIImage()
@@ -83,8 +83,8 @@ class Marker: NSObject {
         return self.marker
     }
     /*func getId() -> Int{
-        return self.id
-        
+    return self.id
+    
     }*/
     func getImage() -> UIImage{
         return self.image
@@ -99,5 +99,33 @@ class Marker: NSObject {
     func getUser() -> User{
         return self.user
     }
-
+    
+    func activityViewControllerPlaceholderItem(activityViewController: UIActivityViewController) -> AnyObject {
+        if self.getArt().getAuthor() == ""{
+            
+            return "Author: Unknown \n\nCondiviso con ArtMap! - versione iOS"
+        }
+        
+        return "Author: " + self.getArt().getAuthor() + " \n\nCondiviso con ArtMap! - versione iOS"
+    }
+    func activityViewController(activityViewController: UIActivityViewController, itemForActivityType activityType: String) -> AnyObject? {
+        if activityType == UIActivityTypePostToFacebook{
+            activityViewController.title = "Shared with ArtMap!"
+            
+            return self.getImage()
+        }
+        
+        return ""
+    }
+    
+    func activityViewController(activityViewController: UIActivityViewController, subjectForActivityType activityType: String?) -> String {
+        if self.getArt().getAuthor() == ""{
+            
+            return "Author: Unknown \n\nCondiviso con ArtMap! - versione iOS"
+        }
+        
+        return "Author: " + self.getArt().getAuthor() + " \n\nCondiviso con ArtMap! - versione iOS"
+    }
+    
+    
 }

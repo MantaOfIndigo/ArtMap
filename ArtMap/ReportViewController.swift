@@ -7,10 +7,11 @@
 //
 
 import UIKit
+import GoogleMaps
 import Parse
 
 class ReportViewController : UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, CLLocationManagerDelegate{
-
+    
     @IBOutlet weak var setVisibility: UIPickerView!
     @IBOutlet weak var titleText: UITextField!
     @IBOutlet weak var authorText: UITextField!
@@ -29,16 +30,17 @@ class ReportViewController : UIViewController, UIPickerViewDataSource, UIPickerV
     var latitude : Double?
     var geoAccuracy : Double?
     
-    @IBAction func back(sender: UIButton) {
+    @IBAction func back(sender: AnyObject) {
+        
         locationManager?.stopUpdatingLocation()
         dismissViewControllerAnimated(true, completion: nil)
     }
-    @IBAction func sendReport(sender: UIButton) {
+
+    @IBAction func sendReport(sender: AnyObject) {
         locationManager?.stopUpdatingLocation()
         
-        let logged: String? = NSUserDefaults.standardUserDefaults().stringForKey("username")
-        if logged != "NOSUCHUSER" && logged != "NOLOGGED"{
-        
+        if PFUser.currentUser() != nil{
+            
             let intrc = Interactor()
             
             let artReport = Art(title: titleText.text, author: authorText.text, year: Int(yearText.text!))
@@ -48,17 +50,18 @@ class ReportViewController : UIViewController, UIPickerViewDataSource, UIPickerV
             }else{
                 intrc.uploadNewReport(artInfo.getId() ,position: CLLocationCoordinate2DMake(0, 0), art: artReport!, visibility: visibility! , geoAccuracy: 0, isInPosition: true)
             }
-            
+            AlertLauncher().launchAlertWithConfirm("Report riuscito", message: "Il report è stato inviato con successo", toView: self)
         }else{
             let alert = AlertLauncher()
             alert.launchAlert("Report fallito", message: "Devi prima effettuare il login per inviare un report", toView: self)
         }
     }
-   
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setPosition.setOn(true, animated: false)
+        setPosition.setOn(false, animated: false)
         setVisibility.dataSource = self
         setVisibility.delegate = self
         pickerValues = ["Visibile","Rovinato o Inaccessibile","Rimosso o Distrutto"]
@@ -67,7 +70,6 @@ class ReportViewController : UIViewController, UIPickerViewDataSource, UIPickerV
         locationManager!.delegate = self
         locationManager!.desiredAccuracy = kCLLocationAccuracyBest
         locationManager!.requestAlwaysAuthorization()
-        locationManager!.startUpdatingLocation()
         
         setPosition.addTarget(self, action: Selector("switchChanged:"), forControlEvents: UIControlEvents.ValueChanged)
         
@@ -96,7 +98,7 @@ class ReportViewController : UIViewController, UIPickerViewDataSource, UIPickerV
         longitude = loc.coordinate.longitude
         geoAccuracy = loc.horizontalAccuracy
         
-        labelAccuracy.text = "Accuratezza posizione:  " + String(geoAccuracy!) + " metri"
+        labelAccuracy.text = "   Accuratezza posizione:  " + String(geoAccuracy!) + " metri"
         
         mapView.camera = camera
         mapView.settings.myLocationButton = true
@@ -115,7 +117,7 @@ class ReportViewController : UIViewController, UIPickerViewDataSource, UIPickerV
         return pickerValues[row]
     }
     
-    func setReportInfo(value: Marker){
-        self.artInfo = value
+    func setReportInfo(markerInformation: Marker){
+        self.artInfo = markerInformation
     }
 }

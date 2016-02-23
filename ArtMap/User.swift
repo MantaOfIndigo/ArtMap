@@ -72,7 +72,11 @@ class User: NSObject {
     
     func calculatePoint(){
         if self.picturesUploaded != nil{
-        self.points = self.picturesUploaded! * 100
+            self.points = (self.picturesUploaded! * 100)
+        }
+        
+        if self.reports != nil{
+            self.points = self.points! + (self.reports! * 50)
         }
         // altre formule per i punti
     }
@@ -152,5 +156,4 @@ class User: NSObject {
         
         return false
     }
-
 }

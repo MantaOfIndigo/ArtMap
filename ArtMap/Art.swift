@@ -15,7 +15,7 @@ class Art: NSObject {
     // title: Titolo
     // author: Autore opera
     // year: Anno di realizzazione
-    // visibility: 0 danneggiato - 1 visibile - 2 rimosso
+    // visibility: 0 non aggiornato - 1 visibile - 2 danneggiato - 3 rimosso
     private var title: String?
     private var author: String?
     private var year: Int?
@@ -74,6 +74,19 @@ class Art: NSObject {
         
         super.init()
     }
+    init(title:String, author:String, yearString: String, status: Int){
+        self.title = title
+        self.author = author
+        if Int(yearString) != nil{
+            self.year = Int(yearString)
+        }else{
+            self.year = 0
+        }
+        self.visibility = status
+        self.tag = ""
+        
+        super.init()
+    }
     init?(object: PFObject){
         if let title = object["title"] as? String{
             self.title = title
@@ -92,7 +105,7 @@ class Art: NSObject {
         } else{
             self.year = nil
         }
-       
+        
         if let visibility = object["visibility"] as? Int{
             self.visibility = visibility
         } else{
@@ -140,6 +153,8 @@ class Art: NSObject {
         }
         return self.tag!
     }
+    
+    //-----------------------------------------------------------
     
     
 }

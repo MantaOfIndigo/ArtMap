@@ -9,7 +9,7 @@
 import UIKit
 import QuartzCore
 
- @objc class ArtInfoView : UIViewController{
+@objc class ArtInfoView : UIViewController{
     
     @IBOutlet weak var infoView: UIView!
     @IBOutlet weak var imageInfo: UIImageView!
@@ -32,10 +32,10 @@ import QuartzCore
     
     @IBAction func sendUserPage(sender: UIButton) {
         let storyboard : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-         let resultController = storyboard.instantiateViewControllerWithIdentifier("userInterface") as? UserInfoController
+        let resultController = storyboard.instantiateViewControllerWithIdentifier("userInterface") as? UserInfoController
         
-            resultController!.setUserPage(artInformation.getUser())
-            presentViewController(resultController!, animated: true, completion: nil)
+        resultController!.setUserPage(artInformation.getUser())
+        presentViewController(resultController!, animated: true, completion: nil)
         
     }
     
@@ -79,13 +79,13 @@ import QuartzCore
     func showAnimate(){
         self.view.alpha = 0
         UIView.animateWithDuration(0.20, animations: {
-                self.view.alpha = 1
-            })
+            self.view.alpha = 1
+        })
     }
     
     func removeAnimate(){
         UIView.animateWithDuration(0.20, animations: {
-                self.view.alpha = 0
+            self.view.alpha = 0
             }, completion: {
                 (finished: Bool) in
                 self.view.removeFromSuperview()
@@ -95,5 +95,5 @@ import QuartzCore
     func setInformation(info: Marker){
         self.artInformation = info
     }
-
+    
 }
