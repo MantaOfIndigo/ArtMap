@@ -206,7 +206,6 @@ class Interactor : UIViewController{
         newRecord["username"] = PFUser.currentUser()!["username"] as! String
         newRecord["year"] = String(art.getYear())
         
-        updateUserInformation(0, checkIns: 0, reports: 1)
         
         newRecord.saveInBackgroundWithBlock{
             (success: Bool, error: NSError?) -> Void in
@@ -272,7 +271,6 @@ class Interactor : UIViewController{
         newRecord["username"] = username
         newRecord["year"] = String(art.getYear())
         
-        updateUserInformation(1, checkIns: 0, reports: 0)
         
         newRecord.saveInBackgroundWithBlock{
             (success: Bool, error: NSError?) -> Void in

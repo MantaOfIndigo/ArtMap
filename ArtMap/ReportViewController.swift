@@ -10,7 +10,7 @@ import UIKit
 import GoogleMaps
 import Parse
 
-class ReportViewController : UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, CLLocationManagerDelegate{
+class ReportViewController : UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, CLLocationManagerDelegate, UITextFieldDelegate{
     
     @IBOutlet weak var setVisibility: UIPickerView!
     @IBOutlet weak var titleText: UITextField!
@@ -57,7 +57,10 @@ class ReportViewController : UIViewController, UIPickerViewDataSource, UIPickerV
         }
     }
     
-    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        return false
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -86,6 +86,8 @@ class AddArtInfoView: UIViewController, UITextFieldDelegate{
         author = authorText.text!
         titleArt = titleText.text!
         if let _ = Int(yearText.text!){
+            
+        }else{
             AlertLauncher().launchAlert("Errore", message: "L'anno inserito non è un numero", toView: self)
             yearText.text = ""
             
